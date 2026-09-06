@@ -7,6 +7,7 @@ can compute an overall OCR confidence for the document.
 
 from typing import Tuple
 import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 from PIL import Image
 
 
