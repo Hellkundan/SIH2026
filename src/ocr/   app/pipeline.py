@@ -51,10 +51,21 @@ def process_document(filename: str, content: bytes) -> DocumentIntelligenceResul
     blur_scores = []
 
     for page in pages:
-        # TEMPORARY TEST: skipping clean_for_ocr() to check whether the
-        # preprocessing step is what's scrambling text on colorful/complex
-        # documents like PAN cards. Re-enable once we know the answer.
-        text, conf = run_ocr(page)
+        # Run OCR twice — once on the raw page, once on the cleaned
+        # (denoised/thresholded) version — and keep whichever gives
+        # higher OCR confidence. The cleanup step helps genuinely blurry
+        # scans, but can hurt colorful/complex documents like ID cards
+        # by over-thresholding real text into noise. Trying both avoids
+        # having to guess in advance which case we're in.
+        raw_text_attempt, raw_conf = run_ocr(page)
+        cleaned = clean_for_ocr(page)
+        cleaned_text_attempt, cleaned_conf = run_ocr(cleaned)
+
+        if cleaned_conf >= raw_conf:
+            text, conf = cleaned_text_attempt, cleaned_conf
+        else:
+            text, conf = raw_text_attempt, raw_conf
+
         full_text_parts.append(text)
         ocr_confidences.append(conf)
         blur_scores.append(blur_score(page))
