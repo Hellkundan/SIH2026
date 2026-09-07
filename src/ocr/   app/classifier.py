@@ -12,15 +12,18 @@ import re
 from typing import Tuple
 
 DOCUMENT_SIGNATURES = {
-    "GST": [r"\bgoods\s+and\s+services\s+tax\b", r"\bgstin\b", r"\bGST\b"],
-    "PAN": [r"\bpermanent\s+account\s+number\b", r"\bincome\s+tax\s+department\b"],
-    "UDYAM": [r"\budyam\b", r"\bmsme\b", r"\budyam\s+registration\b"],
-    "EPFO": [r"\bemployees[\'\u2019]?\s+provident\s+fund\b", r"\bepfo\b", r"\bUAN\b"],
-    "ESIC": [r"\bemployees[\'\u2019]?\s+state\s+insurance\b", r"\besic\b"],
-    "OEM_AUTHORIZATION": [r"\boriginal\s+equipment\s+manufacturer\b", r"\bauthoriz(e|ation)\b.*\bdealer\b"],
+    # \s* instead of \s+ between words: OCR frequently drops the space
+    # between words (e.g. "INCOME TAX" -> "INCOMETAX"), so patterns must
+    # tolerate zero-or-more whitespace, not require it.
+    "GST": [r"\bgoods\s*and\s*services\s*tax\b", r"\bgstin\b", r"\bGST\b"],
+    "PAN": [r"\bpermanent\s*account\s*number\b", r"\bincome\s*tax\s*department\b"],
+    "UDYAM": [r"\budyam\b", r"\bmsme\b", r"\budyam\s*registration\b"],
+    "EPFO": [r"\bemployees[\'\u2019]?\s*provident\s*fund\b", r"\bepfo\b", r"\bUAN\b"],
+    "ESIC": [r"\bemployees[\'\u2019]?\s*state\s*insurance\b", r"\besic\b"],
+    "OEM_AUTHORIZATION": [r"\boriginal\s*equipment\s*manufacturer\b", r"\bauthoriz(e|ation)\b.*\bdealer\b"],
     "STARTUP_INDIA": [r"\bstartup\s*india\b", r"\bdpiit\b"],
-    "NSIC": [r"\bnsic\b", r"\bnational\s+small\s+industries\s+corporation\b"],
-    "MAKE_IN_INDIA": [r"\bmake\s+in\s+india\b", r"\blocal\s+content\s+certificate\b"],
+    "NSIC": [r"\bnsic\b", r"\bnational\s*small\s*industries\s*corporation\b"],
+    "MAKE_IN_INDIA": [r"\bmake\s*in\s*india\b", r"\blocal\s*content\s*certificate\b"],
 }
 
 
