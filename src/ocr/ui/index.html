@@ -1,1 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIXY — Document Intelligence</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
+  :root {
+    --ink: #132436;
+    --paper: #F6F3EC;
+    --paper-raised: #FFFFFF;
+    --stamp: #A63D2F;
+    --stamp-dark: #832F24;
+    --slate: #5C6B7A;
+    --line: #DAD3C3;
+    --verified: #3A6B4F;
+    --verified-bg: #E7EFE9;
+    --flagged: #B8802E;
+    --flagged-bg: #F5EBDA;
+    --danger: #A63D2F;
+    --danger-bg: #F3E4E0;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+  }
+
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.15;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+
+  header p {
+    color: var(--slate);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  /* --- Drop zone --- */
+  .dropzone {
+    border: 1.5px dashed var(--line);
+    background: var(--paper-raised);
+    border-radius: 4px;
+    padding: 48px 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .dropzone:hover, .dropzone.drag {
+    border-color: var(--stamp);
+    background: #FFFDF9;
+  }
+  .dropzone svg { width: 30px; height: 30px; color: var(--slate); margin-bottom: 14px; }
+  .dropzone .primary-text {
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .dropzone .primary-text strong { color: var(--stamp); font-weight: 500; }
+  .dropzone .secondary-text {
+    font-size: 13px;
+    color: var(--slate);
+  }
+  #fileInput { display: none; }
+
+  .filename-chip {
+    display: none;
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 7px 12px;
+  }
+
+  /* --- Submit button --- */
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  button.submit {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    background: var(--ink);
+    border: none;
+    border-radius: 3px;
+    padding: 13px 28px;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  button.submit:hover:not(:disabled) { background: var(--stamp); }
+  button.submit:active:not(:disabled) { transform: scale(0.98); }
+  button.submit:disabled { background: var(--line); color: var(--slate); cursor: not-allowed; }
+
+  /* --- Loading --- */
+  .loading {
+    display: none;
+    text-align: center;
+    margin-top: 28px;
+    color: var(--slate);
+    font-size: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .loading .dot-anim::after {
+    content: '';
+    animation: dots 1.4s steps(4, end) infinite;
+  }
+  @keyframes dots {
+    0% { content: ''; } 25% { content: '.'; }
+    50% { content: '..'; } 75% { content: '...'; }
+  }
+
+  /* --- Results --- */
+  #results { display: none; margin-top: 40px; }
+
+  .cert {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .cert-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .doc-type {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .doc-type .conf {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+    font-weight: 400;
+    margin-left: 8px;
+  }
+
+  .stamp-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
+  .stamp-badge.success { color: var(--verified); background: var(--verified-bg); border-color: #C6DBCC; }
+  .stamp-badge.partial { color: var(--flagged); background: var(--flagged-bg); border-color: #E6D2AC; }
+  .stamp-badge.failed  { color: var(--danger); background: var(--danger-bg); border-color: #E2C4BC; }
+
+  .section {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    font-size: 12px;
+    color: var(--slate);
+    margin-bottom: 12px;
+  }
+
+  .field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid #EFEAE0;
+  }
+  .field-row:last-child { border-bottom: none; }
+  .field-name { font-size: 13px; color: var(--slate); }
+  .field-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--ink);
+    text-align: right;
+  }
+  .field-value .fconf { color: var(--slate); font-size: 11px; margin-left: 8px; }
+
+  .empty-note { font-size: 13px; color: var(--slate); font-style: italic; }
+
+  .warning-item {
+    font-size: 13px;
+    color: var(--flagged);
+    padding: 6px 0;
+    display: flex;
+    gap: 8px;
+  }
+  .warning-item::before { content: '!'; font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+
+  .raw-text-toggle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--stamp);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .raw-text-box {
+    display: none;
+    margin-top: 12px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--slate);
+    max-height: 240px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .hash-row .field-value { font-size: 11px; }
+
+  .error-box {
+    display: none;
+    margin-top: 24px;
+    background: var(--danger-bg);
+    border: 1px solid #E2C4BC;
+    border-radius: 4px;
+    padding: 16px 20px;
+    color: var(--stamp-dark);
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 48px;
+    font-size: 12px;
+    color: var(--slate);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker">DIXY — MEMBER 3 · DOCUMENT INTELLIGENCE</div>
+      <h1>Verify a bidder document</h1>
+      <p>Upload a certificate — GST, PAN, Udyam, or similar — and this reads it, classifies it, and pulls out the key identifiers with a confidence score.</p>
+    </header>
+
+    <div class="dropzone" id="dropzone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 3v13m0-13l-4 4m4-4l4 4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="primary-text"><strong>Choose a file</strong> or drag it here</div>
+      <div class="secondary-text">PDF, JPG, or PNG</div>
+      <div class="filename-chip" id="filenameChip"></div>
+      <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png">
+    </div>
+
+    <div class="actions">
+      <button class="submit" id="submitBtn" disabled>Process document</button>
+    </div>
+
+    <div class="loading" id="loading">reading document<span class="dot-anim"></span></div>
+
+    <div class="error-box" id="errorBox"></div>
+
+    <div id="results">
+      <div class="cert">
+        <div class="cert-header">
+          <div class="doc-type" id="docType">—<span class="conf" id="docConf"></span></div>
+          <div class="stamp-badge" id="statusBadge">—</div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Extracted fields</div>
+          <div id="fieldsContainer"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Quality</div>
+          <div id="qualityContainer"></div>
+        </div>
+
+        <div class="section">
+          <div class="field-row hash-row">
+            <div class="field-name">Document hash</div>
+            <div class="field-value" id="docHash">—</div>
+          </div>
+          <button class="raw-text-toggle" id="rawToggle">Show raw OCR text</button>
+          <div class="raw-text-box" id="rawTextBox"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Running against http://127.0.0.1:8001/api/ocr/process</footer>
+  </div>
+
+<script>
+  const API_URL = "http://127.0.0.1:8001/api/ocr/process";
+
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('fileInput');
+  const filenameChip = document.getElementById('filenameChip');
+  const submitBtn = document.getElementById('submitBtn');
+  const loading = document.getElementById('loading');
+  const results = document.getElementById('results');
+  const errorBox = document.getElementById('errorBox');
+
+  let selectedFile = null;
+
+  dropzone.addEventListener('click', () => fileInput.click());
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('drag');
+  });
+  dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('drag');
+    if (e.dataTransfer.files.length) {
+      selectedFile = e.dataTransfer.files[0];
+      showFilename();
+    }
+  });
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length) {
+      selectedFile = fileInput.files[0];
+      showFilename();
+    }
+  });
+
+  function showFilename() {
+    filenameChip.textContent = selectedFile.name;
+    filenameChip.style.display = 'inline-block';
+    submitBtn.disabled = false;
+    results.style.display = 'none';
+    errorBox.style.display = 'none';
+  }
+
+  document.getElementById('rawToggle').addEventListener('click', () => {
+    const box = document.getElementById('rawTextBox');
+    const btn = document.getElementById('rawToggle');
+    const isOpen = box.style.display === 'block';
+    box.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'Show raw OCR text' : 'Hide raw OCR text';
+  });
+
+  submitBtn.addEventListener('click', async () => {
+    if (!selectedFile) return;
+
+    results.style.display = 'none';
+    errorBox.style.display = 'none';
+    loading.style.display = 'block';
+    submitBtn.disabled = true;
+
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+      const res = await fetch(API_URL, { method: 'POST', body: formData });
+      if (!res.ok) throw new Error(`Server responded with ${res.status}`);
+      const data = await res.json();
+      renderResults(data);
+    } catch (err) {
+      errorBox.textContent = `Couldn't reach the OCR service. Make sure "uvicorn app.main:app --reload --port 8001" is running. (${err.message})`;
+      errorBox.style.display = 'block';
+    } finally {
+      loading.style.display = 'none';
+      submitBtn.disabled = false;
+    }
+  });
+
+  function renderResults(data) {
+    document.getElementById('docType').innerHTML =
+      data.document_type + `<span class="conf">confidence ${(data.classification_confidence * 100).toFixed(0)}%</span>`;
+
+    const badge = document.getElementById('statusBadge');
+    badge.textContent = data.processing_status;
+    badge.className = 'stamp-badge ' + data.processing_status.toLowerCase();
+
+    const fieldsContainer = document.getElementById('fieldsContainer');
+    fieldsContainer.innerHTML = '';
+    if (data.extracted_fields && data.extracted_fields.length) {
+      data.extracted_fields.forEach(f => {
+        const row = document.createElement('div');
+        row.className = 'field-row';
+        row.innerHTML = `<div class="field-name">${f.field_name}</div>
+          <div class="field-value">${f.value}<span class="fconf">${(f.confidence * 100).toFixed(0)}%</span></div>`;
+        fieldsContainer.appendChild(row);
+      });
+    } else {
+      fieldsContainer.innerHTML = '<div class="empty-note">No known identifiers found in this document.</div>';
+    }
+
+    const qualityContainer = document.getElementById('qualityContainer');
+    qualityContainer.innerHTML = '';
+    const q = data.quality;
+    const readableRow = document.createElement('div');
+    readableRow.className = 'field-row';
+    readableRow.innerHTML = `<div class="field-name">Readable</div><div class="field-value">${q.is_readable ? 'Yes' : 'No'}</div>`;
+    qualityContainer.appendChild(readableRow);
+
+    if (q.warnings && q.warnings.length) {
+      q.warnings.forEach(w => {
+        const wEl = document.createElement('div');
+        wEl.className = 'warning-item';
+        wEl.textContent = w;
+        qualityContainer.appendChild(wEl);
+      });
+    }
+
+    document.getElementById('docHash').textContent = data.document_hash.slice(0, 24) + '…';
+    document.getElementById('rawTextBox').textContent = data.raw_text || '(no text extracted)';
+    document.getElementById('rawTextBox').style.display = 'none';
+    document.getElementById('rawToggle').textContent = 'Show raw OCR text';
+
+    results.style.display = 'block';
+  }
+</script>
+</body>
+</html>
