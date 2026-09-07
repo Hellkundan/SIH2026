@@ -5,7 +5,7 @@ from src.verification_hub.models.enums import VerificationType
 
 class VerificationRequest(BaseModel):
     bidder_id: str =Field(...,description="Unique bidder ID")
-    verification_type : verificationtype
+    verification_type : verificationtype  #take from enums
     identifier : Optional[str] = None
     company_name : Optional[str] = None
     pan : Optional[str] = None
