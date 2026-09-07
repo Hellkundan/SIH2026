@@ -11,11 +11,17 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 from PIL import Image
 
 
-def run_ocr(image: Image.Image) -> Tuple[str, float]:
+def run_ocr(image: Image.Image, lang: str = "eng+hin") -> Tuple[str, float]:
     """
     Returns (extracted_text, average_word_confidence 0-1).
+
+    lang="eng+hin" tells Tesseract to recognize BOTH English and Hindi
+    (Devanagari) script in the same pass, instead of forcing Hindi text
+    into English letter shapes (which produces gibberish). Requires
+    hin.traineddata to be present in Tesseract's tessdata folder.
+    Add more languages the same way, e.g. "eng+hin+tam" for Tamil.
     """
-    data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
+    data = pytesseract.image_to_data(image, lang=lang, output_type=pytesseract.Output.DICT)
 
     words = []
     confidences = []
