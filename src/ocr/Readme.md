@@ -35,7 +35,7 @@ You also need the **Tesseract binary** installed (this is separate from the
 - Windows: install from https://github.com/UB-Mannheim/tesseract/wiki and add
   it to PATH (or set `pytesseract.pytesseract.tesseract_cmd` in `ocr_engine.py`)
 
-  ### Hindi language support
+### Hindi language support
 
 Some documents (like Aadhaar cards) contain Hindi text. To read this
 correctly instead of getting garbled output, download the Hindi
