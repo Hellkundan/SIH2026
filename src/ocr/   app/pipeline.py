@@ -51,8 +51,10 @@ def process_document(filename: str, content: bytes) -> DocumentIntelligenceResul
     blur_scores = []
 
     for page in pages:
-        cleaned = clean_for_ocr(page)
-        text, conf = run_ocr(cleaned)
+        # TEMPORARY TEST: skipping clean_for_ocr() to check whether the
+        # preprocessing step is what's scrambling text on colorful/complex
+        # documents like PAN cards. Re-enable once we know the answer.
+        text, conf = run_ocr(page)
         full_text_parts.append(text)
         ocr_confidences.append(conf)
         blur_scores.append(blur_score(page))
