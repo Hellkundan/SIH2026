@@ -9,6 +9,7 @@ backend (and Member 2's AI service) will call.
 """
 
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .pipeline import process_document
@@ -18,6 +19,15 @@ app = FastAPI(
     title="DIXY Document Intelligence Service",
     description="OCR, classification, and field extraction for bid compliance documents.",
     version="0.1.0",
+)
+
+# Allows the standalone UI in ui/index.html (opened directly as a local
+# file) to call this API from the browser. Does not touch any OCR logic.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
