@@ -1,0 +1,9 @@
+[
+  {
+    "pan": "DEBAR1234X",
+    "identifier": "DEBAR1234X",
+    "company_name": "Debarred Demo Vendor",
+    "debarment_status": "DEBARRED",
+    "reason": "Controlled SIH demo record"
+  }
+]
