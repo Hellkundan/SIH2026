@@ -45,37 +45,57 @@ def process_document(filename: str, content: bytes) -> DocumentIntelligenceResul
     if not pages:
         errors.append("No pages could be extracted from the document.")
 
-    # Run OCR across all pages, concatenate text, average confidence + blur
-    full_text_parts = []
-    ocr_confidences = []
+    # Step 3: OCR — try both raw and cleaned versions of each page
+    raw_text_parts, raw_confs = [], []
+    cleaned_text_parts, cleaned_confs = [], []
     blur_scores = []
 
     for page in pages:
-        # Run OCR twice — once on the raw page, once on the cleaned
-        # (denoised/thresholded) version — and keep whichever gives
-        # higher OCR confidence. The cleanup step helps genuinely blurry
-        # scans, but can hurt colorful/complex documents like ID cards
-        # by over-thresholding real text into noise. Trying both avoids
-        # having to guess in advance which case we're in.
         raw_text_attempt, raw_conf = run_ocr(page)
+        raw_text_parts.append(raw_text_attempt)
+        raw_confs.append(raw_conf)
+
         cleaned = clean_for_ocr(page)
         cleaned_text_attempt, cleaned_conf = run_ocr(cleaned)
+        cleaned_text_parts.append(cleaned_text_attempt)
+        cleaned_confs.append(cleaned_conf)
 
-        if cleaned_conf >= raw_conf:
-            text, conf = cleaned_text_attempt, cleaned_conf
-        else:
-            text, conf = raw_text_attempt, raw_conf
-
-        full_text_parts.append(text)
-        ocr_confidences.append(conf)
         blur_scores.append(blur_score(page))
 
-    raw_text = "\n".join(full_text_parts).strip()
-    avg_ocr_conf = round(sum(ocr_confidences) / len(ocr_confidences), 3) if ocr_confidences else 0.0
+    raw_full_text = "\n".join(raw_text_parts).strip()
+    cleaned_full_text = "\n".join(cleaned_text_parts).strip()
+    avg_raw_conf = round(sum(raw_confs) / len(raw_confs), 3) if raw_confs else 0.0
+    avg_cleaned_conf = round(sum(cleaned_confs) / len(cleaned_confs), 3) if cleaned_confs else 0.0
     avg_blur = round(sum(blur_scores) / len(blur_scores), 2) if blur_scores else 0.0
 
-    # Step 4: classify
-    doc_type, class_conf, _matches = classify_document(raw_text)
+    # Step 4: classify BOTH versions, then decide which OCR result to use.
+    # OCR confidence alone is unreliable — a heavily-thresholded image can
+    # produce garbage that Tesseract is confidently wrong about. Instead,
+    # prefer whichever version the classifier actually recognizes; only
+    # fall back to raw OCR confidence if neither version classifies.
+    raw_doc_type, raw_class_conf, _ = classify_document(raw_full_text)
+    cleaned_doc_type, cleaned_class_conf, _ = classify_document(cleaned_full_text)
+
+    raw_known = raw_doc_type != "UNKNOWN"
+    cleaned_known = cleaned_doc_type != "UNKNOWN"
+
+    if raw_known and not cleaned_known:
+        use_raw = True
+    elif cleaned_known and not raw_known:
+        use_raw = False
+    elif raw_known and cleaned_known:
+        use_raw = raw_class_conf >= cleaned_class_conf
+    else:
+        use_raw = avg_raw_conf >= avg_cleaned_conf
+
+    if use_raw:
+        raw_text = raw_full_text
+        avg_ocr_conf = avg_raw_conf
+        doc_type, class_conf = raw_doc_type, raw_class_conf
+    else:
+        raw_text = cleaned_full_text
+        avg_ocr_conf = avg_cleaned_conf
+        doc_type, class_conf = cleaned_doc_type, cleaned_class_conf
 
     # Step 5: extract fields
     fields = extract_fields(raw_text, doc_type)
