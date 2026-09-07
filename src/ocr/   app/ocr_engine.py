@@ -2,7 +2,7 @@
 Step 3: OCR baseline.
 
 Wraps pytesseract. Returns both plain text and per-word confidence so we
-can compute an overall OCR confidence for the document.
+can compute an overall OCR confidence for the document. 
 """
 
 from typing import Tuple
