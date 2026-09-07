@@ -7,7 +7,7 @@ import uuid
 from typing import List
 
 from .ingestion import validate_file, compute_document_hash, is_pdf, IngestionError
-from .preprocessing import pdf_bytes_to_images, image_bytes_to_pil, clean_for_ocr, blur_score
+from .preprocessing import pdf_bytes_to_images, image_bytes_to_pil, clean_for_ocr, blur_score, upscale_if_small
 from .ocr_engine import run_ocr
 from .classifier import classify_document
 from .extractors import extract_fields
@@ -44,6 +44,11 @@ def process_document(filename: str, content: bytes) -> DocumentIntelligenceResul
 
     if not pages:
         errors.append("No pages could be extracted from the document.")
+
+    # Upscale small images (e.g. cropped ID card photos) before OCR —
+    # blur_score is computed on the ORIGINAL so quality signals still
+    # reflect the real source image, not an artificially sharpened copy.
+    pages = [upscale_if_small(p) for p in pages]
 
     # Step 3: OCR — try both raw and cleaned versions of each page
     raw_text_parts, raw_confs = [], []
