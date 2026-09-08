@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from .app.models.enums import ErrorState, VerificationStatus, VerificationType
+from app.models.enums import ErrorState, VerificationStatus, VerificationType
 from app.models.request import VerificationRequest
 from app.models.response import VerificationEvidence, VerificationResponse
 from app.providers.base import VerificationProvider
