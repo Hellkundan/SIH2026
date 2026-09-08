@@ -1,32 +1,58 @@
 # For linux
 
-python3 -m venv .venv [for creating virtual environment]
+[for creating virtual environment]
 
-source .venv/bin/activate [python virtual environment]
+`python3 -m venv .venv `
 
-pip install -r requirement.txt [you should in src/verification_hub folder]
+ [python virtual environment]
 
-uvicorn app.main:app --reload --port 8000 [run this command ]
+`source .venv/bin/activate`
 
-http://127.0.0.1:8000 [click on this url for launching it in browser]
+[you should in src/verification_hub folder]
 
-http://127.0.0.1:8000/docs [swagger api documentation]
+`pip install -r requirement.txt `
+
+[run this command ]
+
+`uvicorn app.main:app --reload --port 8000 `
+
+[click on this url for launching it in browser]
+
+`http://127.0.0.1:8000 `
+
+[swagger api documentation]
+
+`http://127.0.0.1:8000/docs `
 
 # For windows
 
-python -m venv .venv [for creating virtual environment]
+ [for creating virtual environment]
 
-.venv\Scripts\activate [python virtual environment for run on CMD] 
+`python -m venv .venv`
 
-.venv\Scripts\Activate.ps1 [python virtual environment for run on powershell]
+ [python virtual environment for run on CMD] 
 
-pip install -r requirements.txt [you should in src/verification_hub folder]
+`.venv\Scripts\activate`
 
-uvicorn app.main:app --reload --port 8000 [run this command ]
+ [python virtual environment for run on powershell]
 
-http://127.0.0.1:8000 [click on this url for launching it in browser]
+`.venv\Scripts\Activate.ps1`
 
-http://127.0.0.1:8000/docs [swagger api documentation]`
+ [you should in src/verification_hub folder]
+
+`pip install -r requirements.txt`
+
+ [run this command ]
+
+`uvicorn app.main:app --reload --port 8000`
+
+[click on this url for launching it in browser]
+
+`http://127.0.0.1:8000 `
+
+[swagger api documentation]
+
+`http://127.0.0.1:8000/docs `
 
 
 src/verfication_hub/data/mock -> store mock data in JSON format
