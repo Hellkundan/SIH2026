@@ -1,0 +1,12 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# DIXY Backend — Development Profile Configuration (dev)
+# ────────────────────────────────────────────────────────
+# Activate with: --spring.profiles.active=dev
+# Intended strictly for local developer machines when .env is not present.
+# NEVER activate this profile in staging, SIH evaluations, or production.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+jwt:
+  # Clearly designated dev-only secret key (>= 256 bits / 32 bytes)
+  secret: ${JWT_SECRET:dixy-local-development-only-secret-key-minimum-256-bits-length}
+  expiration-ms: 86400000
