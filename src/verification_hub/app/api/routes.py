@@ -1,12 +1,12 @@
 from fastapi import APIRouter
-from src.verification_hub.app.models.request import BatchVerificationRequest, VerificationRequest
-from src.verification_hub.app.models.response import BatchVerificationResponse, VerificationResponse
+from app.models.request import BatchVerificationRequest, VerificationRequest
+from app.models.response import BatchVerificationResponse, VerificationResponse
 # from app.services.scenario_service import (
 #     clean_bidder_requests,
 #     incomplete_bidder_requests,
 #     suspicious_bidder_requests,
 # )
-from src.verification_hub.app.services.verification_service import VerificationService
+from app.services.verification_service import VerificationService
 
 router = APIRouter(prefix="/api/v1", tags=["Verification"])
 service = VerificationService()

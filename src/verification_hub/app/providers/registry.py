@@ -2,12 +2,12 @@ from src.verification_hub.app.models.enums import VerificationType
 from src.verification_hub.app.providers.gst_provider import GSTProvider
 from src.verification_hub.app.providers.udyam_provider import UdyamProvider
 from src.verification_hub.app.providers.pan_provider import PANProvider
-from src.verification_hub.app.providers.epfo_provider import EPFOProvider
-from src.verification_hub.app.providers.esic_provider import ESICProvider
-from src.verification_hub.app.providers.startup_india_provider import StartupIndiaProvider
-from src.verification_hub.app.providers.nsic_provider import NSICProvider
-from src.verification_hub.app.providers.oem_provider import OEMProvider
-from src.verification_hub.app.providers.blacklist_provider import BlacklistProvider
+from app.providers.epfo_provider import EPFOProvider
+from app.providers.esic_provider import ESICProvider
+from app.providers.start_provider import StartupIndiaProvider
+from app.providers.nsic_provider import NSICProvider
+from app.providers.oem_provider import OEMProvider
+from app.providers.blacklist_provider import BlacklistProvider
 
 
 class ProviderRegistry:

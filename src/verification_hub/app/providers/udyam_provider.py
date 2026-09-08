@@ -1,5 +1,5 @@
-from src.verfiation_hub.models.enums import VerificationType
-from src.verification_hub.app.providers.mock.mock_base import MockProvider
+from app.models.enums import VerificationType
+from app.providers.mock.mock_base import MockDatasetProvider
 
 class UdyamProvider(MockDatasetProvider):
     verification_type = VerificationType.UDYAM

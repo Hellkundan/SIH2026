@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any, List
-from src.verification_hub.app.models.enums import VerificationType
+from app.models.enums import VerificationType
 
 class VerificationRequest(BaseModel):
     bidder_id: str = Field(...,description="Unique bidder ID")

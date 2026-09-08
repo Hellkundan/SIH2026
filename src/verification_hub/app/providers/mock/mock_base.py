@@ -1,9 +1,9 @@
 from datetime import datetime, timezone
-from src.verification_hub.app.models.enums import ErrorState, VerificationStatus, VerificationType
-from src.verification_hub.app.models.request import VerificationRequest
-from src.verification_hub.app.models.response import VerificationEvidence, VerificationResponse
-from src.verification_hub.app.providers.base import VerificationProvider
-from src.verification_hub.app.utils.loader import load_json
+from .app.models.enums import ErrorState, VerificationStatus, VerificationType
+from app.models.request import VerificationRequest
+from app.models.response import VerificationEvidence, VerificationResponse
+from app.providers.base import VerificationProvider
+from app.utils.loader import load_json
 
 class MockDatasetProvider(VerificationProvider):
     verification_type: VerificationType
