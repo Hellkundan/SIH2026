@@ -1,8 +1,8 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    APP_NAME: str = "DIXY Verification Hub"
-    APP_VERSION: str = "1.0.0"
+    APP_NAME: str = "Verification Hub"
+    APP_VERSION: str = "0.1"
     PROVIDER_TIMEOUT_SECONDS: float = 5.0
     RETRY_ATTEMPTS: int = 2
 
