@@ -1,11 +1,11 @@
 import asyncio
 from datetime import datetime, timezone
-from src.verification_hub.app.models.enums import VerificationStatus
+from src.verification_hub.app.models.enums import VerificationStatus, ErrorState
 from src.verification_hub.app.models.request import VerificationRequest
 from src.verification_hub.app.models.response import VerificationEvidence, VerificationResponse
 from src.verification_hub.app.providers.registry import ProviderRegistry
 
-class VerificaionService:
+class VerificationService:
     def __init__(self):
         self.registry = ProviderRegistry()
         self.timeout_seconds = 5

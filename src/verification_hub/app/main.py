@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.verification_hub.app.api.routes import router
-from src.verification_hub.appcore.config import settings
+from src.verification_hub.app.core.config import settings
 
 app = FastAPI(
     title=settings.APP_NAME,

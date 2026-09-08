@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
-from src.verification_hub.models.request import VerificationRequest
-from src.verification_hub.models.response import VerificationResponse
+from src.verification_hub.app.models.request import VerificationRequest
+from src.verification_hub.app.models.response import VerificationResponse
 
-class VerificationProvider(ABS):
+class VerificationProvider(ABC):
     name : str = "BaseProvider"
     @abstractmethod
     async def verify(self, request: VerificationRequest) -> VerificationResponse:

@@ -8,7 +8,7 @@ class VerificationType(str, Enum):
     ESIC = "ESIC"
     STARTUP_INDIA = "STARTUP_INDIA"
     NSIC = "NSIC"
-    OEN = "OEN"
+    OEM = "OEM"
     BLACKLIST = "BLACKLIST"
 
 class VerificationStatus(str, Enum):
