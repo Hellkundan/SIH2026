@@ -1,4 +1,4 @@
-#For linux 
+#For linux
 python3 -m venv .venv [for creating virtual enviorment]
 source .venv/bin/activate
 pip install -r requirements.txt
