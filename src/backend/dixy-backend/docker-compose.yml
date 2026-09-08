@@ -1,0 +1,88 @@
+version: "3.9"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# DIXY Docker Compose — Development Environment
+# ───────────────────────────────────────────────
+# HOW TO START:
+#   1. Copy .env.example to .env and fill in values
+#   2. Run: docker compose up -d
+#   3. PostgreSQL will be available on localhost:5432
+#   4. Run Spring Boot separately with: mvn spring-boot:run
+#
+# CONCEPT EXPLANATIONS:
+#   image:   — the pre-built software to use (like an app installer)
+#   container_name: — the name of the running instance
+#   environment: — env vars passed INTO the container
+#   ports: — maps container port to your machine port (host:container)
+#   volumes: — persists data so it survives container restarts
+#   networks: — lets containers talk to each other by name
+#   healthcheck: — Docker checks if service is alive before starting dependents
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+
+  # ─── PostgreSQL Database ──────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine         # Alpine = smaller image (~50MB vs ~400MB)
+    container_name: dixy-postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME:-dixy_db}
+      POSTGRES_USER: ${DB_USERNAME:-dixy_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-dixy_dev_password}
+    ports:
+      - "${DB_PORT:-5432}:5432"       # localhost:5432 → container:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist data between restarts
+      - ./init-scripts:/docker-entrypoint-initdb.d  # Run SQL scripts on first start
+    networks:
+      - dixy-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-dixy_user} -d ${DB_NAME:-dixy_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  # ─── Spring Boot Backend ───────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dixy-backend
+    env_file:
+      - .env
+    environment:
+      DB_HOST: postgres        # Use container service name on dixy-network!
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-dixy_db}
+      DB_USERNAME: ${DB_USERNAME:-dixy_user}
+      DB_PASSWORD: ${DB_PASSWORD:-dixy_dev_password}
+      JWT_SECRET: ${JWT_SECRET:-dixy-default-docker-dev-secret-key-minimum-256-bits}
+      SERVER_PORT: ${SERVER_PORT:-8080}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173}
+    ports:
+      - "${SERVER_PORT:-8080}:8080"
+    networks:
+      - dixy-network
+    depends_on:
+      postgres:
+        condition: service_healthy   # Wait for postgres to be healthy before starting backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/public/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+# ─── Persistent Volumes ───────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+    driver: local
+
+# ─── Network ─────────────────────────────────────────────────────────────────
+# All services on this network can reach each other by container_name
+networks:
+  dixy-network:
+    driver: bridge

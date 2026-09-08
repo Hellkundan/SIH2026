@@ -1,0 +1,28 @@
+# ─── Build / target artifacts ───
+target/
+**/target/
+*.class
+*.jar
+*.war
+
+# ─── IDE & system files ───
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.git/
+.gitignore
+
+# ─── Secrets & local environment ───
+.env
+.env.*
+*.env
+!.env.example
+
+# ─── Logs & temporary files ───
+*.log
+logs/
+**/logs/
+uploads/
+documents/
