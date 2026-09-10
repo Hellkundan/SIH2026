@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-018",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.166932Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-RJ-05-1000017",
+        "details": {
+            "identifier": "UDYAM-RJ-05-1000017",
+            "pan": "UDBZP1034Y",
+            "company_name": "Anand Foods Ltd",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Logistics",
+            "date_of_registration": "2019-12-21",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

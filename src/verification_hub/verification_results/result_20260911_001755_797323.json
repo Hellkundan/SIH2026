@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-012",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T18:47:55.797298Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50011",
+        "details": {
+            "identifier": "DIPP-50011",
+            "pan": "TOPFF1040N",
+            "company_name": "Eastern Plastics Enterprises",
+            "recognition_status": "RECOGNIZED",
+            "sector": "FinTech",
+            "recognition_date": "2020-11-19",
+            "certificate_number": "DIPP58011",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-028",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.636564Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "DRXWX1035Y",
+        "details": {
+            "pan": "DRXWX1035Y",
+            "company_name": "Modern Steel Ltd",
+            "status": "VALID",
+            "pan_type": "Individual",
+            "aadhaar_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

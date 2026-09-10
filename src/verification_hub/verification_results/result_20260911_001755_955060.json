@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-003",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.955035Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4002",
+        "details": {
+            "identifier": "NSIC-4002",
+            "pan": "GYWWJ1021F",
+            "company_name": "Diamond Electronics Enterprises",
+            "certificate_status": "EXPIRED",
+            "rating": "MSE 2B",
+            "valid_upto": "2028-11-28",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

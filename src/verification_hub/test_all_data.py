@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "app" / "data"
 VERIFICATION_DIR = BASE_DIR / "verification"
 
-API_URL = "http://127.0.0.1:8000/api/v1/verification/verify"
+API_URL = "http://127.0.0.1:8002/api/v1/verification/verify"
 
 
 # --------------------------------------------------

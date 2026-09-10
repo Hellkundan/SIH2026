@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-010",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.536661Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "USIAK1063H",
+        "details": {
+            "pan": "USIAK1063H",
+            "company_name": "Bharat Exports Enterprises",
+            "status": "VALID",
+            "pan_type": "Company",
+            "aadhaar_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-059",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T18:47:54.267530Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "10AFRWP1059A3Z4",
+        "details": {
+            "gstin": "10AFRWP1059A3Z4",
+            "pan": "AFRWP1059A",
+            "company_name": "Rajdhani Systems LLP",
+            "registration_status": "ACTIVE",
+            "registered_address": "Patna, Bihar",
+            "constitution_of_business": "LLP",
+            "date_of_registration": "2016-03-18",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

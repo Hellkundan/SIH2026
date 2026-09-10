@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-060",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.363277Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-KL-02-1000059",
+        "details": {
+            "identifier": "UDYAM-KL-02-1000059",
+            "pan": "ZBFYT1095Y",
+            "company_name": "National Logistics & Co",
+            "status": "ACTIVE",
+            "category": "SMALL",
+            "enterprise_type": "IT/Software",
+            "date_of_registration": "2023-02-25",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

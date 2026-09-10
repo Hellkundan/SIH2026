@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-084",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.926149Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "OUNAI1010A",
+        "details": {
+            "pan": "OUNAI1010A",
+            "company_name": "Sun Agro Ltd",
+            "status": "DEACTIVATED",
+            "pan_type": "HUF",
+            "aadhaar_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

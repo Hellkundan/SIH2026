@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-016",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T18:47:54.059082Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "29GYWWJ1021F5Z7",
+        "details": {
+            "gstin": "29GYWWJ1021F5Z7",
+            "pan": "GYWWJ1021F",
+            "company_name": "Diamond Electronics Enterprises",
+            "registration_status": "ACTIVE",
+            "registered_address": "Mysuru, Karnataka",
+            "constitution_of_business": "LLP",
+            "date_of_registration": "2016-04-01",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

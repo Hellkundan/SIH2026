@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-028",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T18:47:55.473630Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2027",
+        "details": {
+            "identifier": "EPFO-2027",
+            "pan": "UDBZP1034Y",
+            "company_name": "Anand Foods Ltd",
+            "status": "ACTIVE",
+            "establishment_office": "Jaipur Regional Office",
+            "date_of_setup": "2017-12-13",
+            "employee_count_range": "10-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

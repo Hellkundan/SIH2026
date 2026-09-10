@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-001",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.570882Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3000",
+        "details": {
+            "identifier": "ESIC-3000",
+            "pan": "AFQOF1001S",
+            "company_name": "Laxmi Automobiles Enterprises",
+            "status": "CANCELLED",
+            "registered_office": "Howrah, West Bengal",
+            "date_of_registration": "2017-12-18",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

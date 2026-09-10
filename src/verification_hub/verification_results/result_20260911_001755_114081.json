@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-012",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.114056Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-WB-08-1000011",
+        "details": {
+            "identifier": "UDYAM-WB-08-1000011",
+            "pan": "LNURY1030X",
+            "company_name": "Uni Engineering Works",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Textiles",
+            "date_of_registration": "2024-09-17",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

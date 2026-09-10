@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-031",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.650418Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "HVZGO1064M",
+        "details": {
+            "pan": "HVZGO1064M",
+            "company_name": "Delta Automobiles Works",
+            "status": "VALID",
+            "pan_type": "LLP",
+            "aadhaar_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-045",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.738335Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3044",
+        "details": {
+            "identifier": "ESIC-3044",
+            "pan": "KRVZM1067B",
+            "company_name": "Classic Packaging & Co",
+            "status": "PENDING",
+            "registered_office": "Ludhiana, Punjab",
+            "date_of_registration": "2019-10-17",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

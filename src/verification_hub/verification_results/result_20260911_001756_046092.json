@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-012",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T18:47:56.046065Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4011",
+        "details": {
+            "identifier": "NSIC-4011",
+            "pan": "NQMLB1062I",
+            "company_name": "Southern Engineering Ltd",
+            "certificate_status": "VALID",
+            "rating": "SE 3C",
+            "valid_upto": "2028-02-04",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-025",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.208326Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-PB-09-1000024",
+        "details": {
+            "identifier": "UDYAM-PB-09-1000024",
+            "pan": "WSHIK1031M",
+            "company_name": "Sanjay Pharma Works",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Retail",
+            "date_of_registration": "2016-12-15",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

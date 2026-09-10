@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-018",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.635935Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3017",
+        "details": {
+            "identifier": "ESIC-3017",
+            "pan": "UDBZP1034Y",
+            "company_name": "Anand Foods Ltd",
+            "status": "ACTIVE",
+            "registered_office": "Jaipur, Rajasthan",
+            "date_of_registration": "2022-06-25",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

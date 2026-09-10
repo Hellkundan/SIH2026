@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-042",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.726727Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3041",
+        "details": {
+            "identifier": "ESIC-3041",
+            "pan": "GRJOI1050X",
+            "company_name": "Laxmi Steel Works",
+            "status": "ACTIVE",
+            "registered_office": "Thiruvananthapuram, Kerala",
+            "date_of_registration": "2022-04-21",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

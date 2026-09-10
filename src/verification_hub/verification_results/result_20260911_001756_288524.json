@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-021",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T18:47:56.288498Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5020",
+        "details": {
+            "identifier": "OEM-5020",
+            "pan": "KVKSI1088K",
+            "company_name": "Northern Chemicals Ltd",
+            "authorization_status": "REVOKED",
+            "authorized_for": "Textiles",
+            "issuing_oem": "Delta Machine Tools",
+            "valid_upto": "2025-01-15",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

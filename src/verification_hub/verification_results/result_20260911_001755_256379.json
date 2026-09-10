@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-035",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.256353Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-RJ-01-1000034",
+        "details": {
+            "identifier": "UDYAM-RJ-01-1000034",
+            "pan": "TLPJZ1007E",
+            "company_name": "Crown Infrastructure LLP",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Trading",
+            "date_of_registration": "2023-02-10",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

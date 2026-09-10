@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-005",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T18:47:56.208283Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5004",
+        "details": {
+            "identifier": "OEM-5004",
+            "pan": "LVZMK1060K",
+            "company_name": "Nova Textiles Enterprises",
+            "authorization_status": "REVOKED",
+            "authorized_for": "Services",
+            "issuing_oem": "Bharat Heavy Components",
+            "valid_upto": "2026-03-17",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-019",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T18:47:56.124311Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4018",
+        "details": {
+            "identifier": "NSIC-4018",
+            "pan": "QGMXV1023C",
+            "company_name": "Green Electronics Works",
+            "certificate_status": "VALID",
+            "rating": "MSE 2A",
+            "valid_upto": "2026-12-14",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-042",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T18:47:54.176714Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "32ZBFYT1095Y6ZH",
+        "details": {
+            "gstin": "32ZBFYT1095Y6ZH",
+            "pan": "ZBFYT1095Y",
+            "company_name": "National Logistics & Co",
+            "registration_status": "ACTIVE",
+            "registered_address": "Thiruvananthapuram, Kerala",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2022-05-11",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

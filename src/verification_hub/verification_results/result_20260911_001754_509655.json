@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-005",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.509628Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "BBWKY1019S",
+        "details": {
+            "pan": "BBWKY1019S",
+            "company_name": "Elite Industries Ltd",
+            "status": "INACTIVE",
+            "pan_type": "HUF",
+            "aadhaar_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

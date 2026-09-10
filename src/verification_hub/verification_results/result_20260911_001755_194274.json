@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-022",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.194249Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-KL-06-1000021",
+        "details": {
+            "identifier": "UDYAM-KL-06-1000021",
+            "pan": "SITYR1051G",
+            "company_name": "Uni Logistics Pvt Ltd",
+            "status": "SUSPENDED",
+            "category": "MICRO",
+            "enterprise_type": "Logistics",
+            "date_of_registration": "2018-07-11",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-024",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T18:47:56.161722Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4023",
+        "details": {
+            "identifier": "NSIC-4023",
+            "pan": "UFCFD1057I",
+            "company_name": "Harsha Solutions Works",
+            "certificate_status": "VALID",
+            "rating": "SE 1A",
+            "valid_upto": "2027-01-12",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

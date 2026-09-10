@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-005",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T18:47:55.075253Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-MH-02-1000004",
+        "details": {
+            "identifier": "UDYAM-MH-02-1000004",
+            "pan": "LCSLX1086K",
+            "company_name": "Global Garments & Co",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Services",
+            "date_of_registration": "2021-10-25",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

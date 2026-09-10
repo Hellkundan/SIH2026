@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-062",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T18:47:54.281255Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "10WOOSK1097D6ZK",
+        "details": {
+            "gstin": "10WOOSK1097D6ZK",
+            "pan": "WOOSK1097D",
+            "company_name": "Bharat Chemicals Pvt Ltd",
+            "registration_status": "ACTIVE",
+            "registered_address": "Patna, Bihar",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2016-01-26",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

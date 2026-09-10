@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-067",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.836875Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "GYWWJ1021F",
+        "details": {
+            "pan": "GYWWJ1021F",
+            "company_name": "Diamond Electronics Enterprises",
+            "status": "VALID",
+            "pan_type": "LLP",
+            "aadhaar_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

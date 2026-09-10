@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-020",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T18:47:56.282773Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5019",
+        "details": {
+            "identifier": "OEM-5019",
+            "pan": "XLMHK1058I",
+            "company_name": "Ananya Fabricators Enterprises",
+            "authorization_status": "AUTHORIZED",
+            "authorized_for": "Logistics",
+            "issuing_oem": "FlowTech Industries",
+            "valid_upto": "2028-06-21",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

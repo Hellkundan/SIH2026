@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-038",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.711927Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3037",
+        "details": {
+            "identifier": "ESIC-3037",
+            "pan": "QGMXV1023C",
+            "company_name": "Green Electronics Works",
+            "status": "ACTIVE",
+            "registered_office": "Howrah, West Bengal",
+            "date_of_registration": "2016-01-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

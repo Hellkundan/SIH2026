@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-001",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.937968Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4000",
+        "details": {
+            "identifier": "NSIC-4000",
+            "pan": "HQXJE1003C",
+            "company_name": "Eastern Industries Enterprises",
+            "certificate_status": "EXPIRED",
+            "rating": "SE 1B",
+            "valid_upto": "2024-02-22",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

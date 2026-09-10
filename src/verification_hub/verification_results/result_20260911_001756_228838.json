@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-010",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T18:47:56.228813Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5009",
+        "details": {
+            "identifier": "OEM-5009",
+            "pan": "EJSNV1096Z",
+            "company_name": "Modern Fabricators & Co",
+            "authorization_status": "AUTHORIZED",
+            "authorized_for": "Trading",
+            "issuing_oem": "Suntech Panels Ltd",
+            "valid_upto": "2027-09-10",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

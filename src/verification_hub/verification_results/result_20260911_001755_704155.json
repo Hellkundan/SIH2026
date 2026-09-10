@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-036",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.704122Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3035",
+        "details": {
+            "identifier": "ESIC-3035",
+            "pan": "XLMHK1058I",
+            "company_name": "Ananya Fabricators Enterprises",
+            "status": "ACTIVE",
+            "registered_office": "Thiruvananthapuram, Kerala",
+            "date_of_registration": "2020-03-12",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

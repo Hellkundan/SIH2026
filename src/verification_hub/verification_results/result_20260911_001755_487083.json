@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-031",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T18:47:55.487057Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2030",
+        "details": {
+            "identifier": "EPFO-2030",
+            "pan": "OIZNL1087T",
+            "company_name": "Sanjay Exports Enterprises",
+            "status": "ACTIVE",
+            "establishment_office": "Hyderabad Regional Office",
+            "date_of_setup": "2019-06-05",
+            "employee_count_range": "20-50",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

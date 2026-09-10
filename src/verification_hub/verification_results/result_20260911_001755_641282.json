@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-019",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T18:47:55.641254Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3018",
+        "details": {
+            "identifier": "ESIC-3018",
+            "pan": "EASSZ1009Y",
+            "company_name": "Royal Foods & Co",
+            "status": "ACTIVE",
+            "registered_office": "Ludhiana, Punjab",
+            "date_of_registration": "2018-08-09",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

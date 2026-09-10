@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-010",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T18:47:55.404253Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2009",
+        "details": {
+            "identifier": "EPFO-2009",
+            "pan": "YCGOK1054T",
+            "company_name": "Sun Enterprises Enterprises",
+            "status": "ACTIVE",
+            "establishment_office": "New Delhi Regional Office",
+            "date_of_setup": "2021-01-14",
+            "employee_count_range": "10-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

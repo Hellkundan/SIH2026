@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-032",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.655176Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "JSUOC1093B",
+        "details": {
+            "pan": "JSUOC1093B",
+            "company_name": "Pioneer Pharma Ltd",
+            "status": "VALID",
+            "pan_type": "Company",
+            "aadhaar_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-053",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T18:47:54.764025Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "UMVPI1047H",
+        "details": {
+            "pan": "UMVPI1047H",
+            "company_name": "Sanjay Metals Enterprises",
+            "status": "VALID",
+            "pan_type": "Individual",
+            "aadhaar_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}
