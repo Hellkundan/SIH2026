@@ -3,7 +3,11 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 
-from dixy_ai_engine import dixy_analyze
+from .dixy_ai_engine import dixy_analyze
+from .tender_summary.summarizer import (
+    build_tender_summary,
+    tender_summary_to_dict,
+)
 
 
 app = FastAPI(
@@ -51,4 +55,18 @@ def analyze_bidder(request: AIAnalyzeRequest):
         raise HTTPException(
             status_code=500,
             detail=f"DIXY AI analysis failed: {str(e)}"
+        )
+
+
+@app.post("/api/ai/tender-summary")
+def tender_summary(request: AIAnalyzeRequest):
+    try:
+        result = build_tender_summary(
+            request.bidder_data.get("tender_text", "")
+        )
+        return tender_summary_to_dict(result)
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Tender Summary analysis failed: {str(e)}"
         )
