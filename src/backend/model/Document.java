@@ -34,14 +34,14 @@ public class Document {
 
     private String filePath;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String extractedText;
 
     private String documentHash;
 
     private Double classificationConfidence;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String ocrExtractedFields;
 
 
