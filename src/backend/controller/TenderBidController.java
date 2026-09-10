@@ -5,6 +5,7 @@ import backend.dto.response.ApiResponse;
 import backend.dto.response.TenderBidResponse;
 import backend.model.TenderBid;
 import backend.service.TenderBidService;
+import backend.service.OrchestrationService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +25,30 @@ import java.util.UUID;
 public class TenderBidController {
 
     private final TenderBidService tenderBidService;
+        private final OrchestrationService orchestrationService;
 
 
-    public TenderBidController(TenderBidService tenderBidService) {
+        public TenderBidController(
+                        TenderBidService tenderBidService,
+                        OrchestrationService orchestrationService
+        ) {
 
         this.tenderBidService = tenderBidService;
+                this.orchestrationService = orchestrationService;
+    }
+
+
+    @PostMapping("/{id}/verify")
+    public ResponseEntity<ApiResponse<List<backend.model.VerificationResult>>> verifyTenderBid(
+            @PathVariable UUID id
+    ) {
+        orchestrationService.triggerVerificationChecks(id);
+        orchestrationService.triggerComplianceEvaluation(id);
+        return response(
+                orchestrationService.getVerificationResults(id),
+                "Verification and compliance evaluation completed",
+                HttpStatus.OK
+        );
     }
 
 

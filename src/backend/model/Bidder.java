@@ -22,6 +22,10 @@ public class Bidder {
     @Column(nullable = false)
     private String phone;
 
+    private String pan;
+
+    private String gstin;
+
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
@@ -60,6 +64,16 @@ public class Bidder {
     }
 
 
+    public String getPan() {
+        return pan;
+    }
+
+
+    public String getGstin() {
+        return gstin;
+    }
+
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -68,10 +82,20 @@ public class Bidder {
     public void updateBidder(
             String companyName,
             String email,
-            String phone
+            String phone,
+            String pan,
+            String gstin
     ) {
         this.companyName = companyName;
         this.email = email;
         this.phone = phone;
+        this.pan = pan;
+        this.gstin = gstin;
+    }
+
+
+    public void setIdentifiers(String pan, String gstin) {
+        this.pan = pan;
+        this.gstin = gstin;
     }
 }

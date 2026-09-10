@@ -6,6 +6,7 @@ import backend.repository.DocumentRepository;
 
 import java.util.List;
 import java.util.UUID;
+import java.nio.file.Path;
 
 public class DocumentService {
 
@@ -90,6 +91,31 @@ public class DocumentService {
 
         document.markAsFailed();
 
+        documentRepository.save(document);
+    }
+
+
+    public void setFilePath(UUID id, Path filePath) {
+        Document document = getDocumentById(id);
+        document.setFilePath(filePath.toString());
+        documentRepository.save(document);
+    }
+
+
+    public void saveOcrResults(
+            UUID id,
+            String extractedText,
+            String documentHash,
+            Double classificationConfidence,
+            String ocrExtractedFields
+    ) {
+        Document document = getDocumentById(id);
+        document.setOcrResults(
+                extractedText,
+                documentHash,
+                classificationConfidence,
+                ocrExtractedFields
+        );
         documentRepository.save(document);
     }
 

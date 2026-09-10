@@ -5,9 +5,11 @@ import backend.dto.response.ApiResponse;
 import backend.dto.response.DocumentResponse;
 import backend.model.Document;
 import backend.service.DocumentService;
+import backend.service.OrchestrationService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,12 +30,52 @@ import java.util.UUID;
 public class DocumentController {
 
     private final DocumentService documentService;
+        private final OrchestrationService orchestrationService;
+        private final String documentsDirectory;
 
 
-    public DocumentController(DocumentService documentService) {
+        public DocumentController(
+                        DocumentService documentService,
+                            OrchestrationService orchestrationService,
+                            @Value("${app.storage.documents-dir}") String documentsDirectory
+        ) {
 
         this.documentService = documentService;
+                this.orchestrationService = orchestrationService;
+        this.documentsDirectory = documentsDirectory;
     }
+
+
+        @PostMapping("/{id}/upload")
+        public ResponseEntity<ApiResponse<DocumentResponse>> uploadDocument(
+                        @PathVariable UUID id,
+                        @RequestPart("file") MultipartFile file
+        ) {
+                try {
+                        if (file.isEmpty()) {
+                                throw new IllegalArgumentException("Uploaded file is empty");
+                        }
+                        documentService.getDocumentById(id);
+                            Path directory = Path.of(documentsDirectory);
+                        Files.createDirectories(directory);
+                            String originalFileName = Path.of(
+                                    file.getOriginalFilename() == null ? "document" : file.getOriginalFilename()
+                            ).getFileName().toString();
+                            Path storedFile = directory.resolve(id + "-" + originalFileName);
+                        Files.write(storedFile, file.getBytes());
+                        documentService.setFilePath(id, storedFile);
+
+                        // Synchronous for the demo; production should enqueue this work.
+                        orchestrationService.triggerDocumentProcessing(id);
+                        return response(
+                                        new DocumentResponse(documentService.getDocumentById(id)),
+                                        "Document uploaded and processed",
+                                        HttpStatus.OK
+                        );
+                } catch (Exception exception) {
+                        return response(null, "Document upload failed: " + exception.getMessage(), HttpStatus.BAD_REQUEST);
+                }
+        }
 
 
     @PostMapping

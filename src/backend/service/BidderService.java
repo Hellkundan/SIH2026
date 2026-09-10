@@ -19,7 +19,9 @@ public class BidderService {
     public Bidder createBidder(
             String companyName,
             String email,
-            String phone
+            String phone,
+            String pan,
+            String gstin
     ) {
 
         Bidder bidder = new Bidder(
@@ -27,8 +29,14 @@ public class BidderService {
                 email,
                 phone
         );
+            bidder.setIdentifiers(pan, gstin);
 
         return bidderRepository.save(bidder);
+    }
+
+
+    public Bidder createBidder(String companyName, String email, String phone) {
+        return createBidder(companyName, email, phone, null, null);
     }
 
 
@@ -52,7 +60,9 @@ public class BidderService {
             UUID id,
             String companyName,
             String email,
-            String phone
+            String phone,
+            String pan,
+            String gstin
     ) {
 
         Bidder bidder = getBidderById(id);
@@ -60,7 +70,9 @@ public class BidderService {
         bidder.updateBidder(
                 companyName,
                 email,
-                phone
+                phone,
+                pan,
+                gstin
         );
 
         bidderRepository.save(bidder);

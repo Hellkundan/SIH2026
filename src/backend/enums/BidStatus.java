@@ -10,5 +10,9 @@ public enum BidStatus {
 
     QUALIFIED,
 
-    DISQUALIFIED
+    DISQUALIFIED,
+
+    NEEDS_REVIEW,
+
+    PASSED_AUTOMATED_CHECKS
 }

@@ -5,6 +5,8 @@ import backend.service.DocumentService;
 import backend.service.TenderBidService;
 import backend.service.TenderRequirementService;
 import backend.service.TenderService;
+import backend.service.OrchestrationService;
+import backend.service.OrchestrationServiceImpl;
 import backend.security.AppUser;
 import backend.security.Role;
 import backend.security.UserStorage;
@@ -13,10 +15,14 @@ import backend.repository.DocumentRepository;
 import backend.repository.TenderBidRepository;
 import backend.repository.TenderRequirementRepository;
 import backend.repository.TenderRepository;
+import backend.repository.VerificationResultRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.client.RestTemplate;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootApplication
 public class BackendApplication {
@@ -78,6 +84,40 @@ public class BackendApplication {
         return new TenderRequirementService(
                 tenderRequirementRepository,
                 tenderService
+        );
+    }
+
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+
+    @Bean
+    public OrchestrationService orchestrationService(
+            DocumentService documentService,
+            TenderBidService tenderBidService,
+            BidderService bidderService,
+            DocumentRepository documentRepository,
+            TenderBidRepository tenderBidRepository,
+            VerificationResultRepository verificationResultRepository,
+            RestTemplate restTemplate,
+            ObjectMapper objectMapper,
+            @Value("${app.ocr.base-url}") String ocrBaseUrl,
+            @Value("${app.verification.base-url}") String verificationBaseUrl
+    ) {
+        return new OrchestrationServiceImpl(
+                documentService,
+                tenderBidService,
+                bidderService,
+                documentRepository,
+                tenderBidRepository,
+                verificationResultRepository,
+                restTemplate,
+                objectMapper,
+                ocrBaseUrl,
+                verificationBaseUrl
         );
     }
 

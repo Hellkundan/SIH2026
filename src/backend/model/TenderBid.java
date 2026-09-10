@@ -128,4 +128,14 @@ public class TenderBid {
 
         this.status = BidStatus.DISQUALIFIED;
     }
+
+
+    public void markComplianceResult(BidStatus complianceStatus) {
+        if (complianceStatus != BidStatus.NEEDS_REVIEW
+                && complianceStatus != BidStatus.PASSED_AUTOMATED_CHECKS) {
+            throw new IllegalArgumentException("Invalid compliance status");
+        }
+
+        this.status = complianceStatus;
+    }
 }

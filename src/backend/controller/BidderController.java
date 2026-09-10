@@ -41,7 +41,9 @@ public class BidderController {
         Bidder bidder = bidderService.createBidder(
                 request.getCompanyName(),
                 request.getEmail(),
-                request.getPhone()
+                request.getPhone(),
+                request.getPan(),
+                request.getGstin()
         );
 
         return response(
@@ -87,7 +89,9 @@ public class BidderController {
                 id,
                 request.getCompanyName(),
                 request.getEmail(),
-                request.getPhone()
+                request.getPhone(),
+                request.getPan(),
+                request.getGstin()
         );
 
         return response(null, "Bidder updated", HttpStatus.OK);

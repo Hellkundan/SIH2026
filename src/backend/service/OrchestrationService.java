@@ -1,6 +1,8 @@
 package backend.service;
 
 import java.util.UUID;
+import java.util.List;
+import backend.model.VerificationResult;
 
 public interface OrchestrationService {
 
@@ -12,4 +14,6 @@ public interface OrchestrationService {
 
     // TODO: Implement compliance evaluation orchestration with the compliance engine.
     void triggerComplianceEvaluation(UUID tenderBidId);
+
+    List<VerificationResult> getVerificationResults(UUID tenderBidId);
 }

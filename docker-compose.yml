@@ -28,6 +28,9 @@ services:
       SPRING_DATASOURCE_USERNAME: "dixy"
       SPRING_DATASOURCE_PASSWORD: "dixy_password"
       SPRING_JPA_HIBERNATE_DDL_AUTO: "validate"
+      OCR_SERVICE_URL: "http://ocr:8001"
+      VERIFICATION_HUB_URL: "http://verification-hub:8000"
+      DOCUMENTS_DIR: "/app/data/documents"
     depends_on:
       postgres:
         condition: service_healthy
