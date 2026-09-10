@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-018",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.737244Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4017",
+        "details": {
+            "identifier": "NSIC-4017",
+            "pan": "GKOGM1049W",
+            "company_name": "Pearl Electronics Pvt Ltd",
+            "certificate_status": "EXPIRED",
+            "rating": "SE 2B",
+            "valid_upto": "2024-04-05",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

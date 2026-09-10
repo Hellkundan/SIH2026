@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-016",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T13:48:54.659538Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50015",
+        "details": {
+            "identifier": "DIPP-50015",
+            "pan": "OIZNL1087T",
+            "company_name": "Sanjay Exports Enterprises",
+            "recognition_status": "RECOGNIZED",
+            "sector": "IT/Software",
+            "recognition_date": "2018-06-09",
+            "certificate_number": "DIPP58015",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

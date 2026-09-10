@@ -1,0 +1,27 @@
+{
+    "bidder_id": "BLACKLIST-008",
+    "verification_type": "BLACKLIST",
+    "status": "VERIFIED",
+    "source": "MOCK_BLACKLIST_DATASET",
+    "timestamp": "2026-09-10T13:48:54.839757Z",
+    "evidence": {
+        "provider": "BlacklistProvider",
+        "source": "MOCK_BLACKLIST_DATASET",
+        "matched_identifier": "JSUOC1093B",
+        "details": {
+            "pan": "JSUOC1093B",
+            "identifier": "JSUOC1093B",
+            "company_name": "Pioneer Pharma Ltd",
+            "debarment_status": "UNDER_REVIEW",
+            "debarred_by": "Central Vigilance Commission",
+            "debarment_period": "",
+            "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-025",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T13:48:54.679292Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50024",
+        "details": {
+            "identifier": "DIPP-50024",
+            "pan": "VZVPQ1091A",
+            "company_name": "Vishwa Logistics & Co",
+            "recognition_status": "RECOGNIZED",
+            "sector": "CleanTech",
+            "recognition_date": "2019-01-04",
+            "certificate_number": "DIPP58024",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

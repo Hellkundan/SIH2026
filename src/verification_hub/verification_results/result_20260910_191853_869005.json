@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-070",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.868975Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "08FDYOM1014Z4ZG",
+        "details": {
+            "gstin": "08FDYOM1014Z4ZG",
+            "pan": "FDYOM1014Z",
+            "company_name": "Nova Polymers & Co",
+            "registration_status": "ACTIVE",
+            "registered_address": "Jodhpur, Rajasthan",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2017-09-16",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

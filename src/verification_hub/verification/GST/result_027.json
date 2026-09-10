@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-027",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.772208Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "21VGPNK1098J6ZK",
+        "details": {
+            "gstin": "21VGPNK1098J6ZK",
+            "pan": "VGPNK1098J",
+            "company_name": "Golden Industries & Co",
+            "registration_status": "ACTIVE",
+            "registered_address": "Bhubaneswar, Odisha",
+            "constitution_of_business": "Partnership",
+            "date_of_registration": "2019-09-23",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

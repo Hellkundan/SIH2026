@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-056",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.366230Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-PB-08-1000055",
+        "details": {
+            "identifier": "UDYAM-PB-08-1000055",
+            "pan": "YQXMO1069T",
+            "company_name": "Anand Infrastructure & Co",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Construction",
+            "date_of_registration": "2023-09-17",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

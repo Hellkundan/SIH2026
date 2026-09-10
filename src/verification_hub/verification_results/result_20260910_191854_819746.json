@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-025",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.819729Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5024",
+        "details": {
+            "identifier": "OEM-5024",
+            "pan": "TJYWZ1066H",
+            "company_name": "Silver Pharma Enterprises",
+            "authorization_status": "AUTHORIZED",
+            "authorized_for": "Construction",
+            "issuing_oem": "Prime Electricals",
+            "valid_upto": "2027-01-11",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

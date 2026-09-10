@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-060",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.842805Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "24KBJZN1008R9ZR",
+        "details": {
+            "gstin": "24KBJZN1008R9ZR",
+            "pan": "KBJZN1008R",
+            "company_name": "Harsha Textiles Works",
+            "registration_status": "ACTIVE",
+            "registered_address": "Ahmedabad, Gujarat",
+            "constitution_of_business": "LLP",
+            "date_of_registration": "2015-01-10",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

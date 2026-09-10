@@ -1,0 +1,25 @@
+{
+    "bidder_id": "PAN-051",
+    "verification_type": "PAN",
+    "status": "VERIFIED",
+    "source": "MOCK_PAN_DATASET",
+    "timestamp": "2026-09-10T13:48:54.071916Z",
+    "evidence": {
+        "provider": "PANProvider",
+        "source": "MOCK_PAN_DATASET",
+        "matched_identifier": "LTVHU1037P",
+        "details": {
+            "pan": "LTVHU1037P",
+            "company_name": "Apex Fabricators & Co",
+            "status": "VALID",
+            "pan_type": "Partnership Firm",
+            "aadhaar_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

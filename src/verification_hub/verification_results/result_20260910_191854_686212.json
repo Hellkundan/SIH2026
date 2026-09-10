@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-028",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T13:48:54.686193Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50027",
+        "details": {
+            "identifier": "DIPP-50027",
+            "pan": "CMBTT1011E",
+            "company_name": "Star Solutions Pvt Ltd",
+            "recognition_status": "RECOGNIZED",
+            "sector": "IT/Software",
+            "recognition_date": "2023-10-18",
+            "certificate_number": "DIPP58027",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

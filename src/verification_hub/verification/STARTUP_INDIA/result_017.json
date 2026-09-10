@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-017",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T13:48:54.661573Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50016",
+        "details": {
+            "identifier": "DIPP-50016",
+            "pan": "GAUXR1072F",
+            "company_name": "Harsha Constructions & Co",
+            "recognition_status": "EXPIRED",
+            "sector": "Manufacturing",
+            "recognition_date": "2017-07-15",
+            "certificate_number": "DIPP58016",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-007",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.706626Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4006",
+        "details": {
+            "identifier": "NSIC-4006",
+            "pan": "LVZMK1060K",
+            "company_name": "Nova Textiles Enterprises",
+            "certificate_status": "VALID",
+            "rating": "MSE 1B",
+            "valid_upto": "2025-04-05",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

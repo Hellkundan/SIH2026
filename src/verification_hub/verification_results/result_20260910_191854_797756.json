@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-015",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.797731Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5014",
+        "details": {
+            "identifier": "OEM-5014",
+            "pan": "JSUOC1093B",
+            "company_name": "Pioneer Pharma Ltd",
+            "authorization_status": "AUTHORIZED",
+            "authorized_for": "Services",
+            "issuing_oem": "Suntech Panels Ltd",
+            "valid_upto": "2025-08-02",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

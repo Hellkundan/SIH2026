@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-037",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.793007Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "03WSHIK1031M3ZM",
+        "details": {
+            "gstin": "03WSHIK1031M3ZM",
+            "pan": "WSHIK1031M",
+            "company_name": "Sanjay Pharma Works",
+            "registration_status": "ACTIVE",
+            "registered_address": "Amritsar, Punjab",
+            "constitution_of_business": "LLP",
+            "date_of_registration": "2023-08-09",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

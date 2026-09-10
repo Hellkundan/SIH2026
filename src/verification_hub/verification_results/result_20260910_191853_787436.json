@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-034",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.787422Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "21LTVHU1037P8ZE",
+        "details": {
+            "gstin": "21LTVHU1037P8ZE",
+            "pan": "LTVHU1037P",
+            "company_name": "Apex Fabricators & Co",
+            "registration_status": "ACTIVE",
+            "registered_address": "Bhubaneswar, Odisha",
+            "constitution_of_business": "LLP",
+            "date_of_registration": "2021-08-06",
+            "taxpayer_type": "Composition",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

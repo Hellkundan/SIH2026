@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-043",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.805679Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "33ZGCLS1029K2ZY",
+        "details": {
+            "gstin": "33ZGCLS1029K2ZY",
+            "pan": "ZGCLS1029K",
+            "company_name": "Uni Textiles Enterprises",
+            "registration_status": "ACTIVE",
+            "registered_address": "Coimbatore, Tamil Nadu",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2020-12-08",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

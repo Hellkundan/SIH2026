@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-015",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.416331Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2014",
+        "details": {
+            "identifier": "EPFO-2014",
+            "pan": "LCSLX1086K",
+            "company_name": "Global Garments & Co",
+            "status": "ACTIVE",
+            "establishment_office": "Nagpur Regional Office",
+            "date_of_setup": "2017-08-03",
+            "employee_count_range": "10-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

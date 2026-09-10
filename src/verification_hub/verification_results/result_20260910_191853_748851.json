@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-017",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.748826Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "36TRDCQ1075B1ZX",
+        "details": {
+            "gstin": "36TRDCQ1075B1ZX",
+            "pan": "TRDCQ1075B",
+            "company_name": "Anand Components Works",
+            "registration_status": "ACTIVE",
+            "registered_address": "Hyderabad, Telangana",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2018-07-17",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

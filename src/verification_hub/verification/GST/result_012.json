@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-012",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.737687Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "21ADWZB1068Z7ZF",
+        "details": {
+            "gstin": "21ADWZB1068Z7ZF",
+            "pan": "ADWZB1068Z",
+            "company_name": "Shiv Automobiles & Co",
+            "registration_status": "ACTIVE",
+            "registered_address": "Bhubaneswar, Odisha",
+            "constitution_of_business": "Proprietorship",
+            "date_of_registration": "2022-01-12",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

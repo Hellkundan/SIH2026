@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-011",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.734569Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "23DJTGJ1078U4Z4",
+        "details": {
+            "gstin": "23DJTGJ1078U4Z4",
+            "pan": "DJTGJ1078U",
+            "company_name": "Shree Constructions Enterprises",
+            "registration_status": "ACTIVE",
+            "registered_address": "Bhopal, Madhya Pradesh",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2020-09-27",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

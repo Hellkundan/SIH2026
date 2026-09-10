@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-001",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.380676Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2000",
+        "details": {
+            "identifier": "EPFO-2000",
+            "pan": "LNURY1030X",
+            "company_name": "Uni Engineering Works",
+            "status": "ACTIVE",
+            "establishment_office": "Kolkata Regional Office",
+            "date_of_setup": "2020-07-15",
+            "employee_count_range": "10-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

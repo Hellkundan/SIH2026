@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-018",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.804654Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5017",
+        "details": {
+            "identifier": "OEM-5017",
+            "pan": "JAWEF1048Z",
+            "company_name": "Vishwa Systems Works",
+            "authorization_status": "EXPIRED",
+            "authorized_for": "Textiles",
+            "issuing_oem": "Comfort Interiors Pvt Ltd",
+            "valid_upto": "2026-04-11",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

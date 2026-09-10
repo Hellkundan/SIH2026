@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-049",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.606637Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3048",
+        "details": {
+            "identifier": "ESIC-3048",
+            "pan": "LTVHU1037P",
+            "company_name": "Apex Fabricators & Co",
+            "status": "ACTIVE",
+            "registered_office": "Bhubaneswar, Odisha",
+            "date_of_registration": "2023-04-06",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

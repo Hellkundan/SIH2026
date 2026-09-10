@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-035",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.463061Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2034",
+        "details": {
+            "identifier": "EPFO-2034",
+            "pan": "LKHGY1016O",
+            "company_name": "Vikram Electronics Enterprises",
+            "status": "ACTIVE",
+            "establishment_office": "Jaipur Regional Office",
+            "date_of_setup": "2022-07-14",
+            "employee_count_range": "50-100",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

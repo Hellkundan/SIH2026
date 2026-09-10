@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-021",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.542588Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3020",
+        "details": {
+            "identifier": "ESIC-3020",
+            "pan": "UMVPI1047H",
+            "company_name": "Sanjay Metals Enterprises",
+            "status": "ACTIVE",
+            "registered_office": "Hyderabad, Telangana",
+            "date_of_registration": "2023-01-07",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

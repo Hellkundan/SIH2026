@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-019",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.423713Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2018",
+        "details": {
+            "identifier": "EPFO-2018",
+            "pan": "ADWZB1068Z",
+            "company_name": "Shiv Automobiles & Co",
+            "status": "ACTIVE",
+            "establishment_office": "Bhubaneswar Regional Office",
+            "date_of_setup": "2018-03-13",
+            "employee_count_range": "50-100",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

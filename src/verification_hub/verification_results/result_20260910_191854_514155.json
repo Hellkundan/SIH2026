@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-007",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.514140Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3006",
+        "details": {
+            "identifier": "ESIC-3006",
+            "pan": "BBWKY1019S",
+            "company_name": "Elite Industries Ltd",
+            "status": "ACTIVE",
+            "registered_office": "New Delhi, Delhi",
+            "date_of_registration": "2014-03-23",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

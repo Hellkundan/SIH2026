@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-015",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.530380Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3014",
+        "details": {
+            "identifier": "ESIC-3014",
+            "pan": "VGPNK1098J",
+            "company_name": "Golden Industries & Co",
+            "status": "ACTIVE",
+            "registered_office": "Bhubaneswar, Odisha",
+            "date_of_registration": "2015-04-05",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

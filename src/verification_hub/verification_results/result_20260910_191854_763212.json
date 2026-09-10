@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-029",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.763196Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4028",
+        "details": {
+            "identifier": "NSIC-4028",
+            "pan": "UZXTV1074J",
+            "company_name": "Shree Solutions Works",
+            "certificate_status": "VALID",
+            "rating": "SE 3C",
+            "valid_upto": "2025-04-21",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

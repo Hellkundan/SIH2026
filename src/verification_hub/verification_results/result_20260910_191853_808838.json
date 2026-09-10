@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-045",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.808821Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "33STEPT1044D2ZB",
+        "details": {
+            "gstin": "33STEPT1044D2ZB",
+            "pan": "STEPT1044D",
+            "company_name": "Vishwa Electronics & Co",
+            "registration_status": "CANCELLED",
+            "registered_address": "Chennai, Tamil Nadu",
+            "constitution_of_business": "Partnership",
+            "date_of_registration": "2016-11-10",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

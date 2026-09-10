@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-018",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.421725Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2017",
+        "details": {
+            "identifier": "EPFO-2017",
+            "pan": "WOOSK1097D",
+            "company_name": "Bharat Chemicals Pvt Ltd",
+            "status": "ACTIVE",
+            "establishment_office": "Patna Regional Office",
+            "date_of_setup": "2015-12-26",
+            "employee_count_range": "10-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-050",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.823510Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "19LNURY1030X7ZE",
+        "details": {
+            "gstin": "19LNURY1030X7ZE",
+            "pan": "LNURY1030X",
+            "company_name": "Uni Engineering Works",
+            "registration_status": "ACTIVE",
+            "registered_address": "Kolkata, West Bengal",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2023-09-07",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

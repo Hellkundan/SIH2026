@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-012",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.408495Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2011",
+        "details": {
+            "identifier": "EPFO-2011",
+            "pan": "EDRBT1092A",
+            "company_name": "Green Agro Pvt Ltd",
+            "status": "EXITED",
+            "establishment_office": "Kochi Regional Office",
+            "date_of_setup": "2018-02-21",
+            "employee_count_range": "20-50",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

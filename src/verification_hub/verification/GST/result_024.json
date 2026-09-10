@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-024",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.766228Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "21GAUXR1072F6ZT",
+        "details": {
+            "gstin": "21GAUXR1072F6ZT",
+            "pan": "GAUXR1072F",
+            "company_name": "Harsha Constructions & Co",
+            "registration_status": "CANCELLED",
+            "registered_address": "Bhubaneswar, Odisha",
+            "constitution_of_business": "Partnership",
+            "date_of_registration": "2019-02-19",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-006",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.723647Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "29SCEHA1070K6ZX",
+        "details": {
+            "gstin": "29SCEHA1070K6ZX",
+            "pan": "SCEHA1070K",
+            "company_name": "Northern Traders Works",
+            "registration_status": "ACTIVE",
+            "registered_address": "Bengaluru, Karnataka",
+            "constitution_of_business": "Partnership",
+            "date_of_registration": "2019-10-22",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

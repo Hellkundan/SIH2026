@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-076",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.886298Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "10RSKRJ1012Q4ZO",
+        "details": {
+            "gstin": "10RSKRJ1012Q4ZO",
+            "pan": "RSKRJ1012Q",
+            "company_name": "Ganesh Infrastructure Works",
+            "registration_status": "CANCELLED",
+            "registered_address": "Patna, Bihar",
+            "constitution_of_business": "Private Limited Company",
+            "date_of_registration": "2015-04-07",
+            "taxpayer_type": "Composition",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

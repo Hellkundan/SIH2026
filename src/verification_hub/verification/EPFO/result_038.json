@@ -1,0 +1,27 @@
+{
+    "bidder_id": "EPFO-038",
+    "verification_type": "EPFO",
+    "status": "VERIFIED",
+    "source": "MOCK_EPFO_DATASET",
+    "timestamp": "2026-09-10T13:48:54.470561Z",
+    "evidence": {
+        "provider": "EPFOProvider",
+        "source": "MOCK_EPFO_DATASET",
+        "matched_identifier": "EPFO-2037",
+        "details": {
+            "identifier": "EPFO-2037",
+            "pan": "EASSZ1009Y",
+            "company_name": "Royal Foods & Co",
+            "status": "ACTIVE",
+            "establishment_office": "Ludhiana Regional Office",
+            "date_of_setup": "2019-07-19",
+            "employee_count_range": "50-100",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

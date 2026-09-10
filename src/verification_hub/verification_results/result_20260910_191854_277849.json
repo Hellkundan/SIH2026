@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-023",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.277823Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-KL-08-1000022",
+        "details": {
+            "identifier": "UDYAM-KL-08-1000022",
+            "pan": "XLMHK1058I",
+            "company_name": "Ananya Fabricators Enterprises",
+            "status": "ACTIVE",
+            "category": "SMALL",
+            "enterprise_type": "Logistics",
+            "date_of_registration": "2019-06-13",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

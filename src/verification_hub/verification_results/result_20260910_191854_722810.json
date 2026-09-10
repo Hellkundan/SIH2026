@@ -1,0 +1,26 @@
+{
+    "bidder_id": "NSIC-013",
+    "verification_type": "NSIC",
+    "status": "VERIFIED",
+    "source": "MOCK_NSIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.722787Z",
+    "evidence": {
+        "provider": "NSICProvider",
+        "source": "MOCK_NSIC_DATASET",
+        "matched_identifier": "NSIC-4012",
+        "details": {
+            "identifier": "NSIC-4012",
+            "pan": "WDJUP1084A",
+            "company_name": "Metro Traders Works",
+            "certificate_status": "VALID",
+            "rating": "SE 2A",
+            "valid_upto": "2028-06-14",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

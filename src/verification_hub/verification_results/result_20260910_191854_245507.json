@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-013",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.245489Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-PB-06-1000012",
+        "details": {
+            "identifier": "UDYAM-PB-06-1000012",
+            "pan": "ELSOC1024W",
+            "company_name": "Prime Exports LLP",
+            "status": "ACTIVE",
+            "category": "MICRO",
+            "enterprise_type": "Retail",
+            "date_of_registration": "2024-02-20",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

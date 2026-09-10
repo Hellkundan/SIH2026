@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-025",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.552602Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3024",
+        "details": {
+            "identifier": "ESIC-3024",
+            "pan": "EDRBT1092A",
+            "company_name": "Green Agro Pvt Ltd",
+            "status": "CANCELLED",
+            "registered_office": "Kochi, Kerala",
+            "date_of_registration": "2014-07-28",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

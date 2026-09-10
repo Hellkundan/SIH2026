@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-013",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T13:48:54.650174Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50012",
+        "details": {
+            "identifier": "DIPP-50012",
+            "pan": "JSUOC1093B",
+            "company_name": "Pioneer Pharma Ltd",
+            "recognition_status": "RECOGNIZED",
+            "sector": "AgriTech",
+            "recognition_date": "2022-12-03",
+            "certificate_number": "DIPP58012",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

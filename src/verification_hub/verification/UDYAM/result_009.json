@@ -1,0 +1,27 @@
+{
+    "bidder_id": "UDYAM-009",
+    "verification_type": "UDYAM",
+    "status": "VERIFIED",
+    "source": "MOCK_UDYAM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.235997Z",
+    "evidence": {
+        "provider": "UdyamProvider",
+        "source": "MOCK_UDYAM_DATASET",
+        "matched_identifier": "UDYAM-BR-02-1000008",
+        "details": {
+            "identifier": "UDYAM-BR-02-1000008",
+            "pan": "RSKRJ1012Q",
+            "company_name": "Ganesh Infrastructure Works",
+            "status": "ACTIVE",
+            "category": "SMALL",
+            "enterprise_type": "Trading",
+            "date_of_registration": "2020-03-13",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

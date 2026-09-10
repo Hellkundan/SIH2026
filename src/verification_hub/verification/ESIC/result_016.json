@@ -1,0 +1,26 @@
+{
+    "bidder_id": "ESIC-016",
+    "verification_type": "ESIC",
+    "status": "VERIFIED",
+    "source": "MOCK_ESIC_DATASET",
+    "timestamp": "2026-09-10T13:48:54.532897Z",
+    "evidence": {
+        "provider": "ESICProvider",
+        "source": "MOCK_ESIC_DATASET",
+        "matched_identifier": "ESIC-3015",
+        "details": {
+            "identifier": "ESIC-3015",
+            "pan": "KVKSI1088K",
+            "company_name": "Northern Chemicals Ltd",
+            "status": "ACTIVE",
+            "registered_office": "Howrah, West Bengal",
+            "date_of_registration": "2023-02-05",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,27 @@
+{
+    "bidder_id": "OEM-024",
+    "verification_type": "OEM",
+    "status": "VERIFIED",
+    "source": "MOCK_OEM_DATASET",
+    "timestamp": "2026-09-10T13:48:54.817282Z",
+    "evidence": {
+        "provider": "OEMProvider",
+        "source": "MOCK_OEM_DATASET",
+        "matched_identifier": "OEM-5023",
+        "details": {
+            "identifier": "OEM-5023",
+            "pan": "IODGS1038W",
+            "company_name": "Star Constructions LLP",
+            "authorization_status": "AUTHORIZED",
+            "authorized_for": "Trading",
+            "issuing_oem": "National Cable Corp",
+            "valid_upto": "2028-08-13",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

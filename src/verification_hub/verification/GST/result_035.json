@@ -1,0 +1,28 @@
+{
+    "bidder_id": "GST-035",
+    "verification_type": "GST",
+    "status": "VERIFIED",
+    "source": "MOCK_GST_DATASET",
+    "timestamp": "2026-09-10T13:48:53.789089Z",
+    "evidence": {
+        "provider": "GSTProvider",
+        "source": "MOCK_GST_DATASET",
+        "matched_identifier": "10ICNEM1090D6ZH",
+        "details": {
+            "gstin": "10ICNEM1090D6ZH",
+            "pan": "ICNEM1090D",
+            "company_name": "Global Foods Enterprises",
+            "registration_status": "PENDING_VERIFICATION",
+            "registered_address": "Patna, Bihar",
+            "constitution_of_business": "LLP",
+            "date_of_registration": "2015-01-10",
+            "taxpayer_type": "Regular",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

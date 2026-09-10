@@ -1,0 +1,27 @@
+{
+    "bidder_id": "STARTUP_INDIA-006",
+    "verification_type": "STARTUP_INDIA",
+    "status": "VERIFIED",
+    "source": "MOCK_STARTUP_INDIA_DATASET",
+    "timestamp": "2026-09-10T13:48:54.630659Z",
+    "evidence": {
+        "provider": "StartupIndiaProvider",
+        "source": "MOCK_STARTUP_INDIA_DATASET",
+        "matched_identifier": "DIPP-50005",
+        "details": {
+            "identifier": "DIPP-50005",
+            "pan": "GKOGM1049W",
+            "company_name": "Pearl Electronics Pvt Ltd",
+            "recognition_status": "UNDER_REVIEW",
+            "sector": "FinTech",
+            "recognition_date": "2018-06-10",
+            "certificate_number": "DIPP58005",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}
