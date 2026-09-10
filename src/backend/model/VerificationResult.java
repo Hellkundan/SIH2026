@@ -1,6 +1,8 @@
 package backend.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -27,7 +29,8 @@ public class VerificationResult {
     private String errorState;
     private Double confidence;
 
-    @Lob
+    @JdbcTypeCode(SqlTypes.LONGVARCHAR)
+    @Column(columnDefinition = "TEXT")
     private String evidence;
 
     @Column(nullable = false)
