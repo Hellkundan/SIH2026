@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  getComplianceResult,
+  getRecommendation,
   getTender,
   listBidders,
   listBidsByTender,
@@ -25,6 +27,45 @@ import { documentLabel } from "@/lib/types";
 export const Route = createFileRoute("/_portal/officer/tenders/$tenderId/bids")({
   component: TenderBids,
 });
+
+function ComplianceRecommendationSummary({ bidId }: { bidId: string }) {
+  const comp = useQuery({
+    queryKey: ["compliance", bidId],
+    queryFn: () => getComplianceResult(bidId),
+  });
+  const rec = useQuery({
+    queryKey: ["recommendation", bidId],
+    queryFn: () => getRecommendation(bidId),
+  });
+
+  if (comp.isLoading || rec.isLoading) return null;
+  if (!comp.data && !rec.data) return null;
+
+  return (
+    <div className="mt-4 rounded-md border bg-muted/30 p-4 space-y-2">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-semibold uppercase text-muted-foreground">AI Intelligence Recommendation:</span>
+          <span className="rounded bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary">
+            {rec.data?.aiRecommendation ?? "EVALUATED"}
+          </span>
+        </div>
+        {comp.data?.severity ? (
+          <span className={`text-xs px-2 py-0.5 rounded font-medium ${
+            comp.data.severity === "LOW" ? "bg-emerald-100 text-emerald-800" :
+            comp.data.severity === "MEDIUM" ? "bg-yellow-100 text-yellow-800" :
+            "bg-red-100 text-red-800"
+          }`}>
+            Risk: {comp.data.severity}
+          </span>
+        ) : null}
+      </div>
+      {comp.data?.explanation ? (
+        <p className="text-xs text-muted-foreground">{comp.data.explanation}</p>
+      ) : null}
+    </div>
+  );
+}
 
 function TenderBids() {
   const { tenderId } = Route.useParams();
@@ -115,6 +156,8 @@ function TenderBids() {
                     </Button>
                   </div>
                 </div>
+
+                <ComplianceRecommendationSummary bidId={bid.id} />
 
                 {bid.notes ? (
                   <p className="mt-3 rounded-md bg-surface p-3 text-sm">{bid.notes}</p>

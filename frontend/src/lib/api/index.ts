@@ -2,8 +2,10 @@ import type {
   ActivityItem,
   BidStatus,
   Bidder,
+  ComplianceResult,
   DocumentIntelligence,
   DocumentType,
+  Recommendation,
   Tender,
   TenderBid,
   TenderDocument,
@@ -372,4 +374,28 @@ export async function listActivity(): Promise<ActivityItem[]> {
   if (!USE_MOCK) return http<ActivityItem[]>("/activity");
   await delay();
   return [...store.activity];
+}
+
+export async function getComplianceResult(tenderBidId: string): Promise<ComplianceResult | null> {
+  if (!USE_MOCK) {
+    try {
+      return await http<ComplianceResult>(`/tender-bids/${tenderBidId}/compliance`);
+    } catch {
+      return null;
+    }
+  }
+  await delay(200);
+  return null;
+}
+
+export async function getRecommendation(tenderBidId: string): Promise<Recommendation | null> {
+  if (!USE_MOCK) {
+    try {
+      return await http<Recommendation>(`/tender-bids/${tenderBidId}/recommendation`);
+    } catch {
+      return null;
+    }
+  }
+  await delay(200);
+  return null;
 }

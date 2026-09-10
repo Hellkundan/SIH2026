@@ -167,3 +167,23 @@ export const ROLE_LABELS: Record<Role, string> = {
   PROCUREMENT_OFFICER: "Procurement Officer",
   ADMIN: "Administrator",
 };
+
+export interface ComplianceResult {
+  id: string;
+  tenderBidId: string;
+  entityMatchScore: number;
+  severity: string;
+  discrepancies: string;
+  explanation: string;
+  evaluatedAt: string;
+}
+
+export interface Recommendation {
+  id: string;
+  tenderBidId: string;
+  complianceResultId: string;
+  aiRecommendation: string;
+  aiConfidence: number;
+  officerDecision: string;
+  createdAt: string;
+}
