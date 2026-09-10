@@ -1,0 +1,12 @@
+{
+  "buildCommand": "bun run build",
+  "installCommand": "bun install",
+  "outputDirectory": ".output/public",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/.output/server/index.mjs"
+    }
+  ]
+}
