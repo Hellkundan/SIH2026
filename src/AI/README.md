@@ -15,70 +15,9 @@ Officer should review.
 It does **not** automatically approve, reject, disqualify, or declare a
 bidder fraudulent.
 
----
+------------------------------------------------------------------------
 
-## Table of Contents
-
-1. [What is DIXY AI?](#1-what-is-dixy-ai)
-2. [High-Level Architecture](#2-high-level-architecture)
-3. [One-Bidder Identity Intelligence](#3-one-bidder-identity-intelligence)
-4. [Identity Graph](#4-identity-graph)
-5. [Missing Evidence vs Conflict](#5-missing-evidence-vs-conflict)
-6. [OCR / Document Intelligence Boundary](#6-ocr--document-intelligence-boundary)
-7. [Dynamic Identity Extraction](#7-dynamic-identity-extraction)
-8. [Deterministic Checks vs AI/ML](#8-deterministic-checks-vs-aiml)
-9. [Entity Resolution Model](#9-entity-resolution-model)
-10. [Cross-Document Consistency](#10-cross-document-consistency)
-11. [Identifier Checks](#11-identifier-checks)
-12. [Verification Module](#12-verification-module)
-13. [Anomaly Detection](#13-anomaly-detection)
-14. [Risk Scoring](#14-risk-scoring)
-15. [Evidence Coverage](#15-evidence-coverage)
-16. [Master AI Function](#16-master-ai-function)
-17. [Current AI Output](#17-current-ai-output)
-18. [Human-Readable Example](#18-human-readable-example)
-19. [Example Identity Conflict](#19-example-identity-conflict)
-20. [Backend Integration](#20-backend-integration)
-21. [FastAPI Service](#21-fastapi-service)
-22. [Backend Integration Flow](#22-backend-integration-flow)
-23. [Team Responsibilities](#23-team-responsibilities)
-24. [Frontend Display Recommendation](#24-frontend-display-recommendation)
-25. [Repository Structure](#25-repository-structure)
-26. [Model Artifact Usage](#26-model-artifact-usage)
-27. [Current Prototype Status](#27-current-prototype-status)
-28. [Important Prototype Limitations](#28-important-prototype-limitations)
-29. [Identity vs Verification vs Compliance vs Decision](#29-identity-vs-verification-vs-compliance-vs-decision)
-30. [Quick Integration Summary](#30-quick-integration-summary)
-31. [DIXY Design Principle](#31-dixy-design-principle)
-
----
-
-## Quick Start for Developers
-
-**Backend Integration:**
-
-```bash
-# Start DIXY AI service (if not already running)
-python dixy_api.py
-```
-
-**API Endpoint:**
-
-```bash
-curl -X POST http://localhost:8000/api/ai/analyze \
-  -H "Content-Type: application/json" \
-  -d '{"bidder_data": {...}, "verification_results": {...}}'
-```
-
-**Health Check:**
-
-```bash
-curl http://localhost:8000/health
-```
-
----
-
-## 1. What is DIXY AI? {#1-what-is-dixy-ai}
+## 1. What is DIXY AI?
 
 DIXY AI is the intelligence layer of the DIXY procurement platform.
 
@@ -88,22 +27,22 @@ bidder.
 
 Its current responsibilities include:
 
-- Cross-document identity consistency
-- Company/name similarity
-- Identifier relationship checking
-- PAN ↔ GSTIN consistency
-- PAN ↔ Udyam consistency
-- PAN ↔ ITR consistency
-- GSTIN ↔ Udyam consistency
-- MCA/company identity comparison
-- State consistency checks
-- Identifier format validation
-- Identity Graph analysis
-- Anomaly detection
-- Risk scoring
-- Evidence coverage
-- Verification-result analysis
-- Explainable recommendations
+-   Cross-document identity consistency
+-   Company/name similarity
+-   Identifier relationship checking
+-   PAN ↔ GSTIN consistency
+-   PAN ↔ Udyam consistency
+-   PAN ↔ ITR consistency
+-   GSTIN ↔ Udyam consistency
+-   MCA/company identity comparison
+-   State consistency checks
+-   Identifier format validation
+-   Identity Graph analysis
+-   Anomaly detection
+-   Risk scoring
+-   Evidence coverage
+-   Verification-result analysis
+-   Explainable recommendations
 
 The system is designed to answer:
 
@@ -111,11 +50,11 @@ The system is designed to answer:
 > underlying bidder, and are there conflicts that require human
 > review?**
 
----
+------------------------------------------------------------------------
 
-# 2. High-Level Architecture {#2-high-level-architecture}
+# 2. High-Level Architecture
 
-```text
+``` text
                     BIDDER DOCUMENTS
                            |
                            v
@@ -131,7 +70,7 @@ The system is designed to answer:
                   | Java / Kotlin    |
                   +--------+---------+
                            |
-                           | HTTP POST
+                           | HTTP
                            v
                   +------------------+
                   |    DIXY AI       |
@@ -152,21 +91,6 @@ The system is designed to answer:
           +----------------+----------------+
                            |
                            v
-                    Risk Analysis
-                    & Anomaly Detection
-                           |
-                           v
-                Verification Analysis
-                           |
-                           v
-                Explainable Recommendation
-                           |
-                           v
-          Return Analysis JSON to Backend
-
-          +----------------+----------------+
-                           |
-                           v
                     Risk + Anomaly
                            |
                            v
@@ -184,7 +108,7 @@ The system is designed to answer:
                        FRONTEND
 ```
 
----
+------------------------------------------------------------------------
 
 # 3. One-Bidder Identity Intelligence
 
@@ -192,7 +116,7 @@ DIXY analyzes the evidence of a single bidder.
 
 Conceptually:
 
-```text
+``` text
                          PAN
                       /   |   \
                      /    |    \
@@ -210,7 +134,7 @@ The objective is not simply to ask whether two names are similar.
 The objective is to determine whether the **whole collection of evidence
 forms a coherent identity**.
 
----
+------------------------------------------------------------------------
 
 # 4. Identity Graph
 
@@ -218,7 +142,7 @@ The current Identity Graph checks relationships such as:
 
 ### Exact identifier relationships
 
-```text
+``` text
 PAN ↔ UDYAM PAN
 PAN ↔ ITR PAN
 GSTIN ↔ UDYAM GSTIN
@@ -228,7 +152,7 @@ These are deterministic relationships.
 
 If:
 
-```text
+``` text
 PAN = ABCDE1234F
 UDYAM PAN = ZZZZZ9999Z
 ```
@@ -237,7 +161,7 @@ the result is a critical identity discrepancy.
 
 ### Name relationships
 
-```text
+``` text
 PAN name ↔ MCA company name
 GST legal name ↔ MCA company name
 Udyam enterprise name ↔ MCA company name
@@ -249,7 +173,7 @@ evidence.
 
 ### Supporting relationships
 
-```text
+``` text
 GST state ↔ MCA registered state
 MCA company status
 ```
@@ -257,7 +181,7 @@ MCA company status
 These provide additional context but are not by themselves proof of
 identity.
 
----
+------------------------------------------------------------------------
 
 # 5. Missing Evidence vs Conflict
 
@@ -266,7 +190,7 @@ evidence**.
 
 For example:
 
-```text
+``` text
 Udyam document missing
         ↓
 INSUFFICIENT EVIDENCE
@@ -274,13 +198,13 @@ INSUFFICIENT EVIDENCE
 
 does not automatically mean:
 
-```text
+``` text
 FAIL
 ```
 
 But:
 
-```text
+``` text
 PAN = ABCDE1234F
 Udyam PAN = ZZZZZ9999Z
         ↓
@@ -291,13 +215,13 @@ is an actual conflict.
 
 This distinction is important for procurement decision support.
 
----
+------------------------------------------------------------------------
 
 # 6. OCR / Document Intelligence Boundary
 
 The OCR/document-intelligence module is responsible for:
 
-```text
+``` text
 Document
    ↓
 OCR
@@ -314,7 +238,7 @@ current identity-analysis workflow.
 
 Example input:
 
-```json
+``` json
 {
   "pan": {
     "name": "ABC Technologies Pvt Ltd",
@@ -331,15 +255,15 @@ Example input:
 
 Additional supported evidence can include:
 
-- Udyam
-- MCA
-- CIN
-- ITR
-- Authorized person / authorized signatory
-- Address
-- Other document fields
+-   Udyam
+-   MCA
+-   CIN
+-   ITR
+-   Authorized person / authorized signatory
+-   Address
+-   Other document fields
 
----
+------------------------------------------------------------------------
 
 # 7. Dynamic Identity Extraction
 
@@ -348,7 +272,7 @@ types.
 
 ### PAN
 
-```text
+``` text
 PAN number
 PAN-holder name
 Address
@@ -356,7 +280,7 @@ Address
 
 ### GST
 
-```text
+``` text
 GSTIN
 Legal name
 Trade name
@@ -366,7 +290,7 @@ State
 
 ### Udyam
 
-```text
+``` text
 Udyam number
 Enterprise name
 PAN
@@ -376,7 +300,7 @@ Address
 
 ### MCA
 
-```text
+``` text
 CIN
 Company name
 Registered state
@@ -386,7 +310,7 @@ Registered office address
 
 ### ITR
 
-```text
+``` text
 PAN
 Name
 Acknowledgement number
@@ -397,7 +321,7 @@ Address
 
 ### Authorized person / signatory
 
-```text
+``` text
 Name
 PAN
 Aadhaar
@@ -410,7 +334,7 @@ The ITR acknowledgement number is **not a PAN**.
 
 DIXY treats:
 
-```text
+``` text
 ITR PAN
 ```
 
@@ -418,7 +342,7 @@ as the identity field that can be compared with the bidder PAN.
 
 The:
 
-```text
+``` text
 ITR acknowledgement number
 ```
 
@@ -427,7 +351,7 @@ is a separate filing identifier.
 If the ITR PAN is not extracted, DIXY should treat that relationship as
 insufficient evidence rather than inventing a match or mismatch.
 
----
+------------------------------------------------------------------------
 
 # 8. Deterministic Checks vs AI/ML
 
@@ -438,18 +362,18 @@ similarity-based intelligence.
 
 Used where an exact relationship is known:
 
-- PAN format
-- GSTIN format
-- PAN embedded in GSTIN
-- PAN ↔ Udyam PAN
-- PAN ↔ ITR PAN
-- GSTIN ↔ Udyam GSTIN
-- State equality
-- Date/threshold/arithmetic rules when applicable
+-   PAN format
+-   GSTIN format
+-   PAN embedded in GSTIN
+-   PAN ↔ Udyam PAN
+-   PAN ↔ ITR PAN
+-   GSTIN ↔ Udyam GSTIN
+-   State equality
+-   Date/threshold/arithmetic rules when applicable
 
 Example:
 
-```text
+``` text
 Bidder PAN:
 ABCDE1234F
 
@@ -467,15 +391,15 @@ CONSISTENT
 
 Used where exact equality is too strict:
 
-- Company names
-- Address similarity
-- Business activity similarity
-- OCR spelling variation
-- Abbreviation/suffix variation
+-   Company names
+-   Address similarity
+-   Business activity similarity
+-   OCR spelling variation
+-   Abbreviation/suffix variation
 
 Example:
 
-```text
+``` text
 ABC Technologies Pvt Ltd
         vs
 ABC Technologies Private Limited
@@ -484,13 +408,13 @@ ABC Technologies Private Limited
 These may be treated as the same identity based on similarity and
 supporting evidence.
 
----
+------------------------------------------------------------------------
 
 # 9. Entity Resolution Model
 
 The project contains an initial Entity Resolution baseline:
 
-```text
+``` text
 dixy_entity_resolution_model.pkl
 dixy_entity_resolution_config.pkl
 ```
@@ -500,17 +424,17 @@ a prototype training source.
 
 Dataset characteristics used during development:
 
-- Approximately 1.99 million company records
-- CIN
-- Company name
-- Address
-- State
-- Business activity
-- Company status and related fields
+-   Approximately 1.99 million company records
+-   CIN
+-   Company name
+-   Address
+-   State
+-   Business activity
+-   Company status and related fields
 
 The prototype model uses features including:
 
-```text
+``` text
 Name similarity
 Address similarity
 State match
@@ -530,7 +454,7 @@ presented as production-world accuracy.
 Real deployment requires representative labelled bidder/document pairs
 and validation on realistic OCR variations.
 
----
+------------------------------------------------------------------------
 
 # 10. Cross-Document Consistency
 
@@ -538,7 +462,7 @@ The current engine compares important identity fields across documents.
 
 Examples:
 
-```text
+``` text
 PAN name ↔ GST legal name
 PAN name ↔ Udyam enterprise name
 GST legal name ↔ Udyam enterprise name
@@ -546,7 +470,7 @@ GST legal name ↔ Udyam enterprise name
 
 Current prototype interpretation:
 
-```text
+``` text
 Similarity >= 85
         ↓
 CONSISTENT
@@ -563,7 +487,7 @@ DISCREPANCY
 These thresholds are prototype values and can be calibrated using real
 labelled data.
 
----
+------------------------------------------------------------------------
 
 # 11. Identifier Checks
 
@@ -572,7 +496,7 @@ similarity.
 
 Current example:
 
-```text
+``` text
 PAN ↔ GSTIN embedded PAN
 ```
 
@@ -580,7 +504,7 @@ A mismatch is treated as a high-severity identity signal.
 
 Important distinction:
 
-```text
+``` text
 VALID FORMAT
        ≠
 GOVERNMENT VERIFIED
@@ -590,13 +514,13 @@ Format validation only checks structural validity.
 
 Authoritative verification must come from the Verification module.
 
----
+------------------------------------------------------------------------
 
 # 12. Verification Module
 
 Government/authoritative verification is a separate responsibility.
 
-```text
+``` text
               GOVERNMENT /
           AUTHORITATIVE SOURCES
                     |
@@ -615,11 +539,11 @@ results where authorized services are available.
 
 Examples may include:
 
-- PAN verification
-- GST verification
-- Udyam verification
-- MCA verification
-- Other authorized verification services
+-   PAN verification
+-   GST verification
+-   Udyam verification
+-   MCA verification
+-   Other authorized verification services
 
 DIXY AI does **not** invent authoritative verification results.
 
@@ -627,14 +551,14 @@ It analyzes the verification results supplied to it.
 
 If authoritative verification says:
 
-```text
+``` text
 GSTIN ↔ PAN = MISMATCH
 ```
 
 DIXY treats that as a significant verification signal even if simple
 text similarity looks normal.
 
----
+------------------------------------------------------------------------
 
 # 13. Anomaly Detection
 
@@ -642,25 +566,25 @@ The anomaly engine currently uses rule-based signals.
 
 Examples:
 
-```text
+``` text
 Critical identifier conflict
         ↓
 High anomaly signal
 ```
 
-```text
+``` text
 Low company-name similarity
         ↓
 Name mismatch signal
 ```
 
-```text
+``` text
 Invalid identifier format
         ↓
 Anomaly signal
 ```
 
-```text
+``` text
 Missing evidence
         ↓
 Evidence gap
@@ -676,30 +600,30 @@ rather than as a trained fraud-detection model.
 
 DIXY should report:
 
-```text
+``` text
 IDENTITY DISCREPANCY
 ```
 
 or:
 
-```text
+``` text
 MANUAL VERIFICATION REQUIRED
 ```
 
 rather than claiming:
 
-```text
+``` text
 FRAUD DETECTED
 ```
 
----
+------------------------------------------------------------------------
 
 # 14. Risk Scoring
 
 The current prototype converts detected signals into risk points and a
 risk level.
 
-```text
+``` text
 0 - 19      LOW
 20 - 39     MEDIUM
 40 - 59     HIGH
@@ -717,16 +641,16 @@ variations.
 
 The system also considers:
 
-- Identifier conflicts
-- Name conflicts
-- Invalid formats
-- Identity Graph conflicts
-- Authoritative verification failures
+-   Identifier conflicts
+-   Name conflicts
+-   Invalid formats
+-   Identity Graph conflicts
+-   Authoritative verification failures
 
 The scoring system will be calibrated further after broader end-to-end
 testing.
 
----
+------------------------------------------------------------------------
 
 # 15. Evidence Coverage
 
@@ -734,7 +658,7 @@ DIXY tracks whether expected identity evidence is available.
 
 Example:
 
-```text
+``` text
 PAN     ✓
 GST     ✓
 Udyam   ✗
@@ -746,13 +670,13 @@ Missing Udyam evidence does not automatically mean the bidder is
 non-compliant because whether Udyam is required depends on the tender
 and bidder context.
 
----
+------------------------------------------------------------------------
 
 # 16. Master AI Function
 
 The current internal entry point is:
 
-```python
+``` python
 dixy_analyze(
     bidder_json,
     verification_results=None
@@ -761,7 +685,7 @@ dixy_analyze(
 
 It combines:
 
-```text
+``` text
 Identity extraction
        ↓
 Cross-document consistency
@@ -784,13 +708,13 @@ Final recommendation
 The backend should eventually interact with the AI through FastAPI
 rather than directly importing Python functions.
 
----
+------------------------------------------------------------------------
 
 # 17. Current AI Output
 
 The master function returns structured JSON containing:
 
-```text
+``` text
 status
 identity_consistency_score
 evidence_coverage
@@ -811,13 +735,13 @@ explanation
 This allows the frontend to show both a high-level decision-support
 summary and detailed evidence.
 
----
+------------------------------------------------------------------------
 
 # 18. Human-Readable Example
 
 A deliberate conflict test produced the following type of result:
 
-```text
+``` text
 OVERALL STATUS
 REVIEW
 
@@ -833,7 +757,7 @@ MANUAL VERIFICATION REQUIRED
 
 Detected conflicts included:
 
-```text
+``` text
 PAN ↔ UDYAM PAN
 CRITICAL
 
@@ -855,7 +779,7 @@ HIGH
 
 At the same time, some evidence remained consistent:
 
-```text
+``` text
 PAN ↔ GSTIN
 CONSISTENT
 
@@ -870,13 +794,13 @@ The system therefore identifies a potentially split identity pattern and
 recommends human verification rather than automatically rejecting the
 bidder.
 
----
+------------------------------------------------------------------------
 
 # 19. Example Identity Conflict
 
 Example:
 
-```text
+``` text
 Submitted PAN
 ABC Technologies Pvt Ltd
 ABCDE1234F
@@ -899,7 +823,7 @@ PAN = ZZZZZ9999Z
 
 DIXY can reason:
 
-```text
+``` text
 PAN/GST evidence
         ↓
 ABC Technologies
@@ -917,7 +841,7 @@ MANUAL VERIFICATION REQUIRED
 
 This is the intended role of the Identity Graph.
 
----
+------------------------------------------------------------------------
 
 # 20. Backend Integration
 
@@ -925,13 +849,13 @@ The DIXY AI service is exposed through FastAPI.
 
 Current endpoint:
 
-```text
+``` text
 POST /api/ai/analyze
 ```
 
 Request structure:
 
-```json
+``` json
 {
   "bidder_data": {
     "pan": {},
@@ -947,7 +871,7 @@ Request structure:
 
 Internally the API calls:
 
-```python
+``` python
 dixy_analyze(
     request.bidder_data,
     request.verification_results
@@ -956,24 +880,24 @@ dixy_analyze(
 
 and returns the analysis JSON.
 
----
+------------------------------------------------------------------------
 
 # 21. FastAPI Service
 
 Current service file:
 
-```text
+``` text
 dixy_api.py
 ```
 
 Current service metadata:
 
-```text
+``` text
 Service:
 DIXY AI
 
 Version:
-DIXY-AI-v0.2
+DIXY-AI-v0.1
 
 Health endpoint:
 GET /health
@@ -984,7 +908,7 @@ POST /api/ai/analyze
 
 Health response:
 
-```json
+``` json
 {
   "status": "healthy",
   "service": "dixy-ai",
@@ -997,11 +921,11 @@ The FastAPI service has been tested in the development environment.
 When the AI engine is updated, the Uvicorn process should be restarted
 so it loads the latest engine code.
 
----
+------------------------------------------------------------------------
 
 # 22. Backend Integration Flow
 
-```text
+``` text
 1. Bidder uploads documents
             ↓
 2. OCR service processes documents
@@ -1025,7 +949,7 @@ so it loads the latest engine code.
 
 The intended service boundary is:
 
-```text
+``` text
 Java/Kotlin Backend
         |
         | HTTP POST
@@ -1044,7 +968,7 @@ Java/Kotlin Backend
 
 The backend should **not** directly import Python modules.
 
----
+------------------------------------------------------------------------
 
 # 23. Team Responsibilities
 
@@ -1052,7 +976,7 @@ The backend should **not** directly import Python modules.
 
 Responsible for:
 
-```text
+``` text
 Document
    ↓
 OCR
@@ -1066,13 +990,13 @@ Key question:
 
 > **What does this document say?**
 
----
+------------------------------------------------------------------------
 
 ## Verification / Government Integration
 
 Responsible for:
 
-```text
+``` text
 Identifier
    ↓
 Appropriate authoritative source
@@ -1084,13 +1008,13 @@ Key question:
 
 > **Can this information be verified from an appropriate source?**
 
----
+------------------------------------------------------------------------
 
 ## AI / Compliance Intelligence
 
 Responsible for:
 
-```text
+``` text
 All bidder evidence
         ↓
 Identity relationships
@@ -1111,13 +1035,13 @@ Key question:
 > **Do all these pieces of information actually belong together, and
 > what should the officer review?**
 
----
+------------------------------------------------------------------------
 
 ## Backend
 
 Responsible for orchestration:
 
-```text
+``` text
 OCR
  |
  +----> DIXY AI
@@ -1129,7 +1053,7 @@ OCR
  +----> Frontend
 ```
 
----
+------------------------------------------------------------------------
 
 ## Frontend
 
@@ -1137,25 +1061,25 @@ Responsible for presenting the AI output clearly.
 
 The frontend should not independently calculate the DIXY risk score.
 
----
+------------------------------------------------------------------------
 
 ## Procurement Officer
 
 Responsible for the final decision.
 
-```text
+``` text
 AI ASSISTS
      ↓
 HUMAN DECIDES
 ```
 
----
+------------------------------------------------------------------------
 
 # 24. Frontend Display Recommendation
 
 For a consistent bidder:
 
-```text
+``` text
 Identity Status
 CONSISTENT
 
@@ -1174,7 +1098,7 @@ IDENTITY CONSISTENT
 
 For a conflicting bidder:
 
-```text
+``` text
 Identity Status
 REVIEW
 
@@ -1196,7 +1120,7 @@ MANUAL VERIFICATION REQUIRED
 
 The UI should allow the officer to expand each finding and see:
 
-```text
+``` text
 Check
 Severity
 Submitted values
@@ -1205,13 +1129,13 @@ Reason
 Recommended verification action
 ```
 
----
+------------------------------------------------------------------------
 
 # 25. Repository Structure
 
 Recommended AI module:
 
-```text
+``` text
 ai/
 │
 ├── dixy_ai_engine.py
@@ -1228,7 +1152,7 @@ files.
 
 Examples:
 
-```text
+``` text
 Do not commit as production module:
 
 dixy_ai_engine_v0.1_*_backup.py
@@ -1236,7 +1160,7 @@ dixy_entity_matching_pairs.csv
 dixy_entity_matching_features.csv
 ```
 
----
+------------------------------------------------------------------------
 
 # 26. Model Artifact Usage
 
@@ -1247,7 +1171,7 @@ trained model for prediction.
 
 The intended deployment pattern is:
 
-```text
+``` text
 ai/
 ├── dixy_ai_engine.py
 ├── dixy_entity_resolution_model.pkl
@@ -1257,7 +1181,7 @@ ai/
 The Python service should load the model using a path relative to the AI
 module/deployment directory rather than a Kaggle-specific path such as:
 
-```text
+``` text
 /kaggle/working/...
 ```
 
@@ -1266,7 +1190,7 @@ not require the ML model.
 
 For example:
 
-```text
+``` text
 PAN ↔ Udyam PAN
 PAN ↔ ITR PAN
 GSTIN ↔ Udyam GSTIN
@@ -1278,48 +1202,48 @@ These relationships should remain deterministic.
 The ML/entity-resolution model is a supporting component for
 similarity-based entity matching.
 
----
+------------------------------------------------------------------------
 
 # 27. Current Prototype Status
 
 ## Implemented
 
-- [x] Indian company dataset exploration
-- [x] Company-name normalization
-- [x] Entity-resolution baseline
-- [x] Model/config artifact generation
-- [x] Dynamic identity extraction
-- [x] PAN/GST/Udyam checks
-- [x] MCA/CIN support
-- [x] ITR support
-- [x] Authorized-person field support
-- [x] Cross-document consistency
-- [x] Identifier relationship checks
-- [x] Identity Graph
-- [x] Identity Graph → risk integration
-- [x] Identity Graph → anomaly integration
-- [x] Identity Graph → final recommendation integration
-- [x] Evidence coverage
-- [x] Verification-result processing
-- [x] FastAPI service
-- [x] `/health` endpoint
-- [x] `/api/ai/analyze` endpoint
-- [x] Clean-bidder and deliberate-conflict testing
+-   [x] Indian company dataset exploration
+-   [x] Company-name normalization
+-   [x] Entity-resolution baseline
+-   [x] Model/config artifact generation
+-   [x] Dynamic identity extraction
+-   [x] PAN/GST/Udyam checks
+-   [x] MCA/CIN support
+-   [x] ITR support
+-   [x] Authorized-person field support
+-   [x] Cross-document consistency
+-   [x] Identifier relationship checks
+-   [x] Identity Graph
+-   [x] Identity Graph → risk integration
+-   [x] Identity Graph → anomaly integration
+-   [x] Identity Graph → final recommendation integration
+-   [x] Evidence coverage
+-   [x] Verification-result processing
+-   [x] FastAPI service
+-   [x] `/health` endpoint
+-   [x] `/api/ai/analyze` endpoint
+-   [x] Clean-bidder and deliberate-conflict testing
 
 ## Next development priorities
 
-- [ ] Improve risk-score calibration and avoid double-counting related
-      conflicts
-- [ ] Improve explainability and recommended actions
-- [ ] Add more document relationships
-- [ ] Tender requirement intelligence
-- [ ] Compliance-rule engine integration
-- [ ] Final backend integration
-- [ ] Frontend integration
-- [ ] End-to-end test suite
-- [ ] Deployment hardening
+-   [ ] Improve risk-score calibration and avoid double-counting related
+    conflicts
+-   [ ] Improve explainability and recommended actions
+-   [ ] Add more document relationships
+-   [ ] Tender requirement intelligence
+-   [ ] Compliance-rule engine integration
+-   [ ] Final backend integration
+-   [ ] Frontend integration
+-   [ ] End-to-end test suite
+-   [ ] Deployment hardening
 
----
+------------------------------------------------------------------------
 
 # 28. Important Prototype Limitations
 
@@ -1351,7 +1275,7 @@ Identity consistency is not the same thing as tender compliance.
 A bidder can have a consistent identity and still fail a tender
 requirement.
 
----
+------------------------------------------------------------------------
 
 # 29. Identity vs Verification vs Compliance vs Decision
 
@@ -1359,28 +1283,28 @@ DIXY separates these concepts:
 
 ## Identity
 
-```text
+``` text
 Do the documents appear to belong
 to the same underlying bidder?
 ```
 
 ## Verification
 
-```text
+``` text
 Does an appropriate authoritative source
 confirm the submitted information?
 ```
 
 ## Compliance
 
-```text
+``` text
 Does the bidder satisfy the
 requirements of this specific tender?
 ```
 
 ## Decision
 
-```text
+``` text
 Does the Procurement Officer accept
 or reject the bidder based on the evidence?
 ```
@@ -1388,13 +1312,13 @@ or reject the bidder based on the evidence?
 This separation prevents the AI layer from becoming an uncontrolled
 automatic procurement decision-maker.
 
----
+------------------------------------------------------------------------
 
 # 30. Quick Integration Summary
 
 For the backend team:
 
-```text
+``` text
 YOU RECEIVE
     ↓
 OCR JSON
@@ -1431,63 +1355,340 @@ The most important rule:
 > **Do not couple Java/Kotlin code to individual Python functions. Use
 > the FastAPI API as the integration boundary.**
 
----
+------------------------------------------------------------------------
 
 # 31. DIXY Design Principle
 
-DIXY AI implements a clear separation of concerns and human-centered decision support:
-
-```text
-                     BIDDER DOCUMENTS
-                            |
-                            v
-                    +------------------+
-                    | OCR / Extraction |
-                    |   (What does it  |
-                    |    document say?)|
-                    +--------+---------+
-                             |
-                Structured Evidence
-                             |
-         +---────────────────┬───────────────────+
-         |                   |                   |
-         v                   v                   v
-    Consistency         Identity Graph       Verification
-      Analysis          Analysis (1 bidder)  Analysis
-         |                   |                   |
-         +───────────────────┼───────────────────+
-                             |
-                    Anomaly Detection
-                             |
-                      Risk Scoring
-                             |
-                    Compliance Checks
-                             |
-              ┌──────────────┴──────────────┐
-              |                             |
-              v                             v
-    Consistent Identity        Review Required
-    Low Risk                   Manual Verification
-              |                             |
-              └──────────────┬──────────────┘
-                             |
-                             v
-              PROCUREMENT OFFICER DECISION
-                             |
-                      FINAL DETERMINATION
+``` text
+             DOCUMENTS
+                  ↓
+                 OCR
+                  ↓
+          STRUCTURED EVIDENCE
+                  ↓
+          IDENTITY INTELLIGENCE
+                  ↓
+      ┌───────────┼───────────┐
+      ↓           ↓           ↓
+  Consistency  Identity    Anomaly
+               Graph
+      └───────────┼───────────┘
+                  ↓
+              Risk Signal
+                  ↓
+          Verification Evidence
+                  ↓
+        Explainable Recommendation
+                  ↓
+        PROCUREMENT OFFICER
+                  ↓
+           FINAL DECISION
 ```
 
-## Core Principle
+**DIXY AI assists the officer; it does not replace the officer.**
 
-> **DIXY AI assists the officer; it does not replace the officer.**
+------------------------------------------------------------------------
 
-DIXY provides explainable, evidence-based recommendations backed by:
+# 24. How Other Team Members Run the DIXY AI Model
 
-- **Deterministic checks** for hard identity rules (PAN, GSTIN, etc.)
-- **Similarity analysis** for name and business information matching
-- **Identity Graph reasoning** connecting related documents and evidence
-- **Risk scoring** based on weighted anomaly signals
-- **Verification integration** incorporating authoritative source results
-- **Clear explanations** of why each finding matters
+The DIXY AI model is intended to be consumed as a **service**, not by
+having every teammate directly import the Python model code.
 
-The Procurement Officer retains full authority to accept, reject, or request additional verification for any bidder, regardless of the AI analysis.
+The normal integration pattern is:
+
+``` text
+Member 3 OCR
+    |
+    | extracted structured bidder JSON
+    v
+Member 1 Backend
+    |
+    | HTTP POST
+    v
+DIXY AI FastAPI Service
+    |
+    +--> Entity Resolution model (.pkl)
+    +--> Identity Graph
+    +--> Consistency checks
+    +--> Risk / anomaly analysis
+    +--> Verification-result analysis
+    |
+    v
+Structured AI Analysis JSON
+    |
+    v
+Member 1 Backend
+    |
+    v
+Member 4 Frontend
+```
+
+This follows the project-wide API contract principle: modules should
+integrate through interfaces/API contracts rather than depending on
+another member's internal implementation.
+
+## 24.1 What a teammate needs
+
+A teammate does **not** need to open the Kaggle notebook or manually
+execute the ML training code.
+
+The AI folder should be self-contained and contain the runtime files,
+for example:
+
+``` text
+ai/
+├── dixy_ai_engine.py
+├── dixy_api.py
+├── dixy_entity_resolution_model.pkl
+├── dixy_entity_resolution_config.pkl
+├── requirements.txt
+├── README.md
+└── tests/
+```
+
+The `.pkl` files are runtime model/configuration artifacts for Entity
+Resolution. They are not OCR models and do not replace the OCR/document
+extraction service.
+
+## 24.2 Start the AI service locally
+
+From the AI module directory:
+
+``` bash
+cd SIH2026/src/ai
+source SIH26DIXY-env/bin/activate
+```
+
+Install dependencies if required:
+
+``` bash
+pip install -r requirements.txt
+```
+
+Start FastAPI:
+
+``` bash
+uvicorn dixy_api:app --host 0.0.0.0 --port 8003
+```
+
+The service will then listen on:
+
+``` text
+http://localhost:8003
+```
+
+Health check:
+
+``` text
+GET /health
+```
+
+Analysis endpoint:
+
+``` text
+POST /api/ai/analyze
+```
+
+## 24.3 Calling the AI from another service
+
+Member 1's Spring Boot backend should call the AI service over HTTP.
+
+Example endpoint:
+
+``` text
+POST http://<AI-SERVICE-HOST>:8003/api/ai/analyze
+```
+
+Example request:
+
+``` json
+{
+  "bidder_data": {
+    "pan": {
+      "number": "ABCDE1234F",
+      "name": "ABC Technologies Pvt Ltd"
+    },
+    "gst": {
+      "gstin": "19ABCDE1234F1Z5",
+      "name": "ABC Technologies Private Limited",
+      "state": "West Bengal"
+    },
+    "udyam": {
+      "number": "UDYAM-WB-01-0001234",
+      "name": "ABC Technologies Pvt Ltd",
+      "pan": "ABCDE1234F"
+    }
+  },
+  "verification_results": {}
+}
+```
+
+The response is structured JSON and can be stored by the backend and
+shown by the frontend.
+
+## 24.4 Localhost vs network access
+
+If the backend and AI service are running on the **same computer**:
+
+``` text
+http://127.0.0.1:8003
+```
+
+is sufficient.
+
+If the AI service is running on one teammate's computer and another
+teammate needs to access it over the same local network, the AI service
+must listen on all interfaces:
+
+``` bash
+uvicorn dixy_api:app --host 0.0.0.0 --port 8003
+```
+
+The caller can then use the AI host machine's LAN address:
+
+``` text
+http://192.168.x.x:8003/api/ai/analyze
+```
+
+The exact IP depends on the development network.
+
+Do not use `127.0.0.1` from the other teammate's computer because it
+refers to that teammate's own computer.
+
+## 24.5 Recommended team integration
+
+For development, the simplest arrangement is:
+
+``` text
+                 Developer Machine
+        ┌────────────────────────────────┐
+        │                                │
+        │  Spring Boot Backend :8080     │
+        │          |                     │
+        │          | HTTP                │
+        │          v                     │
+        │  DIXY AI FastAPI :8003         │
+        │          |                     │
+        │          v                     │
+        │  AI Engine + .pkl models       │
+        │                                │
+        └────────────────────────────────┘
+```
+
+For the final integrated system, DIXY should move toward independent
+services/containers so the team does not depend on one developer's
+laptop remaining online.
+
+A future deployment can use:
+
+``` text
+Frontend
+   |
+Backend
+   |
+   +------ OCR Service
+   |
+   +------ DIXY AI Service :8003
+   |
+   +------ Verification Hub
+```
+
+Docker/containerization can be added by the Security/DevOps member for
+reproducible deployment.
+
+## 24.6 Important integration rule
+
+The backend should call:
+
+``` text
+POST /api/ai/analyze
+```
+
+and consume the returned JSON.
+
+The backend should **not** do this:
+
+``` python
+from dixy_ai_engine import dixy_analyze
+```
+
+unless the architecture is intentionally changed to run the AI inside
+the same Python process.
+
+Keeping the AI behind the FastAPI contract gives the team a clean
+service boundary and allows the AI implementation to evolve without
+forcing the Java/Kotlin backend to understand the internal ML code.
+
+## 24.7 Updating the AI model
+
+When `dixy_ai_engine.py` or the `.pkl` model/configuration changes:
+
+1.  Pull the latest Git changes.
+2.  Ensure the updated files are present in the AI service directory.
+3.  Restart Uvicorn.
+4.  Run the health check.
+5.  Run the AI API test cases.
+6.  Only then integrate the updated result into the backend.
+
+Example:
+
+``` bash
+git pull
+uvicorn dixy_api:app --host 0.0.0.0 --port 8003
+```
+
+When using `--reload` during development, code changes are normally
+reloaded automatically, but a full restart is recommended after changing
+model/configuration artifacts.
+
+## 24.8 Integration contract
+
+The AI service accepts:
+
+``` text
+INPUT
+-----
+bidder_data
+verification_results (optional)
+```
+
+and returns:
+
+``` text
+OUTPUT
+------
+status
+identity_consistency_score
+evidence_coverage
+available_documents
+missing_documents
+risk_points
+risk_level
+consistency_checks
+identifier_checks
+identity_graph
+verification_analysis
+anomaly_analysis
+findings
+recommendation
+explanation
+```
+
+This matches the project's team contract in which Member 3 provides
+extracted document text/fields/confidence, Member 5 provides normalized
+verification results, and Member 2 provides discrepancies, confidence
+and recommendations to the backend.
+
+## 24.9 Security note
+
+The development FastAPI server is intended for internal prototype use.
+For a deployed environment, the team should add appropriate network
+controls, authentication/authorization, secrets management, logging,
+rate limits and secure transport as part of the overall DIXY platform.
+
+The AI service must also preserve the principle:
+
+> **AI ASSISTS → HUMAN DECIDES**
+
+The API output is a decision-support result. The Procurement Officer
+remains responsible for the final procurement decision.
