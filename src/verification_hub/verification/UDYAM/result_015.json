@@ -3,10 +3,12 @@
     "verification_type": "UDYAM",
     "status": "VERIFIED",
     "source": "MOCK_UDYAM_DATASET",
-    "timestamp": "2026-09-10T22:12:32.430008Z",
+    "timestamp": "2026-09-10T23:54:46.126495Z",
     "evidence": {
         "provider": "UdyamProvider",
         "source": "MOCK_UDYAM_DATASET",
+        "checked_at": "2026-09-10T23:54:46.126495Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "UDYAM-BR-09-1000014",
         "details": {
             "identifier": "UDYAM-BR-09-1000014",
@@ -18,10 +20,16 @@
             "date_of_registration": "2019-10-17",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "UDYAM-BR-09-1000014"
+            ],
+            "dataset_status": "ACTIVE"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.16
 }

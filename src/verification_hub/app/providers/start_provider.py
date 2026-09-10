@@ -5,5 +5,6 @@ class StartupIndiaProvider(MockDatasetProvider):
     verification_type = VerificationType.STARTUP_INDIA
     dataset_file = "startup_india_data.json"
     identifier_keys = ('identifier',)
+    status_field = "recognition_status"
     name = "StartupIndiaProvider"
     source = "MOCK_STARTUP_INDIA_DATASET"

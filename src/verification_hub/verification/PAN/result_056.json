@@ -3,10 +3,12 @@
     "verification_type": "PAN",
     "status": "VERIFIED",
     "source": "MOCK_PAN_DATASET",
-    "timestamp": "2026-09-10T22:12:32.256641Z",
+    "timestamp": "2026-09-10T23:54:45.920752Z",
     "evidence": {
         "provider": "PANProvider",
         "source": "MOCK_PAN_DATASET",
+        "checked_at": "2026-09-10T23:54:45.920752Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "XDDMN1036R",
         "details": {
             "pan": "XDDMN1036R",
@@ -16,10 +18,16 @@
             "aadhaar_linked": "Yes",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "XDDMN1036R"
+            ],
+            "dataset_status": "VALID"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 1.02
 }

@@ -1,12 +1,14 @@
 {
     "bidder_id": "PAN-084",
     "verification_type": "PAN",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_PAN_DATASET",
-    "timestamp": "2026-09-10T22:12:32.337310Z",
+    "timestamp": "2026-09-10T23:54:46.032190Z",
     "evidence": {
         "provider": "PANProvider",
         "source": "MOCK_PAN_DATASET",
+        "checked_at": "2026-09-10T23:54:46.032190Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "OUNAI1010A",
         "details": {
             "pan": "OUNAI1010A",
@@ -16,10 +18,16 @@
             "aadhaar_linked": "Yes",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "OUNAI1010A"
+            ],
+            "dataset_status": "DEACTIVATED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.13
 }

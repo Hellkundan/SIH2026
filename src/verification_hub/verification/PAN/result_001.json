@@ -1,12 +1,14 @@
 {
     "bidder_id": "PAN-001",
     "verification_type": "PAN",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_PAN_DATASET",
-    "timestamp": "2026-09-10T22:12:32.098950Z",
+    "timestamp": "2026-09-10T23:54:45.681021Z",
     "evidence": {
         "provider": "PANProvider",
         "source": "MOCK_PAN_DATASET",
+        "checked_at": "2026-09-10T23:54:45.681021Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "TEOKV1032J",
         "details": {
             "pan": "TEOKV1032J",
@@ -16,10 +18,16 @@
             "aadhaar_linked": "Yes",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "TEOKV1032J"
+            ],
+            "dataset_status": "INACTIVE"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.79
 }

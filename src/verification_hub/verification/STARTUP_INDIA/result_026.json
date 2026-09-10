@@ -3,10 +3,12 @@
     "verification_type": "STARTUP_INDIA",
     "status": "VERIFIED",
     "source": "MOCK_STARTUP_INDIA_DATASET",
-    "timestamp": "2026-09-10T22:12:32.967948Z",
+    "timestamp": "2026-09-10T23:54:46.618010Z",
     "evidence": {
         "provider": "StartupIndiaProvider",
         "source": "MOCK_STARTUP_INDIA_DATASET",
+        "checked_at": "2026-09-10T23:54:46.618010Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "DIPP-50025",
         "details": {
             "identifier": "DIPP-50025",
@@ -18,10 +20,16 @@
             "certificate_number": "DIPP58025",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "DIPP-50025"
+            ],
+            "dataset_status": "RECOGNIZED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.13
 }

@@ -71,7 +71,6 @@ class MockDatasetProvider(VerificationProvider):
         self,
         request: VerificationRequest,
     ) -> list[str]:
-        """Collect usable identifiers from the request."""
 
         values = []
 
@@ -96,9 +95,6 @@ class MockDatasetProvider(VerificationProvider):
         match_type: str,
         confidence: float,
     ) -> VerificationStatus:
-        """
-        Convert dataset-specific status into DIXY's normalized status.
-        """
 
         record_status = str(
             record.get("record_status", "")
@@ -114,7 +110,6 @@ class MockDatasetProvider(VerificationProvider):
             )
         ).strip().upper()
 
-        # GST uses registration_status.
         if not dataset_status:
             dataset_status = str(
                 record.get(
@@ -123,26 +118,44 @@ class MockDatasetProvider(VerificationProvider):
                 )
             ).strip().upper()
 
-        # PENDING states.
+        if not dataset_status:
+            dataset_status = str(
+                record.get(
+                    "recognition_status",
+                    ""
+                )
+            ).strip().upper()
+
+        if not dataset_status:
+            dataset_status = str(
+                record.get(
+                    "certificate_status",
+                    ""
+                )
+            ).strip().upper()
+
+        if not dataset_status:
+            dataset_status = str(
+                record.get(
+                    "authorization_status",
+                    ""
+                )
+            ).strip().upper()
+
         if dataset_status in self.PENDING_RECORD_STATUSES:
             return VerificationStatus.PENDING
 
-        # Adverse / review states.
         if dataset_status in self.REVIEW_RECORD_STATUSES:
             return VerificationStatus.MANUAL_REVIEW
 
-        # Positive states.
         if dataset_status in self.VERIFIED_RECORD_STATUSES:
 
-            # Fuzzy matches must always be reviewed.
             if match_type == "fuzzy":
                 return VerificationStatus.MANUAL_REVIEW
 
-            # Name-only matches must always be reviewed.
             if match_type == "name_only":
                 return VerificationStatus.MANUAL_REVIEW
 
-            # Exact identifier but strong name mismatch.
             if (
                 match_type == "exact"
                 and confidence < self.NAME_MISMATCH_CONFIDENCE_FLOOR
@@ -151,7 +164,6 @@ class MockDatasetProvider(VerificationProvider):
 
             return VerificationStatus.VERIFIED
 
-        # Unknown source status should never silently become VERIFIED.
         return VerificationStatus.MANUAL_REVIEW
 
     async def verify(
@@ -159,18 +171,27 @@ class MockDatasetProvider(VerificationProvider):
         request: VerificationRequest,
     ) -> VerificationResponse:
 
+        checked_at = datetime.now(timezone.utc)
+
         values = self._request_values(request)
 
+        # ---------------------------------------------------------
+        # INVALID REQUEST
+        # ---------------------------------------------------------
         if not values and not request.company_name:
+
             return VerificationResponse(
                 bidder_id=request.bidder_id,
                 verification_type=self.verification_type,
                 status=VerificationStatus.MANUAL_REVIEW,
                 source=self.source,
-                timestamp=datetime.now(timezone.utc),
+                timestamp=checked_at,
+
                 evidence=VerificationEvidence(
                     provider=self.name,
                     source=self.source,
+                    checked_at=checked_at,
+                    evidence_type="synthetic_dataset",
                     details={
                         "reason": (
                             "No usable identifier or "
@@ -178,6 +199,7 @@ class MockDatasetProvider(VerificationProvider):
                         )
                     },
                 ),
+
                 error_state=ErrorState.INVALID_REQUEST,
                 error_message=(
                     "Identifier or company name required "
@@ -186,6 +208,9 @@ class MockDatasetProvider(VerificationProvider):
                 confidence=0.0,
             )
 
+        # ---------------------------------------------------------
+        # SEARCH DATASET
+        # ---------------------------------------------------------
         result = find_match(
             dataset_file=self.dataset_file,
             identifier_keys=self.identifier_keys,
@@ -193,27 +218,37 @@ class MockDatasetProvider(VerificationProvider):
             company_name=request.company_name,
         )
 
-        # No matching record.
+        # ---------------------------------------------------------
+        # NO MATCH
+        # ---------------------------------------------------------
         if result.record is None:
+
             return VerificationResponse(
                 bidder_id=request.bidder_id,
                 verification_type=self.verification_type,
                 status=VerificationStatus.NOT_FOUND,
                 source=self.source,
-                timestamp=datetime.now(timezone.utc),
+                timestamp=checked_at,
+
                 evidence=VerificationEvidence(
                     provider=self.name,
                     source=self.source,
+                    checked_at=checked_at,
+                    evidence_type="synthetic_dataset",
                     matched_identifier=result.matched_identifier,
                     details={
                         "match_type": "none",
                         "searched_identifiers": values,
                     },
                 ),
+
                 error_state=ErrorState.NONE,
                 confidence=result.confidence,
             )
 
+        # ---------------------------------------------------------
+        # MATCH FOUND
+        # ---------------------------------------------------------
         record = result.record
 
         status = self._status_from_record(
@@ -246,6 +281,21 @@ class MockDatasetProvider(VerificationProvider):
                 "registration_status"
             )
 
+        if dataset_status is None:
+            dataset_status = record.get(
+                "recognition_status"
+            )
+
+        if dataset_status is None:
+            dataset_status = record.get(
+                "certificate_status"
+            )
+
+        if dataset_status is None:
+            dataset_status = record.get(
+                "authorization_status"
+            )
+
         details["dataset_status"] = dataset_status
 
         return VerificationResponse(
@@ -253,13 +303,17 @@ class MockDatasetProvider(VerificationProvider):
             verification_type=self.verification_type,
             status=status,
             source=self.source,
-            timestamp=datetime.now(timezone.utc),
+            timestamp=checked_at,
+
             evidence=VerificationEvidence(
                 provider=self.name,
                 source=self.source,
+                checked_at=checked_at,
+                evidence_type="synthetic_dataset",
                 matched_identifier=result.matched_identifier,
                 details=details,
             ),
+
             error_state=ErrorState.NONE,
             confidence=result.confidence,
         )

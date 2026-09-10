@@ -1,12 +1,14 @@
 {
     "bidder_id": "UDYAM-022",
     "verification_type": "UDYAM",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_UDYAM_DATASET",
-    "timestamp": "2026-09-10T22:12:32.452000Z",
+    "timestamp": "2026-09-10T23:54:46.151524Z",
     "evidence": {
         "provider": "UdyamProvider",
         "source": "MOCK_UDYAM_DATASET",
+        "checked_at": "2026-09-10T23:54:46.151524Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "UDYAM-KL-06-1000021",
         "details": {
             "identifier": "UDYAM-KL-06-1000021",
@@ -18,10 +20,16 @@
             "date_of_registration": "2018-07-11",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "UDYAM-KL-06-1000021"
+            ],
+            "dataset_status": "SUSPENDED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.1
 }

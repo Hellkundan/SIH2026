@@ -1,12 +1,14 @@
 {
     "bidder_id": "GST-045",
     "verification_type": "GST",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_GST_DATASET",
-    "timestamp": "2026-09-10T22:12:31.958142Z",
+    "timestamp": "2026-09-10T23:54:45.451309Z",
     "evidence": {
         "provider": "GSTProvider",
         "source": "MOCK_GST_DATASET",
+        "checked_at": "2026-09-10T23:54:45.451309Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "33STEPT1044D2ZB",
         "details": {
             "gstin": "33STEPT1044D2ZB",
@@ -19,10 +21,16 @@
             "taxpayer_type": "Regular",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "33STEPT1044D2ZB"
+            ],
+            "dataset_status": "CANCELLED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.12
 }
