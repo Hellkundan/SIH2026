@@ -44,8 +44,7 @@ function BidderReport() {
     })),
   });
 
-  const tenderTitle = (id: string) =>
-    tenders.data?.find((t) => t.id === id)?.title ?? id;
+  const tenderTitle = (id: string) => tenders.data?.find((t) => t.id === id)?.title ?? id;
 
   return (
     <PortalShell title="Bidder report" subtitle={bidder.data?.companyName ?? bidderId}>

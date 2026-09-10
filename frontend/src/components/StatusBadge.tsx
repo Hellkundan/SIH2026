@@ -1,11 +1,6 @@
 import { cn } from "@/lib/utils";
 import { titleCase } from "@/lib/format";
-import type {
-  BidStatus,
-  DocumentStatus,
-  TenderStatus,
-  VerificationStatus,
-} from "@/lib/types";
+import type { BidStatus, DocumentStatus, TenderStatus, VerificationStatus } from "@/lib/types";
 
 type Tone = "neutral" | "success" | "warning" | "danger" | "info";
 

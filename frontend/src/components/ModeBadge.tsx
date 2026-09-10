@@ -11,7 +11,11 @@ export function ModeBadge({ className }: { className?: string }) {
   const live = !USE_MOCK;
   return (
     <span
-      title={live ? `Connected to ${API_BASE_URL || "the configured API"}` : "Demo data — no API configured"}
+      title={
+        live
+          ? `Connected to ${API_BASE_URL || "the configured API"}`
+          : "Demo data — no API configured"
+      }
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-semibold",
         live

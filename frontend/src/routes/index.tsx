@@ -25,8 +25,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "DIXY — Verified Vendors. Faster Tenders." },
       {
         property: "og:description",
-        content:
-          "Automated bidder compliance verification for government e-tendering.",
+        content: "Automated bidder compliance verification for government e-tendering.",
       },
     ],
   }),
@@ -58,8 +57,16 @@ const features = [
 
 const steps = [
   { icon: Gavel, title: "Register", body: "Create your company account in under two minutes." },
-  { icon: FileSearch, title: "Upload documents", body: "Drop in your compliance certificates once." },
-  { icon: BadgeCheck, title: "Get verified & bid", body: "Checks run automatically; bid on anything you qualify for." },
+  {
+    icon: FileSearch,
+    title: "Upload documents",
+    body: "Drop in your compliance certificates once.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Get verified & bid",
+    body: "Checks run automatically; bid on anything you qualify for.",
+  },
 ];
 
 function Landing() {
@@ -181,9 +188,7 @@ function Landing() {
           <ol className="mt-10 grid gap-5 md:grid-cols-3">
             {steps.map((s, i) => (
               <li key={s.title} className="rounded-lg border bg-card p-6">
-                <span className="text-xs font-bold tracking-widest text-accent">
-                  STEP {i + 1}
-                </span>
+                <span className="text-xs font-bold tracking-widest text-accent">STEP {i + 1}</span>
                 <s.icon className="mt-3 size-6 text-primary" />
                 <h3 className="mt-3 font-semibold">{s.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>

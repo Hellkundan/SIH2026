@@ -156,7 +156,8 @@ function OfficerDashboard() {
                     <TableRow key={b.id}>
                       <TableCell>
                         <p className="text-sm font-medium">
-                          {bidders.data?.find((x) => x.id === b.bidderId)?.companyName ?? b.bidderId}
+                          {bidders.data?.find((x) => x.id === b.bidderId)?.companyName ??
+                            b.bidderId}
                         </p>
                         <p className="text-xs text-muted-foreground">
                           {b.submittedAt ? dateTime(b.submittedAt) : "—"}

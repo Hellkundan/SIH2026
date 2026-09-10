@@ -16,7 +16,9 @@ const DEMO_ACCOUNTS: Record<string, Role> = {
 };
 
 const normaliseRole = (value: unknown): Role => {
-  const role = String(value ?? "BIDDER").toUpperCase().replace(/^ROLE_/, "");
+  const role = String(value ?? "BIDDER")
+    .toUpperCase()
+    .replace(/^ROLE_/, "");
   if (role === "ADMIN") return "ADMIN";
   if (role === "PROCUREMENT_OFFICER" || role === "OFFICER") return "PROCUREMENT_OFFICER";
   return "BIDDER";

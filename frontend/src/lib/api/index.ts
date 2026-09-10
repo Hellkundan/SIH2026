@@ -31,9 +31,7 @@ export async function getTender(id: string): Promise<Tender> {
   return t;
 }
 
-export async function createTender(
-  input: Pick<Tender, "title" | "description">,
-): Promise<Tender> {
+export async function createTender(input: Pick<Tender, "title" | "description">): Promise<Tender> {
   if (!USE_MOCK) return http<Tender>("/tenders", { method: "POST", body: JSON.stringify(input) });
   await delay();
   const tender: Tender = {
@@ -50,7 +48,8 @@ export async function updateTender(
   id: string,
   patch: Partial<Pick<Tender, "title" | "description" | "status">>,
 ): Promise<Tender> {
-  if (!USE_MOCK) return http<Tender>(`/tenders/${id}`, { method: "PUT", body: JSON.stringify(patch) });
+  if (!USE_MOCK)
+    return http<Tender>(`/tenders/${id}`, { method: "PUT", body: JSON.stringify(patch) });
   await delay();
   const t = store.tenders.find((x) => x.id === id);
   if (!t) throw new Error("Tender not found");
@@ -58,10 +57,7 @@ export async function updateTender(
   return t;
 }
 
-export async function setTenderStatus(
-  id: string,
-  action: "open" | "close",
-): Promise<Tender> {
+export async function setTenderStatus(id: string, action: "open" | "close"): Promise<Tender> {
   if (!USE_MOCK) return http<Tender>(`/tenders/${id}/${action}`, { method: "POST" });
   await delay();
   return updateTender(id, { status: action === "open" ? "OPEN" : "CLOSED" });
@@ -284,10 +280,7 @@ export async function getBid(id: string): Promise<TenderBid> {
 }
 
 /** Documents need a bid to hang off, so the draft bid is created up front. */
-export async function ensureDraftBid(
-  tenderId: string,
-  bidderId: string,
-): Promise<TenderBid> {
+export async function ensureDraftBid(tenderId: string, bidderId: string): Promise<TenderBid> {
   const mine = await listBidsByBidder(bidderId);
   const existing = mine.find((b) => b.tenderId === tenderId);
   if (existing) return existing;
@@ -362,7 +355,11 @@ export async function setBidStatus(
   bid.history.push({
     at: store.nowIso(),
     label:
-      action === "review" ? "Marked under review" : action === "qualify" ? "Qualified" : "Disqualified",
+      action === "review"
+        ? "Marked under review"
+        : action === "qualify"
+          ? "Qualified"
+          : "Disqualified",
     by: "You (Procurement Officer)",
   });
   return bid;

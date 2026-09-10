@@ -25,33 +25,13 @@ export const DOCUMENT_LABELS: Record<DocumentType, string> = {
   OTHER: "Other Document",
 };
 
-export const documentLabel = (type: string) =>
-  DOCUMENT_LABELS[type as DocumentType] ?? type;
+export const documentLabel = (type: string) => DOCUMENT_LABELS[type as DocumentType] ?? type;
 
 export type TenderStatus = "DRAFT" | "OPEN" | "CLOSED";
-export type BidStatus =
-  | "DRAFT"
-  | "SUBMITTED"
-  | "UNDER_REVIEW"
-  | "QUALIFIED"
-  | "DISQUALIFIED";
-export type DocumentStatus =
-  | "UPLOADED"
-  | "PROCESSING"
-  | "PROCESSED"
-  | "VERIFIED"
-  | "FAILED";
-export type VerificationStatus =
-  | "VERIFIED"
-  | "NOT_FOUND"
-  | "FAILED"
-  | "PENDING"
-  | "MANUAL_REVIEW";
-export type VerificationErrorState =
-  | "PROVIDER_UNAVAILABLE"
-  | "TIMEOUT"
-  | "INVALID_REQUEST"
-  | null;
+export type BidStatus = "DRAFT" | "SUBMITTED" | "UNDER_REVIEW" | "QUALIFIED" | "DISQUALIFIED";
+export type DocumentStatus = "UPLOADED" | "PROCESSING" | "PROCESSED" | "VERIFIED" | "FAILED";
+export type VerificationStatus = "VERIFIED" | "NOT_FOUND" | "FAILED" | "PENDING" | "MANUAL_REVIEW";
+export type VerificationErrorState = "PROVIDER_UNAVAILABLE" | "TIMEOUT" | "INVALID_REQUEST" | null;
 
 /** The three roles the Spring Boot backend issues. */
 export type Role = "BIDDER" | "PROCUREMENT_OFFICER" | "ADMIN";

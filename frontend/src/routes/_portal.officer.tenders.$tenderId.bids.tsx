@@ -45,17 +45,23 @@ function ComplianceRecommendationSummary({ bidId }: { bidId: string }) {
     <div className="mt-4 rounded-md border bg-muted/30 p-4 space-y-2">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold uppercase text-muted-foreground">AI Intelligence Recommendation:</span>
+          <span className="text-xs font-semibold uppercase text-muted-foreground">
+            AI Intelligence Recommendation:
+          </span>
           <span className="rounded bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary">
             {rec.data?.aiRecommendation ?? "EVALUATED"}
           </span>
         </div>
         {comp.data?.severity ? (
-          <span className={`text-xs px-2 py-0.5 rounded font-medium ${
-            comp.data.severity === "LOW" ? "bg-emerald-100 text-emerald-800" :
-            comp.data.severity === "MEDIUM" ? "bg-yellow-100 text-yellow-800" :
-            "bg-red-100 text-red-800"
-          }`}>
+          <span
+            className={`text-xs px-2 py-0.5 rounded font-medium ${
+              comp.data.severity === "LOW"
+                ? "bg-emerald-100 text-emerald-800"
+                : comp.data.severity === "MEDIUM"
+                  ? "bg-yellow-100 text-yellow-800"
+                  : "bg-red-100 text-red-800"
+            }`}
+          >
             Risk: {comp.data.severity}
           </span>
         ) : null}
@@ -97,8 +103,7 @@ function TenderBids() {
   });
 
   const list = (bids.data ?? []).filter((b) => b.status !== "DRAFT");
-  const companyOf = (id: string) =>
-    bidders.data?.find((b) => b.id === id)?.companyName ?? id;
+  const companyOf = (id: string) => bidders.data?.find((b) => b.id === id)?.companyName ?? id;
 
   return (
     <PortalShell title="Bid review" subtitle={tender.data?.title ?? tenderId}>
@@ -181,10 +186,7 @@ function TenderBids() {
                     >
                       Mark under review
                     </Button>
-                    <Button
-                      size="sm"
-                      onClick={() => act.mutate({ id: bid.id, action: "qualify" })}
-                    >
+                    <Button size="sm" onClick={() => act.mutate({ id: bid.id, action: "qualify" })}>
                       Qualify
                     </Button>
                     <Button
@@ -216,8 +218,18 @@ function BidDocuments({ bidId }: { bidId: string }) {
     queryFn: () => listDocumentsByBid(bidId),
   });
 
-  if (docs.isLoading) return <div className="mt-4"><LoadingRows rows={2} /></div>;
-  if (docs.isError) return <div className="mt-4"><ErrorState /></div>;
+  if (docs.isLoading)
+    return (
+      <div className="mt-4">
+        <LoadingRows rows={2} />
+      </div>
+    );
+  if (docs.isError)
+    return (
+      <div className="mt-4">
+        <ErrorState />
+      </div>
+    );
 
   const list = docs.data ?? [];
   if (list.length === 0) {

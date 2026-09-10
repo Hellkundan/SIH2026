@@ -348,7 +348,13 @@ function DocumentsStep({
 }: {
   bidId: string;
   bidderId: string;
-  docs: { id: string; documentType: DocumentType; fileName: string; status: string; uploadedAt: string }[];
+  docs: {
+    id: string;
+    documentType: DocumentType;
+    fileName: string;
+    status: string;
+    uploadedAt: string;
+  }[];
   loading: boolean;
   uploading: boolean;
   onUpload: (type: DocumentType, fileName: string) => void;
@@ -463,9 +469,7 @@ function DocumentsStep({
       {loading ? (
         <LoadingRows rows={2} />
       ) : docs.length === 0 ? (
-        <p className="text-sm text-muted-foreground">
-          No documents attached to this bid yet.
-        </p>
+        <p className="text-sm text-muted-foreground">No documents attached to this bid yet.</p>
       ) : (
         <div className="space-y-4">
           {docs.map((d) => (

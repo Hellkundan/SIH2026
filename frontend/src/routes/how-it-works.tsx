@@ -25,18 +25,39 @@ export const Route = createFileRoute("/how-it-works")({
 
 const bidderSteps = [
   ["Create your account", "Register your company with its name, email and phone number."],
-  ["Upload compliance documents", "Drag in PAN, GST, Udyam, EPFO, ESIC and any certificates you hold."],
-  ["Automatic verification", "OCR extracts the fields, then each one is checked against its government registry."],
-  ["Browse matching tenders", "Open tenders show whether your verified profile already meets their requirements."],
+  [
+    "Upload compliance documents",
+    "Drag in PAN, GST, Udyam, EPFO, ESIC and any certificates you hold.",
+  ],
+  [
+    "Automatic verification",
+    "OCR extracts the fields, then each one is checked against its government registry.",
+  ],
+  [
+    "Browse matching tenders",
+    "Open tenders show whether your verified profile already meets their requirements.",
+  ],
   ["Submit your bid", "Attach already-verified documents, add your quote and submit."],
-  ["Track the outcome", "Draft → Submitted → Under review → Qualified or Disqualified, with officer remarks."],
+  [
+    "Track the outcome",
+    "Draft → Submitted → Under review → Qualified or Disqualified, with officer remarks.",
+  ],
 ];
 
 const officerSteps = [
   ["Publish a tender", "Create it as a draft, then open it for bidding when you're ready."],
-  ["Define requirements", "Tick the mandatory certificates and add criteria like minimum turnover."],
-  ["Review verified bids", "Each bid arrives with a compliance score and every registry response attached."],
-  ["Qualify or disqualify", "Record remarks against the decision; the bidder sees the outcome immediately."],
+  [
+    "Define requirements",
+    "Tick the mandatory certificates and add criteria like minimum turnover.",
+  ],
+  [
+    "Review verified bids",
+    "Each bid arrives with a compliance score and every registry response attached.",
+  ],
+  [
+    "Qualify or disqualify",
+    "Record remarks against the decision; the bidder sees the outcome immediately.",
+  ],
   ["Award", "Shortlist from a pool where the paperwork has already been proven genuine."],
 ];
 
@@ -85,9 +106,7 @@ function HowItWorks() {
             {pipeline.map((step, i) => (
               <Card key={step[0]} className="relative border-border/70">
                 <CardContent className="p-5">
-                  <span className="text-xs font-bold tracking-widest text-accent">
-                    0{i + 1}
-                  </span>
+                  <span className="text-xs font-bold tracking-widest text-accent">0{i + 1}</span>
                   <h3 className="mt-2 text-sm font-semibold">{step[0]}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{step[1]}</p>
                 </CardContent>
@@ -95,7 +114,7 @@ function HowItWorks() {
             ))}
           </div>
           <pre className="mt-8 overflow-x-auto rounded-lg border bg-card p-5 text-xs leading-relaxed text-muted-foreground">
-{`  [Upload] --> [OCR extraction] --> [Confidence score]
+            {`  [Upload] --> [OCR extraction] --> [Confidence score]
                                           |
                               low  <------+------>  good
                                 |                     |

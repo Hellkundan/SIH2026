@@ -32,9 +32,7 @@ export const Route = createFileRoute("/register")({
 });
 
 type Result =
-  | { kind: "created"; company: string }
-  | { kind: "pending" }
-  | { kind: "error"; message: string };
+  { kind: "created"; company: string } | { kind: "pending" } | { kind: "error"; message: string };
 
 function RegisterPage() {
   const [busy, setBusy] = useState(false);
@@ -117,11 +115,23 @@ function RegisterPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" required value={form.email} onChange={set("email")} />
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={set("email")}
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" required value={form.phone} onChange={set("phone")} placeholder="+91" />
+                  <Input
+                    id="phone"
+                    required
+                    value={form.phone}
+                    onChange={set("phone")}
+                    placeholder="+91"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <Button type="submit" className="w-full" disabled={busy}>

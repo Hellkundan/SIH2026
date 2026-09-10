@@ -66,9 +66,7 @@ function LoginPage() {
       <div className="hidden flex-col justify-between bg-sidebar p-12 text-sidebar-foreground lg:flex">
         <Logo invert />
         <div>
-          <h2 className="text-3xl font-extrabold">
-            One sign-in. Every tender you can bid on.
-          </h2>
+          <h2 className="text-3xl font-extrabold">One sign-in. Every tender you can bid on.</h2>
           <p className="mt-4 max-w-md text-sidebar-foreground/75">
             Attach your compliance documents to a bid and they are read and checked against the
             issuing registries automatically.

@@ -4,11 +4,9 @@
  * Flip USE_MOCK to false (and set VITE_API_BASE_URL) to route every call in
  * `src/lib/api/index.ts` at the real backend. Page components never change.
  */
-export const USE_MOCK =
-  (import.meta.env["VITE_USE_MOCK"] ?? "true") !== "false";
+export const USE_MOCK = (import.meta.env["VITE_USE_MOCK"] ?? "true") !== "false";
 
-export const API_BASE_URL =
-  (import.meta.env["VITE_API_BASE_URL"] as string | undefined) ?? "";
+export const API_BASE_URL = (import.meta.env["VITE_API_BASE_URL"] as string | undefined) ?? "";
 
 const TOKEN_KEY = "dixy.token";
 
