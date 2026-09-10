@@ -32,3 +32,7 @@ bin/
 ### OCR / Uploaded Files ###
 src/ocr/app/files/*
 !src/ocr/app/files/.gitkeep
+
+### Verification Hub / Test Results ###
+src/verification_hub/verification_results/*
+!src/verification_hub/verification_results/.gitkeep
