@@ -1418,6 +1418,56 @@ def analyze_verification_results(
             })
 
 
+        elif status == "MANUAL_REVIEW":
+            
+            findings.append({
+
+                "field":
+                    field,
+
+                "status":
+                    "MANUAL_REVIEW",
+
+                "severity":
+                    "HIGH",
+
+                "reason":
+                    result.get(
+                        "reason",
+                        "Verification requires human review."
+                    ),
+
+                "source":
+                    result.get("source")
+
+            })
+
+
+        elif status == "PENDING":
+
+            findings.append({
+
+                "field":
+                    field,
+
+                "status":
+                    "PENDING",
+
+                "severity":
+                    "MEDIUM",
+
+                "reason":
+                    result.get(
+                        "reason",
+                        "Verification is still pending."
+                    ),
+
+                "source":
+                    result.get("source")
+
+            })
+
+
         elif status == "VERIFIED":
 
             findings.append({
@@ -1524,22 +1574,35 @@ def dixy_analyze(
         )
     )
 
-
     verification_risk_points = 0
-
-
     for finding in verification_analysis[
-        "verification_findings"
+    "verification_findings"
     ]:
+        status = finding["status"]
+        severity = finding.get("severity", "MEDIUM")
 
-        if finding["status"] in [
+        if status in [
             "FAILED",
             "INVALID",
             "NOT_FOUND",
             "MISMATCH"
         ]:
 
-            verification_risk_points += 50
+            if severity == "CRITICAL":
+                verification_risk_points += 60
+
+            else:
+                verification_risk_points += 50
+
+
+        elif status == "MANUAL_REVIEW":
+
+            verification_risk_points += 30
+
+
+        elif status == "PENDING":
+
+            verification_risk_points += 15
 
 
     total_risk_points = (
@@ -1594,7 +1657,8 @@ def dixy_analyze(
             "FAILED",
             "INVALID",
             "NOT_FOUND",
-            "MISMATCH"
+            "MISMATCH",
+            "MANUAL_REVIEW"
         ]
 
         for item in verification_analysis[
