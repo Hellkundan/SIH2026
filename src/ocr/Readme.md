@@ -24,7 +24,7 @@ data for the Compliance Engine (Member 2) and Backend (Member 1) to consume.
 cd src/ocr
 python3 -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 You also need the **Tesseract binary** installed (this is separate from the
