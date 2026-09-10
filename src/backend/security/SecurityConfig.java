@@ -38,7 +38,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/tenders/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/tenders/**").authenticated()
                         .requestMatchers(HttpMethod.POST, "/tenders/**")
                         .hasAnyRole("PROCUREMENT_OFFICER", "ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/tenders/**")
