@@ -1,24 +1,24 @@
 package backend.service;
 
 import backend.model.TenderBid;
-import backend.storage.TenderBidStorage;
+import backend.repository.TenderBidRepository;
 
 import java.util.List;
 import java.util.UUID;
 
 public class TenderBidService {
 
-    private final TenderBidStorage tenderBidStorage;
+    private final TenderBidRepository tenderBidRepository;
     private final TenderService tenderService;
     private final BidderService bidderService;
 
 
     public TenderBidService(
-            TenderBidStorage tenderBidStorage,
+            TenderBidRepository tenderBidRepository,
             TenderService tenderService,
             BidderService bidderService
     ) {
-        this.tenderBidStorage = tenderBidStorage;
+        this.tenderBidRepository = tenderBidRepository;
         this.tenderService = tenderService;
         this.bidderService = bidderService;
     }
@@ -29,10 +29,8 @@ public class TenderBidService {
             UUID bidderId
     ) {
 
-        // Check if Tender exists
         tenderService.getTenderById(tenderId);
 
-        // Check if Bidder exists
         bidderService.getBidderById(bidderId);
 
         TenderBid tenderBid = new TenderBid(
@@ -40,115 +38,86 @@ public class TenderBidService {
                 bidderId
         );
 
-        tenderBidStorage.saveTenderBid(
-                tenderBid
-        );
-
-        return tenderBid;
+        return tenderBidRepository.save(tenderBid);
     }
 
 
-    public TenderBid getTenderBidById(
-            UUID id
-    ) {
+    public TenderBid getTenderBidById(UUID id) {
 
-        TenderBid tenderBid =
-                tenderBidStorage
-                        .findTenderBidById(id);
-
-        if (tenderBid == null) {
-
-            throw new IllegalArgumentException(
-                    "Tender bid not found"
-            );
-        }
-
-        return tenderBid;
+        return tenderBidRepository
+                .findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Tender bid not found"
+                ));
     }
 
 
     public List<TenderBid> getAllTenderBids() {
 
-        return tenderBidStorage
-                .getAllTenderBids();
+        return tenderBidRepository.findAll();
     }
 
 
-    public List<TenderBid> getTenderBidsByTenderId(
-            UUID tenderId
-    ) {
+    public List<TenderBid> getTenderBidsByTenderId(UUID tenderId) {
 
-        // Check if Tender exists
         tenderService.getTenderById(tenderId);
 
-        return tenderBidStorage
-                .getTenderBidsByTenderId(tenderId);
+        return tenderBidRepository.findByTenderId(tenderId);
     }
 
 
-    public List<TenderBid> getTenderBidsByBidderId(
-            UUID bidderId
-    ) {
+    public List<TenderBid> getTenderBidsByBidderId(UUID bidderId) {
 
-        // Check if Bidder exists
         bidderService.getBidderById(bidderId);
 
-        return tenderBidStorage
-                .getTenderBidsByBidderId(bidderId);
+        return tenderBidRepository.findByBidderId(bidderId);
     }
 
 
-    public void submitTenderBid(
-            UUID id
-    ) {
+    public void submitTenderBid(UUID id) {
 
-        TenderBid tenderBid =
-                getTenderBidById(id);
+        TenderBid tenderBid = getTenderBidById(id);
 
         tenderBid.submitBid();
+
+        tenderBidRepository.save(tenderBid);
     }
 
 
-    public void startBidReview(
-            UUID id
-    ) {
+    public void startBidReview(UUID id) {
 
-        TenderBid tenderBid =
-                getTenderBidById(id);
+        TenderBid tenderBid = getTenderBidById(id);
 
         tenderBid.startReview();
+
+        tenderBidRepository.save(tenderBid);
     }
 
 
-    public void qualifyBid(
-            UUID id
-    ) {
+    public void qualifyBid(UUID id) {
 
-        TenderBid tenderBid =
-                getTenderBidById(id);
+        TenderBid tenderBid = getTenderBidById(id);
 
         tenderBid.qualifyBid();
+
+        tenderBidRepository.save(tenderBid);
     }
 
 
-    public void disqualifyBid(
-            UUID id
-    ) {
+    public void disqualifyBid(UUID id) {
 
-        TenderBid tenderBid =
-                getTenderBidById(id);
+        TenderBid tenderBid = getTenderBidById(id);
 
         tenderBid.disqualifyBid();
+
+        tenderBidRepository.save(tenderBid);
     }
 
 
-    public void deleteTenderBid(
-            UUID id
-    ) {
+    public void deleteTenderBid(UUID id) {
 
-        // Check if the TenderBid exists
         getTenderBidById(id);
 
-        tenderBidStorage.deleteTenderBid(id);
+        tenderBidRepository.deleteById(id);
     }
 }

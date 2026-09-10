@@ -1,7 +1,402 @@
 [
   {
-    "identifier": "ESIC-1001",
-    "company_name": "ABC Technologies Pvt Ltd",
-    "status": "ACTIVE"
+    "identifier": "ESIC-3000",
+    "pan": "AFQOF1001S",
+    "company_name": "Laxmi Automobiles Enterprises",
+    "status": "CANCELLED",
+    "registered_office": "Howrah, West Bengal",
+    "date_of_registration": "2017-12-18"
+  },
+  {
+    "identifier": "ESIC-3001",
+    "pan": "WSHIK1031M",
+    "company_name": "Sanjay Pharma Works",
+    "status": "ACTIVE",
+    "registered_office": "Amritsar, Punjab",
+    "date_of_registration": "2017-03-01"
+  },
+  {
+    "identifier": "ESIC-3002",
+    "pan": "ZQORV1005Y",
+    "company_name": "Pioneer Steel LLP",
+    "status": "CANCELLED",
+    "registered_office": "Lucknow, Uttar Pradesh",
+    "date_of_registration": "2014-04-18"
+  },
+  {
+    "identifier": "ESIC-3003",
+    "pan": "LVZMK1060K",
+    "company_name": "Nova Textiles Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Bhubaneswar, Odisha",
+    "date_of_registration": "2014-06-01"
+  },
+  {
+    "identifier": "ESIC-3004",
+    "pan": "NIWVC1046L",
+    "company_name": "Ravi Agro Pvt Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2020-12-24"
+  },
+  {
+    "identifier": "ESIC-3005",
+    "pan": "GKOGM1049W",
+    "company_name": "Pearl Electronics Pvt Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Pune, Maharashtra",
+    "date_of_registration": "2017-09-08"
+  },
+  {
+    "identifier": "ESIC-3006",
+    "pan": "BBWKY1019S",
+    "company_name": "Elite Industries Ltd",
+    "status": "ACTIVE",
+    "registered_office": "New Delhi, Delhi",
+    "date_of_registration": "2014-03-23"
+  },
+  {
+    "identifier": "ESIC-3007",
+    "pan": "YCWGX1022X",
+    "company_name": "Ravi Infrastructure LLP",
+    "status": "ACTIVE",
+    "registered_office": "Nagpur, Maharashtra",
+    "date_of_registration": "2014-04-28"
+  },
+  {
+    "identifier": "ESIC-3008",
+    "pan": "LVEJR1004W",
+    "company_name": "Shiv Steel LLP",
+    "status": "ACTIVE",
+    "registered_office": "Jaipur, Rajasthan",
+    "date_of_registration": "2019-08-24"
+  },
+  {
+    "identifier": "ESIC-3009",
+    "pan": "SCEHA1070K",
+    "company_name": "Northern Traders Works",
+    "status": "ACTIVE",
+    "registered_office": "Bengaluru, Karnataka",
+    "date_of_registration": "2015-09-05"
+  },
+  {
+    "identifier": "ESIC-3010",
+    "pan": "FFWID1083T",
+    "company_name": "Om Components Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Kolkata, West Bengal",
+    "date_of_registration": "2020-02-19"
+  },
+  {
+    "identifier": "ESIC-3011",
+    "pan": "MIZGW1053D",
+    "company_name": "Vishwa Foods & Co",
+    "status": "ACTIVE",
+    "registered_office": "Mumbai, Maharashtra",
+    "date_of_registration": "2020-11-05"
+  },
+  {
+    "identifier": "ESIC-3012",
+    "pan": "IWZHQ1028M",
+    "company_name": "Ravi Electronics & Co",
+    "status": "ACTIVE",
+    "registered_office": "Nagpur, Maharashtra",
+    "date_of_registration": "2018-06-26"
+  },
+  {
+    "identifier": "ESIC-3013",
+    "pan": "ZNXPR1041C",
+    "company_name": "Apex Chemicals Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Bhopal, Madhya Pradesh",
+    "date_of_registration": "2019-06-15"
+  },
+  {
+    "identifier": "ESIC-3014",
+    "pan": "VGPNK1098J",
+    "company_name": "Golden Industries & Co",
+    "status": "ACTIVE",
+    "registered_office": "Bhubaneswar, Odisha",
+    "date_of_registration": "2015-04-05"
+  },
+  {
+    "identifier": "ESIC-3015",
+    "pan": "KVKSI1088K",
+    "company_name": "Northern Chemicals Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Howrah, West Bengal",
+    "date_of_registration": "2023-02-05"
+  },
+  {
+    "identifier": "ESIC-3016",
+    "pan": "TOPFF1040N",
+    "company_name": "Eastern Plastics Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Thiruvananthapuram, Kerala",
+    "date_of_registration": "2021-08-11"
+  },
+  {
+    "identifier": "ESIC-3017",
+    "pan": "UDBZP1034Y",
+    "company_name": "Anand Foods Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Jaipur, Rajasthan",
+    "date_of_registration": "2022-06-25"
+  },
+  {
+    "identifier": "ESIC-3018",
+    "pan": "EASSZ1009Y",
+    "company_name": "Royal Foods & Co",
+    "status": "ACTIVE",
+    "registered_office": "Ludhiana, Punjab",
+    "date_of_registration": "2018-08-09"
+  },
+  {
+    "identifier": "ESIC-3019",
+    "pan": "FKMGO1073S",
+    "company_name": "Uni Chemicals LLP",
+    "status": "PENDING",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2015-03-26"
+  },
+  {
+    "identifier": "ESIC-3020",
+    "pan": "UMVPI1047H",
+    "company_name": "Sanjay Metals Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Hyderabad, Telangana",
+    "date_of_registration": "2023-01-07"
+  },
+  {
+    "identifier": "ESIC-3021",
+    "pan": "LMSRZ1015D",
+    "company_name": "Ravi Plastics LLP",
+    "status": "PENDING",
+    "registered_office": "Chennai, Tamil Nadu",
+    "date_of_registration": "2019-03-03"
+  },
+  {
+    "identifier": "ESIC-3022",
+    "pan": "HVZGO1064M",
+    "company_name": "Delta Automobiles Works",
+    "status": "ACTIVE",
+    "registered_office": "Guwahati, Assam",
+    "date_of_registration": "2019-07-17"
+  },
+  {
+    "identifier": "ESIC-3023",
+    "pan": "XOSFM1006U",
+    "company_name": "Nova Industries Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Bhopal, Madhya Pradesh",
+    "date_of_registration": "2018-05-27"
+  },
+  {
+    "identifier": "ESIC-3024",
+    "pan": "EDRBT1092A",
+    "company_name": "Green Agro Pvt Ltd",
+    "status": "CANCELLED",
+    "registered_office": "Kochi, Kerala",
+    "date_of_registration": "2014-07-28"
+  },
+  {
+    "identifier": "ESIC-3025",
+    "pan": "OIZNL1087T",
+    "company_name": "Sanjay Exports Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Hyderabad, Telangana",
+    "date_of_registration": "2022-04-04"
+  },
+  {
+    "identifier": "ESIC-3026",
+    "pan": "TJYWZ1066H",
+    "company_name": "Silver Pharma Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Guwahati, Assam",
+    "date_of_registration": "2016-02-01"
+  },
+  {
+    "identifier": "ESIC-3027",
+    "pan": "WOOSK1097D",
+    "company_name": "Bharat Chemicals Pvt Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2017-03-07"
+  },
+  {
+    "identifier": "ESIC-3028",
+    "pan": "SITYR1051G",
+    "company_name": "Uni Logistics Pvt Ltd",
+    "status": "PENDING",
+    "registered_office": "Kochi, Kerala",
+    "date_of_registration": "2019-11-21"
+  },
+  {
+    "identifier": "ESIC-3029",
+    "pan": "KBJZN1008R",
+    "company_name": "Harsha Textiles Works",
+    "status": "CANCELLED",
+    "registered_office": "Ahmedabad, Gujarat",
+    "date_of_registration": "2015-10-19"
+  },
+  {
+    "identifier": "ESIC-3030",
+    "pan": "AFRWP1059A",
+    "company_name": "Rajdhani Systems LLP",
+    "status": "ACTIVE",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2015-01-03"
+  },
+  {
+    "identifier": "ESIC-3031",
+    "pan": "XDDMN1036R",
+    "company_name": "Global Infrastructure Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Bhubaneswar, Odisha",
+    "date_of_registration": "2021-03-03"
+  },
+  {
+    "identifier": "ESIC-3032",
+    "pan": "BVKUY1039A",
+    "company_name": "Diamond Chemicals & Co",
+    "status": "PENDING",
+    "registered_office": "Amritsar, Punjab",
+    "date_of_registration": "2019-02-02"
+  },
+  {
+    "identifier": "ESIC-3033",
+    "pan": "LCSLX1086K",
+    "company_name": "Global Garments & Co",
+    "status": "CANCELLED",
+    "registered_office": "Nagpur, Maharashtra",
+    "date_of_registration": "2014-03-19"
+  },
+  {
+    "identifier": "ESIC-3034",
+    "pan": "CMBTT1011E",
+    "company_name": "Star Solutions Pvt Ltd",
+    "status": "ACTIVE",
+    "registered_office": "New Delhi, Delhi",
+    "date_of_registration": "2020-08-01"
+  },
+  {
+    "identifier": "ESIC-3035",
+    "pan": "XLMHK1058I",
+    "company_name": "Ananya Fabricators Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Thiruvananthapuram, Kerala",
+    "date_of_registration": "2020-03-12"
+  },
+  {
+    "identifier": "ESIC-3036",
+    "pan": "NFUJY1099U",
+    "company_name": "Elite Exports Pvt Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Bengaluru, Karnataka",
+    "date_of_registration": "2016-05-09"
+  },
+  {
+    "identifier": "ESIC-3037",
+    "pan": "QGMXV1023C",
+    "company_name": "Green Electronics Works",
+    "status": "ACTIVE",
+    "registered_office": "Howrah, West Bengal",
+    "date_of_registration": "2016-01-20"
+  },
+  {
+    "identifier": "ESIC-3038",
+    "pan": "RSKRJ1012Q",
+    "company_name": "Ganesh Infrastructure Works",
+    "status": "ACTIVE",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2017-11-10"
+  },
+  {
+    "identifier": "ESIC-3039",
+    "pan": "FBTBI1018B",
+    "company_name": "Sun Electronics LLP",
+    "status": "ACTIVE",
+    "registered_office": "Guwahati, Assam",
+    "date_of_registration": "2022-08-02"
+  },
+  {
+    "identifier": "ESIC-3040",
+    "pan": "ADWZB1068Z",
+    "company_name": "Shiv Automobiles & Co",
+    "status": "ACTIVE",
+    "registered_office": "Bhubaneswar, Odisha",
+    "date_of_registration": "2020-03-14"
+  },
+  {
+    "identifier": "ESIC-3041",
+    "pan": "GRJOI1050X",
+    "company_name": "Laxmi Steel Works",
+    "status": "ACTIVE",
+    "registered_office": "Thiruvananthapuram, Kerala",
+    "date_of_registration": "2022-04-21"
+  },
+  {
+    "identifier": "ESIC-3042",
+    "pan": "JSUOC1093B",
+    "company_name": "Pioneer Pharma Ltd",
+    "status": "CANCELLED",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2022-01-13"
+  },
+  {
+    "identifier": "ESIC-3043",
+    "pan": "XFBVX1079J",
+    "company_name": "Sanjay Infrastructure LLP",
+    "status": "PENDING",
+    "registered_office": "Nagpur, Maharashtra",
+    "date_of_registration": "2019-08-18"
+  },
+  {
+    "identifier": "ESIC-3044",
+    "pan": "KRVZM1067B",
+    "company_name": "Classic Packaging & Co",
+    "status": "PENDING",
+    "registered_office": "Ludhiana, Punjab",
+    "date_of_registration": "2019-10-17"
+  },
+  {
+    "identifier": "ESIC-3045",
+    "pan": "DJTGJ1078U",
+    "company_name": "Shree Constructions Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Bhopal, Madhya Pradesh",
+    "date_of_registration": "2018-03-01"
+  },
+  {
+    "identifier": "ESIC-3046",
+    "pan": "ZGCLS1029K",
+    "company_name": "Uni Textiles Enterprises",
+    "status": "ACTIVE",
+    "registered_office": "Coimbatore, Tamil Nadu",
+    "date_of_registration": "2017-01-26"
+  },
+  {
+    "identifier": "ESIC-3047",
+    "pan": "NQMLB1062I",
+    "company_name": "Southern Engineering Ltd",
+    "status": "ACTIVE",
+    "registered_office": "Bhubaneswar, Odisha",
+    "date_of_registration": "2014-08-17"
+  },
+  {
+    "identifier": "ESIC-3048",
+    "pan": "LTVHU1037P",
+    "company_name": "Apex Fabricators & Co",
+    "status": "ACTIVE",
+    "registered_office": "Bhubaneswar, Odisha",
+    "date_of_registration": "2023-04-06"
+  },
+  {
+    "identifier": "ESIC-3049",
+    "pan": "BLJPL1085H",
+    "company_name": "Pearl Traders Works",
+    "status": "ACTIVE",
+    "registered_office": "Patna, Bihar",
+    "date_of_registration": "2017-05-18"
   }
 ]

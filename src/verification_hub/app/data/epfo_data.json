@@ -1,7 +1,452 @@
 [
   {
-    "identifier": "EPFO-1001",
-    "company_name": "ABC Technologies Pvt Ltd",
-    "status": "ACTIVE"
+    "identifier": "EPFO-2000",
+    "pan": "LNURY1030X",
+    "company_name": "Uni Engineering Works",
+    "status": "ACTIVE",
+    "establishment_office": "Kolkata Regional Office",
+    "date_of_setup": "2020-07-15",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2001",
+    "pan": "YGEUE1026N",
+    "company_name": "Sanjay Fabricators Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2015-07-17",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2002",
+    "pan": "MLHTC1094N",
+    "company_name": "Universal Polymers & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Hyderabad Regional Office",
+    "date_of_setup": "2019-08-16",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2003",
+    "pan": "TRDCQ1075B",
+    "company_name": "Anand Components Works",
+    "status": "ACTIVE",
+    "establishment_office": "Hyderabad Regional Office",
+    "date_of_setup": "2015-12-15",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2004",
+    "pan": "KVKSI1088K",
+    "company_name": "Northern Chemicals Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Howrah Regional Office",
+    "date_of_setup": "2015-09-13",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2005",
+    "pan": "STEPT1044D",
+    "company_name": "Vishwa Electronics & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Chennai Regional Office",
+    "date_of_setup": "2017-08-09",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2006",
+    "pan": "ICNEM1090D",
+    "company_name": "Global Foods Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2022-10-05",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2007",
+    "pan": "DJTGJ1078U",
+    "company_name": "Shree Constructions Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Bhopal Regional Office",
+    "date_of_setup": "2019-11-25",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2008",
+    "pan": "DGNKJ1080X",
+    "company_name": "National Foods & Co",
+    "status": "ACTIVE",
+    "establishment_office": "New Delhi Regional Office",
+    "date_of_setup": "2021-01-04",
+    "employee_count_range": "100-500"
+  },
+  {
+    "identifier": "EPFO-2009",
+    "pan": "YCGOK1054T",
+    "company_name": "Sun Enterprises Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "New Delhi Regional Office",
+    "date_of_setup": "2021-01-14",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2010",
+    "pan": "GYWWJ1021F",
+    "company_name": "Diamond Electronics Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Mysuru Regional Office",
+    "date_of_setup": "2016-11-10",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2011",
+    "pan": "EDRBT1092A",
+    "company_name": "Green Agro Pvt Ltd",
+    "status": "EXITED",
+    "establishment_office": "Kochi Regional Office",
+    "date_of_setup": "2018-02-21",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2012",
+    "pan": "MFKBJ1017M",
+    "company_name": "Star Textiles & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Mysuru Regional Office",
+    "date_of_setup": "2016-01-13",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2013",
+    "pan": "VGPNK1098J",
+    "company_name": "Golden Industries & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2017-07-21",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2014",
+    "pan": "LCSLX1086K",
+    "company_name": "Global Garments & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Nagpur Regional Office",
+    "date_of_setup": "2017-08-03",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2015",
+    "pan": "TLPJZ1007E",
+    "company_name": "Crown Infrastructure LLP",
+    "status": "ACTIVE",
+    "establishment_office": "Jodhpur Regional Office",
+    "date_of_setup": "2021-01-01",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2016",
+    "pan": "GAUXR1072F",
+    "company_name": "Harsha Constructions & Co",
+    "status": "PENDING_VERIFICATION",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2020-12-05",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2017",
+    "pan": "WOOSK1097D",
+    "company_name": "Bharat Chemicals Pvt Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2015-12-26",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2018",
+    "pan": "ADWZB1068Z",
+    "company_name": "Shiv Automobiles & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2018-03-13",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2019",
+    "pan": "DRXWX1035Y",
+    "company_name": "Modern Steel Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Bhopal Regional Office",
+    "date_of_setup": "2016-11-22",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2020",
+    "pan": "TEDOZ1076Q",
+    "company_name": "Sai Foods LLP",
+    "status": "ACTIVE",
+    "establishment_office": "Surat Regional Office",
+    "date_of_setup": "2014-10-21",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2021",
+    "pan": "AJLYW1081D",
+    "company_name": "Sanjay Plastics LLP",
+    "status": "ACTIVE",
+    "establishment_office": "Guwahati Regional Office",
+    "date_of_setup": "2017-11-24",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2022",
+    "pan": "LTJDB1089R",
+    "company_name": "Sai Industries Pvt Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Mysuru Regional Office",
+    "date_of_setup": "2021-04-03",
+    "employee_count_range": "100-500"
+  },
+  {
+    "identifier": "EPFO-2023",
+    "pan": "ZNXPR1041C",
+    "company_name": "Apex Chemicals Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Bhopal Regional Office",
+    "date_of_setup": "2015-10-24",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2024",
+    "pan": "LTVHU1037P",
+    "company_name": "Apex Fabricators & Co",
+    "status": "EXITED",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2019-03-08",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2025",
+    "pan": "EJSNV1096Z",
+    "company_name": "Modern Fabricators & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Pune Regional Office",
+    "date_of_setup": "2022-10-20",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2026",
+    "pan": "FKMGO1073S",
+    "company_name": "Uni Chemicals LLP",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2014-11-10",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2027",
+    "pan": "UDBZP1034Y",
+    "company_name": "Anand Foods Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Jaipur Regional Office",
+    "date_of_setup": "2017-12-13",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2028",
+    "pan": "GASVP1065V",
+    "company_name": "Southern Pharma Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Hyderabad Regional Office",
+    "date_of_setup": "2017-08-13",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2029",
+    "pan": "RSKRJ1012Q",
+    "company_name": "Ganesh Infrastructure Works",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2023-02-17",
+    "employee_count_range": "100-500"
+  },
+  {
+    "identifier": "EPFO-2030",
+    "pan": "OIZNL1087T",
+    "company_name": "Sanjay Exports Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Hyderabad Regional Office",
+    "date_of_setup": "2019-06-05",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2031",
+    "pan": "FEANH1052B",
+    "company_name": "Shiv Electronics LLP",
+    "status": "PENDING_VERIFICATION",
+    "establishment_office": "Thiruvananthapuram Regional Office",
+    "date_of_setup": "2020-06-18",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2032",
+    "pan": "WDJUP1084A",
+    "company_name": "Metro Traders Works",
+    "status": "ACTIVE",
+    "establishment_office": "Hyderabad Regional Office",
+    "date_of_setup": "2015-01-19",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2033",
+    "pan": "VZVPQ1091A",
+    "company_name": "Vishwa Logistics & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Hyderabad Regional Office",
+    "date_of_setup": "2014-01-26",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2034",
+    "pan": "LKHGY1016O",
+    "company_name": "Vikram Electronics Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Jaipur Regional Office",
+    "date_of_setup": "2022-07-14",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2035",
+    "pan": "KREEP1071M",
+    "company_name": "Sun Logistics Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2022-09-20",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2036",
+    "pan": "WSHIK1031M",
+    "company_name": "Sanjay Pharma Works",
+    "status": "ACTIVE",
+    "establishment_office": "Amritsar Regional Office",
+    "date_of_setup": "2015-09-07",
+    "employee_count_range": "100-500"
+  },
+  {
+    "identifier": "EPFO-2037",
+    "pan": "EASSZ1009Y",
+    "company_name": "Royal Foods & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Ludhiana Regional Office",
+    "date_of_setup": "2019-07-19",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2038",
+    "pan": "KSBRQ1045D",
+    "company_name": "Vishwa Polymers & Co",
+    "status": "PENDING_VERIFICATION",
+    "establishment_office": "Thiruvananthapuram Regional Office",
+    "date_of_setup": "2015-05-23",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2039",
+    "pan": "SGKRH1020K",
+    "company_name": "Uni Electronics Works",
+    "status": "EXITED",
+    "establishment_office": "Ludhiana Regional Office",
+    "date_of_setup": "2017-01-08",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2040",
+    "pan": "MIZGW1053D",
+    "company_name": "Vishwa Foods & Co",
+    "status": "ACTIVE",
+    "establishment_office": "Mumbai Regional Office",
+    "date_of_setup": "2021-10-20",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2041",
+    "pan": "LMSRZ1015D",
+    "company_name": "Ravi Plastics LLP",
+    "status": "ACTIVE",
+    "establishment_office": "Chennai Regional Office",
+    "date_of_setup": "2016-02-01",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2042",
+    "pan": "JAWEF1048Z",
+    "company_name": "Vishwa Systems Works",
+    "status": "ACTIVE",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2016-08-12",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2043",
+    "pan": "AFRWP1059A",
+    "company_name": "Rajdhani Systems LLP",
+    "status": "ACTIVE",
+    "establishment_office": "Patna Regional Office",
+    "date_of_setup": "2018-03-12",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2044",
+    "pan": "BYBAG1043A",
+    "company_name": "Silver Logistics Works",
+    "status": "ACTIVE",
+    "establishment_office": "New Delhi Regional Office",
+    "date_of_setup": "2018-12-04",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2045",
+    "pan": "IXUWX1025G",
+    "company_name": "Northern Enterprises Pvt Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Ahmedabad Regional Office",
+    "date_of_setup": "2020-05-17",
+    "employee_count_range": "10-20"
+  },
+  {
+    "identifier": "EPFO-2046",
+    "pan": "USIAK1063H",
+    "company_name": "Bharat Exports Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Chennai Regional Office",
+    "date_of_setup": "2023-11-03",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2047",
+    "pan": "NQMLB1062I",
+    "company_name": "Southern Engineering Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2014-08-28",
+    "employee_count_range": "20-50"
+  },
+  {
+    "identifier": "EPFO-2048",
+    "pan": "XDDMN1036R",
+    "company_name": "Global Infrastructure Ltd",
+    "status": "ACTIVE",
+    "establishment_office": "Bhubaneswar Regional Office",
+    "date_of_setup": "2018-02-19",
+    "employee_count_range": "50-100"
+  },
+  {
+    "identifier": "EPFO-2049",
+    "pan": "TOPFF1040N",
+    "company_name": "Eastern Plastics Enterprises",
+    "status": "ACTIVE",
+    "establishment_office": "Thiruvananthapuram Regional Office",
+    "date_of_setup": "2022-01-02",
+    "employee_count_range": "100-500"
   }
 ]

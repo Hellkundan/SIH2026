@@ -5,14 +5,14 @@ import backend.service.DocumentService;
 import backend.service.TenderBidService;
 import backend.service.TenderRequirementService;
 import backend.service.TenderService;
-import backend.storage.BidderStorage;
-import backend.storage.DocumentStorage;
-import backend.storage.TenderBidStorage;
-import backend.storage.TenderRequirementStorage;
-import backend.storage.TenderStorage;
 import backend.security.AppUser;
 import backend.security.Role;
 import backend.security.UserStorage;
+import backend.repository.BidderRepository;
+import backend.repository.DocumentRepository;
+import backend.repository.TenderBidRepository;
+import backend.repository.TenderRequirementRepository;
+import backend.repository.TenderRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -28,63 +28,28 @@ public class BackendApplication {
 
 
     @Bean
-    public TenderStorage tenderStorage() {
+    public TenderService tenderService(TenderRepository tenderRepository) {
 
-        return new TenderStorage();
+        return new TenderService(tenderRepository);
     }
 
 
     @Bean
-    public BidderStorage bidderStorage() {
+    public BidderService bidderService(BidderRepository bidderRepository) {
 
-        return new BidderStorage();
-    }
-
-
-    @Bean
-    public DocumentStorage documentStorage() {
-
-        return new DocumentStorage();
-    }
-
-
-    @Bean
-    public TenderBidStorage tenderBidStorage() {
-
-        return new TenderBidStorage();
-    }
-
-
-    @Bean
-    public TenderRequirementStorage tenderRequirementStorage() {
-
-        return new TenderRequirementStorage();
-    }
-
-
-    @Bean
-    public TenderService tenderService(TenderStorage tenderStorage) {
-
-        return new TenderService(tenderStorage);
-    }
-
-
-    @Bean
-    public BidderService bidderService(BidderStorage bidderStorage) {
-
-        return new BidderService(bidderStorage);
+        return new BidderService(bidderRepository);
     }
 
 
     @Bean
     public TenderBidService tenderBidService(
-            TenderBidStorage tenderBidStorage,
+            TenderBidRepository tenderBidRepository,
             TenderService tenderService,
             BidderService bidderService
     ) {
 
         return new TenderBidService(
-                tenderBidStorage,
+                tenderBidRepository,
                 tenderService,
                 bidderService
         );
@@ -93,12 +58,12 @@ public class BackendApplication {
 
     @Bean
     public DocumentService documentService(
-            DocumentStorage documentStorage,
+            DocumentRepository documentRepository,
             TenderBidService tenderBidService
     ) {
 
         return new DocumentService(
-                documentStorage,
+                documentRepository,
                 tenderBidService
         );
     }
@@ -106,19 +71,19 @@ public class BackendApplication {
 
     @Bean
     public TenderRequirementService tenderRequirementService(
-            TenderRequirementStorage tenderRequirementStorage,
+            TenderRequirementRepository tenderRequirementRepository,
             TenderService tenderService
     ) {
 
         return new TenderRequirementService(
-                tenderRequirementStorage,
+                tenderRequirementRepository,
                 tenderService
         );
     }
 
 
-        @Bean
-        public UserStorage userStorage(PasswordEncoder passwordEncoder) {
+    @Bean
+    public UserStorage userStorage(PasswordEncoder passwordEncoder) {
 
         UserStorage userStorage = new UserStorage();
 
@@ -139,5 +104,5 @@ public class BackendApplication {
         ));
 
         return userStorage;
-        }
+    }
 }

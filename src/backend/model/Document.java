@@ -2,24 +2,38 @@ package backend.model;
 
 import backend.enums.DocumentStatus;
 import backend.enums.DocumentType;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
+@Table(name = "documents")
 public class Document {
 
-    private final UUID id = UUID.randomUUID();
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
-    private final UUID tenderBidId;
+    @Column(nullable = false)
+    private UUID tenderBidId;
 
-    private final DocumentType documentType;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private DocumentType documentType;
 
-    private final String fileName;
+    @Column(nullable = false)
+    private String fileName;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private DocumentStatus status;
 
-    private final LocalDateTime uploadedAt;
+    @Column(nullable = false)
+    private LocalDateTime uploadedAt;
 
+
+    public Document() {}
 
     public Document(
             UUID tenderBidId,

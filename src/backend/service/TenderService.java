@@ -1,18 +1,18 @@
 package backend.service;
 
 import backend.model.Tender;
-import backend.storage.TenderStorage;
+import backend.repository.TenderRepository;
 
 import java.util.List;
 import java.util.UUID;
 
 public class TenderService {
 
-    private final TenderStorage tenderStorage;
+    private final TenderRepository tenderRepository;
 
 
-    public TenderService(TenderStorage tenderStorage) {
-        this.tenderStorage = tenderStorage;
+    public TenderService(TenderRepository tenderRepository) {
+        this.tenderRepository = tenderRepository;
     }
 
 
@@ -26,31 +26,23 @@ public class TenderService {
                 description
         );
 
-        tenderStorage.saveTender(tender);
-
-        return tender;
+        return tenderRepository.save(tender);
     }
 
 
     public Tender getTenderById(UUID id) {
 
-        Tender tender =
-                tenderStorage.findTenderById(id);
-
-        if (tender == null) {
-
-            throw new IllegalArgumentException(
-                    "Tender not found"
-            );
-        }
-
-        return tender;
+        return tenderRepository
+                .findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Tender not found"
+                ));
     }
 
 
     public List<Tender> getAllTenders() {
 
-        return tenderStorage.getAllTenders();
+        return tenderRepository.findAll();
     }
 
 
@@ -66,6 +58,8 @@ public class TenderService {
                 title,
                 description
         );
+
+        tenderRepository.save(tender);
     }
 
 
@@ -74,6 +68,8 @@ public class TenderService {
         Tender tender = getTenderById(id);
 
         tender.openTender();
+
+        tenderRepository.save(tender);
     }
 
 
@@ -82,6 +78,8 @@ public class TenderService {
         Tender tender = getTenderById(id);
 
         tender.closeTender();
+
+        tenderRepository.save(tender);
     }
 
 
@@ -89,6 +87,6 @@ public class TenderService {
 
         getTenderById(id);
 
-        tenderStorage.deleteTender(id);
+        tenderRepository.deleteById(id);
     }
 }

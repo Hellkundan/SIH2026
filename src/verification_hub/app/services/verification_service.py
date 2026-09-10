@@ -1,63 +1,55 @@
 import asyncio
 from datetime import datetime, timezone
-from app.models.enums import VerificationStatus, ErrorState
+
+from app.models.enums import ErrorState, VerificationStatus
 from app.models.request import VerificationRequest
 from app.models.response import VerificationEvidence, VerificationResponse
 from app.providers.registry import ProviderRegistry
 
+
 class VerificationService:
-    def __init__(self):
+    def __init__(self) -> None:
         self.registry = ProviderRegistry()
-        self.timeout_seconds = 5
 
     async def verify(self, request: VerificationRequest) -> VerificationResponse:
         provider = self.registry.get_provider(request.verification_type)
 
         if provider is None:
-            return self._failure(
-                request,
-                VerificationStatus.FAILED,
-                ErrorState.PROVIDER_UNAVAILABLE,
-                "Provider is not registered"
+            return VerificationResponse(
+                bidder_id=request.bidder_id,
+                verification_type=request.verification_type,
+                status=VerificationStatus.FAILED,
+                source="NONE",
+                timestamp=datetime.now(timezone.utc),
+                evidence=VerificationEvidence(
+                    provider="Unknown",
+                    source="NONE",
+                    details={"reason": "No provider registered for this verification type"},
+                ),
+                error_state=ErrorState.PROVIDER_UNAVAILABLE,
+                error_message=f"No provider available for {request.verification_type}",
+                confidence=0.0,
             )
 
         try:
-            return await asyncio.wait_for(
-                provider.verify(request),
-                timeout=self.timeout_seconds
-            )
-        except asyncio.TimeoutError:
-            return self._failure(
-                request,
-                VerificationStatus.PENDING,
-                ErrorState.TIMEOUT,
-                "Provider timeout"
-            )
-        except Exception as exc:
-            return self._failure(
-                request,
-                VerificationStatus.FAILED,
-                ErrorState.INTERNAL_ERROR,
-                str(exc)
+            return await provider.verify(request)
+        except Exception as exc:  # keep the API resilient during a live demo
+            return VerificationResponse(
+                bidder_id=request.bidder_id,
+                verification_type=request.verification_type,
+                status=VerificationStatus.FAILED,
+                source=getattr(provider, "source", "UNKNOWN"),
+                timestamp=datetime.now(timezone.utc),
+                evidence=VerificationEvidence(
+                    provider=getattr(provider, "name", "Unknown"),
+                    source=getattr(provider, "source", "UNKNOWN"),
+                    details={"error": str(exc)},
+                ),
+                error_state=ErrorState.INTERNAL_ERROR,
+                error_message=str(exc),
+                confidence=0.0,
             )
 
-    async def verify_all(self, requests: list[VerificationRequest]):
-        tasks = [self.verify(request) for request in requests]
-        return await asyncio.gather(*tasks)
-
-    def _failure(self, request, status, error_state, message):
-        return VerificationResponse(
-            bidder_id=request.bidder_id,
-            verification_type=request.verification_type,
-            status=status,
-            source="VERIFICATION_HUB",
-            timestamp=datetime.now(timezone.utc),
-            evidence=VerificationEvidence(
-                provider="VERIFICATION_HUB",
-                source="VERIFICATION_HUB",
-                details={}
-            ),
-            error_state=error_state,
-            error_message=message,
-            confidence=0.0
-        )
+    async def verify_all(self, checks: list[VerificationRequest]) -> list[VerificationResponse]:
+        results = await asyncio.gather(*(self.verify(request) for request in checks))
+        return list(results)

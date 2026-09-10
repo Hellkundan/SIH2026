@@ -1,24 +1,36 @@
 package backend.model;
 
 import backend.enums.BidStatus;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
+@Table(name = "tender_bids")
 public class TenderBid {
 
-    private final UUID id = UUID.randomUUID();
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
-    private final UUID tenderId;
+    @Column(nullable = false)
+    private UUID tenderId;
 
-    private final UUID bidderId;
+    @Column(nullable = false)
+    private UUID bidderId;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private BidStatus status;
 
-    private final LocalDateTime createdAt;
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
 
     private LocalDateTime submittedAt;
 
+
+    public TenderBid() {}
 
     public TenderBid(
             UUID tenderId,

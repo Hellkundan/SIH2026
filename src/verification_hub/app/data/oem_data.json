@@ -1,7 +1,227 @@
 [
   {
-    "identifier": "OEM-1001",
-    "company_name": "ABC Technologies Pvt Ltd",
-    "authorization_status": "AUTHORIZED"
+    "identifier": "OEM-5000",
+    "pan": "NFUJY1099U",
+    "company_name": "Elite Exports Pvt Ltd",
+    "authorization_status": "EXPIRED",
+    "authorized_for": "Construction",
+    "issuing_oem": "National Cable Corp",
+    "valid_upto": "2025-01-17"
+  },
+  {
+    "identifier": "OEM-5001",
+    "pan": "VGPNK1098J",
+    "company_name": "Golden Industries & Co",
+    "authorization_status": "REVOKED",
+    "authorized_for": "Construction",
+    "issuing_oem": "Delta Machine Tools",
+    "valid_upto": "2027-05-22"
+  },
+  {
+    "identifier": "OEM-5002",
+    "pan": "OIZNL1087T",
+    "company_name": "Sanjay Exports Enterprises",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Trading",
+    "issuing_oem": "FlowTech Industries",
+    "valid_upto": "2027-05-21"
+  },
+  {
+    "identifier": "OEM-5003",
+    "pan": "AFQOF1001S",
+    "company_name": "Laxmi Automobiles Enterprises",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Manufacturing",
+    "issuing_oem": "Bharat Heavy Components",
+    "valid_upto": "2027-11-23"
+  },
+  {
+    "identifier": "OEM-5004",
+    "pan": "LVZMK1060K",
+    "company_name": "Nova Textiles Enterprises",
+    "authorization_status": "REVOKED",
+    "authorized_for": "Services",
+    "issuing_oem": "Bharat Heavy Components",
+    "valid_upto": "2026-03-17"
+  },
+  {
+    "identifier": "OEM-5005",
+    "pan": "LKHGY1016O",
+    "company_name": "Vikram Electronics Enterprises",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Manufacturing",
+    "issuing_oem": "TechCore Systems Ltd",
+    "valid_upto": "2028-11-11"
+  },
+  {
+    "identifier": "OEM-5006",
+    "pan": "YVCFQ1082A",
+    "company_name": "Nova Electronics Pvt Ltd",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Textiles",
+    "issuing_oem": "TechCore Systems Ltd",
+    "valid_upto": "2028-05-09"
+  },
+  {
+    "identifier": "OEM-5007",
+    "pan": "YCWGX1022X",
+    "company_name": "Ravi Infrastructure LLP",
+    "authorization_status": "EXPIRED",
+    "authorized_for": "Services",
+    "issuing_oem": "National Cable Corp",
+    "valid_upto": "2028-12-02"
+  },
+  {
+    "identifier": "OEM-5008",
+    "pan": "TEDOZ1076Q",
+    "company_name": "Sai Foods LLP",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Services",
+    "issuing_oem": "Prime Electricals",
+    "valid_upto": "2027-12-23"
+  },
+  {
+    "identifier": "OEM-5009",
+    "pan": "EJSNV1096Z",
+    "company_name": "Modern Fabricators & Co",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Trading",
+    "issuing_oem": "Suntech Panels Ltd",
+    "valid_upto": "2027-09-10"
+  },
+  {
+    "identifier": "OEM-5010",
+    "pan": "IWZHQ1028M",
+    "company_name": "Ravi Electronics & Co",
+    "authorization_status": "EXPIRED",
+    "authorized_for": "Retail",
+    "issuing_oem": "Comfort Interiors Pvt Ltd",
+    "valid_upto": "2027-02-16"
+  },
+  {
+    "identifier": "OEM-5011",
+    "pan": "TEOKV1032J",
+    "company_name": "Ravi Steel Works",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Construction",
+    "issuing_oem": "Bharat Heavy Components",
+    "valid_upto": "2026-11-11"
+  },
+  {
+    "identifier": "OEM-5012",
+    "pan": "MBTFR1077V",
+    "company_name": "Green Metals Pvt Ltd",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Retail",
+    "issuing_oem": "Prime Electricals",
+    "valid_upto": "2027-04-24"
+  },
+  {
+    "identifier": "OEM-5013",
+    "pan": "BVKUY1039A",
+    "company_name": "Diamond Chemicals & Co",
+    "authorization_status": "EXPIRED",
+    "authorized_for": "Logistics",
+    "issuing_oem": "National Cable Corp",
+    "valid_upto": "2027-06-09"
+  },
+  {
+    "identifier": "OEM-5014",
+    "pan": "JSUOC1093B",
+    "company_name": "Pioneer Pharma Ltd",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Services",
+    "issuing_oem": "Suntech Panels Ltd",
+    "valid_upto": "2025-08-02"
+  },
+  {
+    "identifier": "OEM-5015",
+    "pan": "DRXWX1035Y",
+    "company_name": "Modern Steel Ltd",
+    "authorization_status": "EXPIRED",
+    "authorized_for": "Construction",
+    "issuing_oem": "FlowTech Industries",
+    "valid_upto": "2028-04-17"
+  },
+  {
+    "identifier": "OEM-5016",
+    "pan": "YCGOK1054T",
+    "company_name": "Sun Enterprises Enterprises",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Retail",
+    "issuing_oem": "National Cable Corp",
+    "valid_upto": "2027-07-02"
+  },
+  {
+    "identifier": "OEM-5017",
+    "pan": "JAWEF1048Z",
+    "company_name": "Vishwa Systems Works",
+    "authorization_status": "EXPIRED",
+    "authorized_for": "Textiles",
+    "issuing_oem": "Comfort Interiors Pvt Ltd",
+    "valid_upto": "2026-04-11"
+  },
+  {
+    "identifier": "OEM-5018",
+    "pan": "STEPT1044D",
+    "company_name": "Vishwa Electronics & Co",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "IT/Software",
+    "issuing_oem": "Suntech Panels Ltd",
+    "valid_upto": "2026-06-28"
+  },
+  {
+    "identifier": "OEM-5019",
+    "pan": "XLMHK1058I",
+    "company_name": "Ananya Fabricators Enterprises",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Logistics",
+    "issuing_oem": "FlowTech Industries",
+    "valid_upto": "2028-06-21"
+  },
+  {
+    "identifier": "OEM-5020",
+    "pan": "KVKSI1088K",
+    "company_name": "Northern Chemicals Ltd",
+    "authorization_status": "REVOKED",
+    "authorized_for": "Textiles",
+    "issuing_oem": "Delta Machine Tools",
+    "valid_upto": "2025-01-15"
+  },
+  {
+    "identifier": "OEM-5021",
+    "pan": "CWWFV1027O",
+    "company_name": "Nova Textiles Works",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "IT/Software",
+    "issuing_oem": "Comfort Interiors Pvt Ltd",
+    "valid_upto": "2026-08-26"
+  },
+  {
+    "identifier": "OEM-5022",
+    "pan": "AFRWP1059A",
+    "company_name": "Rajdhani Systems LLP",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Manufacturing",
+    "issuing_oem": "FlowTech Industries",
+    "valid_upto": "2026-10-14"
+  },
+  {
+    "identifier": "OEM-5023",
+    "pan": "IODGS1038W",
+    "company_name": "Star Constructions LLP",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Trading",
+    "issuing_oem": "National Cable Corp",
+    "valid_upto": "2028-08-13"
+  },
+  {
+    "identifier": "OEM-5024",
+    "pan": "TJYWZ1066H",
+    "company_name": "Silver Pharma Enterprises",
+    "authorization_status": "AUTHORIZED",
+    "authorized_for": "Construction",
+    "issuing_oem": "Prime Electricals",
+    "valid_upto": "2027-01-11"
   }
 ]

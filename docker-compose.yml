@@ -1,4 +1,20 @@
 services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: dixy
+      POSTGRES_USER: dixy
+      POSTGRES_PASSWORD: dixy_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dixy -d dixy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   backend:
     build:
       context: .
@@ -8,7 +24,13 @@ services:
     environment:
       APP_JWT_SECRET: "ZGl4eS1zaWgtMjAyNi1qd3Qtc2VjcmV0LWtleS1mb3ItZGV2"
       APP_JWT_EXPIRATION_MS: "3600000"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/dixy"
+      SPRING_DATASOURCE_USERNAME: "dixy"
+      SPRING_DATASOURCE_PASSWORD: "dixy_password"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "create-drop"
     depends_on:
+      postgres:
+        condition: service_healthy
       verification-hub:
         condition: service_healthy
       ocr:
@@ -37,3 +59,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+volumes:
+  postgres_data:

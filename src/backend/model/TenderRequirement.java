@@ -1,17 +1,28 @@
 package backend.model;
 
+import jakarta.persistence.*;
+
 import java.util.UUID;
 
+@Entity
+@Table(name = "tender_requirements")
 public class TenderRequirement {
 
-    private final UUID id = UUID.randomUUID();
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
-    private final UUID tenderId;
+    @Column(nullable = false)
+    private UUID tenderId;
 
+    @Column(nullable = false)
     private String requirement;
 
+    @Column(nullable = false)
     private boolean mandatory;
 
+
+    public TenderRequirement() {}
 
     public TenderRequirement(
             UUID tenderId,

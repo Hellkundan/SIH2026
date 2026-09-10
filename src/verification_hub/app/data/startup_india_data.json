@@ -1,7 +1,272 @@
 [
   {
-    "identifier": "DIPP-1001",
-    "company_name": "ABC Innovations Pvt Ltd",
-    "recognition_status": "RECOGNIZED"
+    "identifier": "DIPP-50000",
+    "pan": "MLHTC1094N",
+    "company_name": "Universal Polymers & Co",
+    "recognition_status": "RECOGNIZED",
+    "sector": "IT/Software",
+    "recognition_date": "2024-01-11",
+    "certificate_number": "DIPP58000"
+  },
+  {
+    "identifier": "DIPP-50001",
+    "pan": "TLPJZ1007E",
+    "company_name": "Crown Infrastructure LLP",
+    "recognition_status": "UNDER_REVIEW",
+    "sector": "IT/Software",
+    "recognition_date": "2019-06-23",
+    "certificate_number": "DIPP58001"
+  },
+  {
+    "identifier": "DIPP-50002",
+    "pan": "WOOSK1097D",
+    "company_name": "Bharat Chemicals Pvt Ltd",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Manufacturing",
+    "recognition_date": "2022-01-01",
+    "certificate_number": "DIPP58002"
+  },
+  {
+    "identifier": "DIPP-50003",
+    "pan": "IWZHQ1028M",
+    "company_name": "Ravi Electronics & Co",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Manufacturing",
+    "recognition_date": "2019-02-28",
+    "certificate_number": "DIPP58003"
+  },
+  {
+    "identifier": "DIPP-50004",
+    "pan": "FKMGO1073S",
+    "company_name": "Uni Chemicals LLP",
+    "recognition_status": "RECOGNIZED",
+    "sector": "FinTech",
+    "recognition_date": "2018-06-23",
+    "certificate_number": "DIPP58004"
+  },
+  {
+    "identifier": "DIPP-50005",
+    "pan": "GKOGM1049W",
+    "company_name": "Pearl Electronics Pvt Ltd",
+    "recognition_status": "UNDER_REVIEW",
+    "sector": "FinTech",
+    "recognition_date": "2018-06-10",
+    "certificate_number": "DIPP58005"
+  },
+  {
+    "identifier": "DIPP-50006",
+    "pan": "KSBRQ1045D",
+    "company_name": "Vishwa Polymers & Co",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Logistics",
+    "recognition_date": "2023-11-16",
+    "certificate_number": "DIPP58006"
+  },
+  {
+    "identifier": "DIPP-50007",
+    "pan": "YCWGX1022X",
+    "company_name": "Ravi Infrastructure LLP",
+    "recognition_status": "RECOGNIZED",
+    "sector": "IT/Software",
+    "recognition_date": "2025-12-20",
+    "certificate_number": "DIPP58007"
+  },
+  {
+    "identifier": "DIPP-50008",
+    "pan": "EDRBT1092A",
+    "company_name": "Green Agro Pvt Ltd",
+    "recognition_status": "EXPIRED",
+    "sector": "IT/Software",
+    "recognition_date": "2019-07-10",
+    "certificate_number": "DIPP58008"
+  },
+  {
+    "identifier": "DIPP-50009",
+    "pan": "LNURY1030X",
+    "company_name": "Uni Engineering Works",
+    "recognition_status": "RECOGNIZED",
+    "sector": "FinTech",
+    "recognition_date": "2019-12-01",
+    "certificate_number": "DIPP58009"
+  },
+  {
+    "identifier": "DIPP-50010",
+    "pan": "TRDCQ1075B",
+    "company_name": "Anand Components Works",
+    "recognition_status": "UNDER_REVIEW",
+    "sector": "CleanTech",
+    "recognition_date": "2023-10-02",
+    "certificate_number": "DIPP58010"
+  },
+  {
+    "identifier": "DIPP-50011",
+    "pan": "TOPFF1040N",
+    "company_name": "Eastern Plastics Enterprises",
+    "recognition_status": "RECOGNIZED",
+    "sector": "FinTech",
+    "recognition_date": "2020-11-19",
+    "certificate_number": "DIPP58011"
+  },
+  {
+    "identifier": "DIPP-50012",
+    "pan": "JSUOC1093B",
+    "company_name": "Pioneer Pharma Ltd",
+    "recognition_status": "RECOGNIZED",
+    "sector": "AgriTech",
+    "recognition_date": "2022-12-03",
+    "certificate_number": "DIPP58012"
+  },
+  {
+    "identifier": "DIPP-50013",
+    "pan": "LTJDB1089R",
+    "company_name": "Sai Industries Pvt Ltd",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Logistics",
+    "recognition_date": "2019-11-03",
+    "certificate_number": "DIPP58013"
+  },
+  {
+    "identifier": "DIPP-50014",
+    "pan": "HQXJE1003C",
+    "company_name": "Eastern Industries Enterprises",
+    "recognition_status": "EXPIRED",
+    "sector": "EdTech",
+    "recognition_date": "2022-08-01",
+    "certificate_number": "DIPP58014"
+  },
+  {
+    "identifier": "DIPP-50015",
+    "pan": "OIZNL1087T",
+    "company_name": "Sanjay Exports Enterprises",
+    "recognition_status": "RECOGNIZED",
+    "sector": "IT/Software",
+    "recognition_date": "2018-06-09",
+    "certificate_number": "DIPP58015"
+  },
+  {
+    "identifier": "DIPP-50016",
+    "pan": "GAUXR1072F",
+    "company_name": "Harsha Constructions & Co",
+    "recognition_status": "EXPIRED",
+    "sector": "Manufacturing",
+    "recognition_date": "2017-07-15",
+    "certificate_number": "DIPP58016"
+  },
+  {
+    "identifier": "DIPP-50017",
+    "pan": "FFWID1083T",
+    "company_name": "Om Components Enterprises",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Logistics",
+    "recognition_date": "2023-08-13",
+    "certificate_number": "DIPP58017"
+  },
+  {
+    "identifier": "DIPP-50018",
+    "pan": "FBTBI1018B",
+    "company_name": "Sun Electronics LLP",
+    "recognition_status": "RECOGNIZED",
+    "sector": "FinTech",
+    "recognition_date": "2024-10-21",
+    "certificate_number": "DIPP58018"
+  },
+  {
+    "identifier": "DIPP-50019",
+    "pan": "YVCFQ1082A",
+    "company_name": "Nova Electronics Pvt Ltd",
+    "recognition_status": "EXPIRED",
+    "sector": "IT/Software",
+    "recognition_date": "2024-02-26",
+    "certificate_number": "DIPP58019"
+  },
+  {
+    "identifier": "DIPP-50020",
+    "pan": "ELSOC1024W",
+    "company_name": "Prime Exports LLP",
+    "recognition_status": "EXPIRED",
+    "sector": "FinTech",
+    "recognition_date": "2022-05-04",
+    "certificate_number": "DIPP58020"
+  },
+  {
+    "identifier": "DIPP-50021",
+    "pan": "USIAK1063H",
+    "company_name": "Bharat Exports Enterprises",
+    "recognition_status": "RECOGNIZED",
+    "sector": "IT/Software",
+    "recognition_date": "2023-03-24",
+    "certificate_number": "DIPP58021"
+  },
+  {
+    "identifier": "DIPP-50022",
+    "pan": "YQXMO1069T",
+    "company_name": "Anand Infrastructure & Co",
+    "recognition_status": "RECOGNIZED",
+    "sector": "CleanTech",
+    "recognition_date": "2018-06-20",
+    "certificate_number": "DIPP58022"
+  },
+  {
+    "identifier": "DIPP-50023",
+    "pan": "BVKUY1039A",
+    "company_name": "Diamond Chemicals & Co",
+    "recognition_status": "UNDER_REVIEW",
+    "sector": "CleanTech",
+    "recognition_date": "2017-07-21",
+    "certificate_number": "DIPP58023"
+  },
+  {
+    "identifier": "DIPP-50024",
+    "pan": "VZVPQ1091A",
+    "company_name": "Vishwa Logistics & Co",
+    "recognition_status": "RECOGNIZED",
+    "sector": "CleanTech",
+    "recognition_date": "2019-01-04",
+    "certificate_number": "DIPP58024"
+  },
+  {
+    "identifier": "DIPP-50025",
+    "pan": "NQMLB1062I",
+    "company_name": "Southern Engineering Ltd",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Logistics",
+    "recognition_date": "2023-12-18",
+    "certificate_number": "DIPP58025"
+  },
+  {
+    "identifier": "DIPP-50026",
+    "pan": "LVEJR1004W",
+    "company_name": "Shiv Steel LLP",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Manufacturing",
+    "recognition_date": "2021-11-10",
+    "certificate_number": "DIPP58026"
+  },
+  {
+    "identifier": "DIPP-50027",
+    "pan": "CMBTT1011E",
+    "company_name": "Star Solutions Pvt Ltd",
+    "recognition_status": "RECOGNIZED",
+    "sector": "IT/Software",
+    "recognition_date": "2023-10-18",
+    "certificate_number": "DIPP58027"
+  },
+  {
+    "identifier": "DIPP-50028",
+    "pan": "VGPNK1098J",
+    "company_name": "Golden Industries & Co",
+    "recognition_status": "EXPIRED",
+    "sector": "IT/Software",
+    "recognition_date": "2022-01-14",
+    "certificate_number": "DIPP58028"
+  },
+  {
+    "identifier": "DIPP-50029",
+    "pan": "ZGCLS1029K",
+    "company_name": "Uni Textiles Enterprises",
+    "recognition_status": "RECOGNIZED",
+    "sector": "Manufacturing",
+    "recognition_date": "2024-04-04",
+    "certificate_number": "DIPP58029"
   }
 ]

@@ -1,22 +1,22 @@
 package backend.service;
 
 import backend.model.TenderRequirement;
-import backend.storage.TenderRequirementStorage;
+import backend.repository.TenderRequirementRepository;
 
 import java.util.List;
 import java.util.UUID;
 
 public class TenderRequirementService {
 
-    private final TenderRequirementStorage requirementStorage;
+    private final TenderRequirementRepository tenderRequirementRepository;
     private final TenderService tenderService;
 
 
     public TenderRequirementService(
-            TenderRequirementStorage requirementStorage,
+            TenderRequirementRepository tenderRequirementRepository,
             TenderService tenderService
     ) {
-        this.requirementStorage = requirementStorage;
+        this.tenderRequirementRepository = tenderRequirementRepository;
         this.tenderService = tenderService;
     }
 
@@ -27,7 +27,6 @@ public class TenderRequirementService {
             boolean mandatory
     ) {
 
-        // Check if the Tender exists
         tenderService.getTenderById(tenderId);
 
         TenderRequirement tenderRequirement =
@@ -37,48 +36,31 @@ public class TenderRequirementService {
                         mandatory
                 );
 
-        requirementStorage.saveRequirement(
-                tenderRequirement
-        );
-
-        return tenderRequirement;
+        return tenderRequirementRepository.save(tenderRequirement);
     }
 
 
-    public TenderRequirement getRequirementById(
-            UUID id
-    ) {
+    public TenderRequirement getRequirementById(UUID id) {
 
-        TenderRequirement requirement =
-                requirementStorage
-                        .findRequirementById(id);
-
-        if (requirement == null) {
-
-            throw new IllegalArgumentException(
-                    "Tender requirement not found"
-            );
-        }
-
-        return requirement;
+        return tenderRequirementRepository
+                .findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Tender requirement not found"
+                ));
     }
 
 
     public List<TenderRequirement> getAllRequirements() {
 
-        return requirementStorage.getAllRequirements();
+        return tenderRequirementRepository.findAll();
     }
 
 
-    public List<TenderRequirement> getRequirementsByTenderId(
-            UUID tenderId
-    ) {
+    public List<TenderRequirement> getRequirementsByTenderId(UUID tenderId) {
 
-        // Check if the Tender exists
         tenderService.getTenderById(tenderId);
 
-        return requirementStorage
-                .getRequirementsByTenderId(tenderId);
+        return tenderRequirementRepository.findByTenderId(tenderId);
     }
 
 
@@ -88,23 +70,21 @@ public class TenderRequirementService {
             boolean mandatory
     ) {
 
-        TenderRequirement tenderRequirement =
-                getRequirementById(id);
+        TenderRequirement tenderRequirement = getRequirementById(id);
 
         tenderRequirement.updateRequirement(
                 requirement,
                 mandatory
         );
+
+        tenderRequirementRepository.save(tenderRequirement);
     }
 
 
-    public void deleteRequirement(
-            UUID id
-    ) {
+    public void deleteRequirement(UUID id) {
 
-        // Check if requirement exists first
         getRequirementById(id);
 
-        requirementStorage.deleteRequirement(id);
+        tenderRequirementRepository.deleteById(id);
     }
 }

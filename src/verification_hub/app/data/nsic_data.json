@@ -1,7 +1,242 @@
 [
   {
-    "identifier": "NSIC-1001",
-    "company_name": "ABC Technologies Pvt Ltd",
-    "certificate_status": "VALID"
+    "identifier": "NSIC-4000",
+    "pan": "HQXJE1003C",
+    "company_name": "Eastern Industries Enterprises",
+    "certificate_status": "EXPIRED",
+    "rating": "SE 1B",
+    "valid_upto": "2024-02-22"
+  },
+  {
+    "identifier": "NSIC-4001",
+    "pan": "YGEUE1026N",
+    "company_name": "Sanjay Fabricators Ltd",
+    "certificate_status": "VALID",
+    "rating": "SE 3C",
+    "valid_upto": "2025-09-02"
+  },
+  {
+    "identifier": "NSIC-4002",
+    "pan": "GYWWJ1021F",
+    "company_name": "Diamond Electronics Enterprises",
+    "certificate_status": "EXPIRED",
+    "rating": "MSE 2B",
+    "valid_upto": "2028-11-28"
+  },
+  {
+    "identifier": "NSIC-4003",
+    "pan": "AJLYW1081D",
+    "company_name": "Sanjay Plastics LLP",
+    "certificate_status": "SUSPENDED",
+    "rating": "SE 1B",
+    "valid_upto": "2027-05-03"
+  },
+  {
+    "identifier": "NSIC-4004",
+    "pan": "LTVHU1037P",
+    "company_name": "Apex Fabricators & Co",
+    "certificate_status": "VALID",
+    "rating": "MSE 1A",
+    "valid_upto": "2028-10-17"
+  },
+  {
+    "identifier": "NSIC-4005",
+    "pan": "OUNAI1010A",
+    "company_name": "Sun Agro Ltd",
+    "certificate_status": "EXPIRED",
+    "rating": "MSE 3C",
+    "valid_upto": "2025-02-25"
+  },
+  {
+    "identifier": "NSIC-4006",
+    "pan": "LVZMK1060K",
+    "company_name": "Nova Textiles Enterprises",
+    "certificate_status": "VALID",
+    "rating": "MSE 1B",
+    "valid_upto": "2025-04-05"
+  },
+  {
+    "identifier": "NSIC-4007",
+    "pan": "FDYOM1014Z",
+    "company_name": "Nova Polymers & Co",
+    "certificate_status": "VALID",
+    "rating": "SE 2B",
+    "valid_upto": "2025-11-05"
+  },
+  {
+    "identifier": "NSIC-4008",
+    "pan": "BVKUY1039A",
+    "company_name": "Diamond Chemicals & Co",
+    "certificate_status": "EXPIRED",
+    "rating": "SE 1A",
+    "valid_upto": "2024-07-18"
+  },
+  {
+    "identifier": "NSIC-4009",
+    "pan": "GRJOI1050X",
+    "company_name": "Laxmi Steel Works",
+    "certificate_status": "VALID",
+    "rating": "SE 2A",
+    "valid_upto": "2028-08-28"
+  },
+  {
+    "identifier": "NSIC-4010",
+    "pan": "JSUOC1093B",
+    "company_name": "Pioneer Pharma Ltd",
+    "certificate_status": "VALID",
+    "rating": "MSE 3C",
+    "valid_upto": "2028-07-04"
+  },
+  {
+    "identifier": "NSIC-4011",
+    "pan": "NQMLB1062I",
+    "company_name": "Southern Engineering Ltd",
+    "certificate_status": "VALID",
+    "rating": "SE 3C",
+    "valid_upto": "2028-02-04"
+  },
+  {
+    "identifier": "NSIC-4012",
+    "pan": "WDJUP1084A",
+    "company_name": "Metro Traders Works",
+    "certificate_status": "VALID",
+    "rating": "SE 2A",
+    "valid_upto": "2028-06-14"
+  },
+  {
+    "identifier": "NSIC-4013",
+    "pan": "FMXUE1033C",
+    "company_name": "Universal Chemicals Works",
+    "certificate_status": "VALID",
+    "rating": "MSE 3C",
+    "valid_upto": "2028-08-02"
+  },
+  {
+    "identifier": "NSIC-4014",
+    "pan": "CMBTT1011E",
+    "company_name": "Star Solutions Pvt Ltd",
+    "certificate_status": "VALID",
+    "rating": "SE 3C",
+    "valid_upto": "2028-11-23"
+  },
+  {
+    "identifier": "NSIC-4015",
+    "pan": "YVCFQ1082A",
+    "company_name": "Nova Electronics Pvt Ltd",
+    "certificate_status": "VALID",
+    "rating": "SE 2A",
+    "valid_upto": "2025-01-24"
+  },
+  {
+    "identifier": "NSIC-4016",
+    "pan": "YQXMO1069T",
+    "company_name": "Anand Infrastructure & Co",
+    "certificate_status": "VALID",
+    "rating": "SE 2A",
+    "valid_upto": "2024-06-27"
+  },
+  {
+    "identifier": "NSIC-4017",
+    "pan": "GKOGM1049W",
+    "company_name": "Pearl Electronics Pvt Ltd",
+    "certificate_status": "EXPIRED",
+    "rating": "SE 2B",
+    "valid_upto": "2024-04-05"
+  },
+  {
+    "identifier": "NSIC-4018",
+    "pan": "QGMXV1023C",
+    "company_name": "Green Electronics Works",
+    "certificate_status": "VALID",
+    "rating": "MSE 2A",
+    "valid_upto": "2026-12-14"
+  },
+  {
+    "identifier": "NSIC-4019",
+    "pan": "UMVPI1047H",
+    "company_name": "Sanjay Metals Enterprises",
+    "certificate_status": "VALID",
+    "rating": "SE 2B",
+    "valid_upto": "2025-07-24"
+  },
+  {
+    "identifier": "NSIC-4020",
+    "pan": "JAWEF1048Z",
+    "company_name": "Vishwa Systems Works",
+    "certificate_status": "VALID",
+    "rating": "SE 2A",
+    "valid_upto": "2024-09-26"
+  },
+  {
+    "identifier": "NSIC-4021",
+    "pan": "DGNKJ1080X",
+    "company_name": "National Foods & Co",
+    "certificate_status": "VALID",
+    "rating": "SE 3C",
+    "valid_upto": "2027-03-25"
+  },
+  {
+    "identifier": "NSIC-4022",
+    "pan": "EJSNV1096Z",
+    "company_name": "Modern Fabricators & Co",
+    "certificate_status": "EXPIRED",
+    "rating": "MSE 1A",
+    "valid_upto": "2025-04-27"
+  },
+  {
+    "identifier": "NSIC-4023",
+    "pan": "UFCFD1057I",
+    "company_name": "Harsha Solutions Works",
+    "certificate_status": "VALID",
+    "rating": "SE 1A",
+    "valid_upto": "2027-01-12"
+  },
+  {
+    "identifier": "NSIC-4024",
+    "pan": "ZQORV1005Y",
+    "company_name": "Pioneer Steel LLP",
+    "certificate_status": "VALID",
+    "rating": "SE 2B",
+    "valid_upto": "2028-07-21"
+  },
+  {
+    "identifier": "NSIC-4025",
+    "pan": "LCSLX1086K",
+    "company_name": "Global Garments & Co",
+    "certificate_status": "EXPIRED",
+    "rating": "MSE 1B",
+    "valid_upto": "2026-08-20"
+  },
+  {
+    "identifier": "NSIC-4026",
+    "pan": "EKRMA1056J",
+    "company_name": "Metro Infrastructure Pvt Ltd",
+    "certificate_status": "VALID",
+    "rating": "MSE 2B",
+    "valid_upto": "2028-09-12"
+  },
+  {
+    "identifier": "NSIC-4027",
+    "pan": "AFRWP1059A",
+    "company_name": "Rajdhani Systems LLP",
+    "certificate_status": "VALID",
+    "rating": "MSE 2A",
+    "valid_upto": "2024-05-01"
+  },
+  {
+    "identifier": "NSIC-4028",
+    "pan": "UZXTV1074J",
+    "company_name": "Shree Solutions Works",
+    "certificate_status": "VALID",
+    "rating": "SE 3C",
+    "valid_upto": "2025-04-21"
+  },
+  {
+    "identifier": "NSIC-4029",
+    "pan": "IWZHQ1028M",
+    "company_name": "Ravi Electronics & Co",
+    "certificate_status": "VALID",
+    "rating": "SE 2B",
+    "valid_upto": "2028-01-28"
   }
 ]

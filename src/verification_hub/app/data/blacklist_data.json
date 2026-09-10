@@ -1,9 +1,110 @@
 [
   {
-    "pan": "DEBAR1234X",
-    "identifier": "DEBAR1234X",
-    "company_name": "Debarred Demo Vendor",
+    "pan": "EJSNV1096Z",
+    "identifier": "EJSNV1096Z",
+    "company_name": "Modern Fabricators & Co",
     "debarment_status": "DEBARRED",
-    "reason": "Controlled SIH demo record"
+    "debarred_by": "Ministry of Textiles",
+    "debarment_period": "2023-09-19 to 2027-03-03",
+    "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim"
+  },
+  {
+    "pan": "KRVZM1067B",
+    "identifier": "KRVZM1067B",
+    "company_name": "Classic Packaging & Co",
+    "debarment_status": "DEBARRED",
+    "debarred_by": "CVC Reference",
+    "debarment_period": "2023-12-17 to 2028-09-11",
+    "reason": "Controlled SIH demo record - Simulated blacklisting for non-performance of awarded contract"
+  },
+  {
+    "pan": "ELSOC1024W",
+    "identifier": "ELSOC1024W",
+    "company_name": "Prime Exports LLP",
+    "debarment_status": "UNDER_REVIEW",
+    "debarred_by": "State Procurement Cell",
+    "debarment_period": "",
+    "reason": "Controlled SIH demo record - Simulated debarment for tender document forgery"
+  },
+  {
+    "pan": "YICCW1002T",
+    "identifier": "YICCW1002T",
+    "company_name": "Nova Enterprises Ltd",
+    "debarment_status": "UNDER_REVIEW",
+    "debarred_by": "Ministry of MSME",
+    "debarment_period": "",
+    "reason": "Controlled SIH demo record - Simulated debarment for tender document forgery"
+  },
+  {
+    "pan": "LCSLX1086K",
+    "identifier": "LCSLX1086K",
+    "company_name": "Global Garments & Co",
+    "debarment_status": "UNDER_REVIEW",
+    "debarred_by": "State Procurement Cell",
+    "debarment_period": "",
+    "reason": "Controlled SIH demo record - Simulated blacklisting for non-performance of awarded contract"
+  },
+  {
+    "pan": "GDCTO1000S",
+    "identifier": "GDCTO1000S",
+    "company_name": "Bharat Fabricators LLP",
+    "debarment_status": "DEBARRED",
+    "debarred_by": "State Procurement Cell",
+    "debarment_period": "2024-03-07 to 2028-01-19",
+    "reason": "Controlled SIH demo record - Simulated debarment for submission of fabricated GST returns"
+  },
+  {
+    "pan": "DGNKJ1080X",
+    "identifier": "DGNKJ1080X",
+    "company_name": "National Foods & Co",
+    "debarment_status": "DEBARRED",
+    "debarred_by": "CVC Reference",
+    "debarment_period": "2024-11-26 to 2026-07-21",
+    "reason": "Controlled SIH demo record - Simulated debarment for tender document forgery"
+  },
+  {
+    "pan": "JSUOC1093B",
+    "identifier": "JSUOC1093B",
+    "company_name": "Pioneer Pharma Ltd",
+    "debarment_status": "UNDER_REVIEW",
+    "debarred_by": "Central Vigilance Commission",
+    "debarment_period": "",
+    "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim"
+  },
+  {
+    "pan": "WSHIK1031M",
+    "identifier": "WSHIK1031M",
+    "company_name": "Sanjay Pharma Works",
+    "debarment_status": "DEBARRED",
+    "debarred_by": "Ministry of Textiles",
+    "debarment_period": "2024-02-21 to 2026-01-23",
+    "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim"
+  },
+  {
+    "pan": "IWZHQ1028M",
+    "identifier": "IWZHQ1028M",
+    "company_name": "Ravi Electronics & Co",
+    "debarment_status": "DEBARRED",
+    "debarred_by": "Ministry of MSME",
+    "debarment_period": "2022-09-09 to 2027-12-05",
+    "reason": "Controlled SIH demo record - Simulated show-cause notice for expired certifications"
+  },
+  {
+    "pan": "KVKSI1088K",
+    "identifier": "KVKSI1088K",
+    "company_name": "Northern Chemicals Ltd",
+    "debarment_status": "UNDER_REVIEW",
+    "debarred_by": "State PWD",
+    "debarment_period": "",
+    "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim"
+  },
+  {
+    "pan": "STEPT1044D",
+    "identifier": "STEPT1044D",
+    "company_name": "Vishwa Electronics & Co",
+    "debarment_status": "DEBARRED",
+    "debarred_by": "State PWD",
+    "debarment_period": "2022-11-17 to 2027-10-20",
+    "reason": "Controlled SIH demo record - Simulated show-cause for collusive bidding practices"
   }
 ]

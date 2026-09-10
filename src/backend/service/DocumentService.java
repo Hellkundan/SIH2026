@@ -2,22 +2,22 @@ package backend.service;
 
 import backend.enums.DocumentType;
 import backend.model.Document;
-import backend.storage.DocumentStorage;
+import backend.repository.DocumentRepository;
 
 import java.util.List;
 import java.util.UUID;
 
 public class DocumentService {
 
-    private final DocumentStorage documentStorage;
+    private final DocumentRepository documentRepository;
     private final TenderBidService tenderBidService;
 
 
     public DocumentService(
-            DocumentStorage documentStorage,
+            DocumentRepository documentRepository,
             TenderBidService tenderBidService
     ) {
-        this.documentStorage = documentStorage;
+        this.documentRepository = documentRepository;
         this.tenderBidService = tenderBidService;
     }
 
@@ -28,10 +28,7 @@ public class DocumentService {
             String fileName
     ) {
 
-        // Check if TenderBid exists
-        tenderBidService.getTenderBidById(
-                tenderBidId
-        );
+        tenderBidService.getTenderBidById(tenderBidId);
 
         Document document = new Document(
                 tenderBidId,
@@ -39,96 +36,68 @@ public class DocumentService {
                 fileName
         );
 
-        documentStorage.saveDocument(
-                document
-        );
-
-        return document;
+        return documentRepository.save(document);
     }
 
 
-    public Document getDocumentById(
-            UUID id
-    ) {
+    public Document getDocumentById(UUID id) {
 
-        Document document =
-                documentStorage
-                        .findDocumentById(id);
-
-        if (document == null) {
-
-            throw new IllegalArgumentException(
-                    "Document not found"
-            );
-        }
-
-        return document;
+        return documentRepository
+                .findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Document not found"
+                ));
     }
 
 
     public List<Document> getAllDocuments() {
 
-        return documentStorage
-                .getAllDocuments();
+        return documentRepository.findAll();
     }
 
 
-    public List<Document> getDocumentsByTenderBidId(
-            UUID tenderBidId
-    ) {
+    public List<Document> getDocumentsByTenderBidId(UUID tenderBidId) {
 
-        // Check if TenderBid exists
-        tenderBidService.getTenderBidById(
-                tenderBidId
-        );
+        tenderBidService.getTenderBidById(tenderBidId);
 
-        return documentStorage
-                .getDocumentsByTenderBidId(
-                        tenderBidId
-                );
+        return documentRepository.findByTenderBidId(tenderBidId);
     }
 
 
-    public void startDocumentProcessing(
-            UUID id
-    ) {
+    public void startDocumentProcessing(UUID id) {
 
-        Document document =
-                getDocumentById(id);
+        Document document = getDocumentById(id);
 
         document.startProcessing();
+
+        documentRepository.save(document);
     }
 
 
-    public void markDocumentAsProcessed(
-            UUID id
-    ) {
+    public void markDocumentAsProcessed(UUID id) {
 
-        Document document =
-                getDocumentById(id);
+        Document document = getDocumentById(id);
 
         document.markAsProcessed();
+
+        documentRepository.save(document);
     }
 
 
-    public void markDocumentAsFailed(
-            UUID id
-    ) {
+    public void markDocumentAsFailed(UUID id) {
 
-        Document document =
-                getDocumentById(id);
+        Document document = getDocumentById(id);
 
         document.markAsFailed();
+
+        documentRepository.save(document);
     }
 
 
-    public void deleteDocument(
-            UUID id
-    ) {
+    public void deleteDocument(UUID id) {
 
-        // Check if document exists
         getDocumentById(id);
 
-        documentStorage.deleteDocument(id);
+        documentRepository.deleteById(id);
     }
 }

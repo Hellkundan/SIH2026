@@ -1,18 +1,32 @@
 package backend.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
+@Table(name = "bidders")
 public class Bidder {
 
-    private final UUID id = UUID.randomUUID();
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
+    @Column(nullable = false)
     private String companyName;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String phone;
 
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
+
+    public Bidder() {}
 
     public Bidder(
             String companyName,

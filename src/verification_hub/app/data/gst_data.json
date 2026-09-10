@@ -1,8 +1,902 @@
 [
   {
-    "gstin": "27ABCDE1234F1Z5",
-    "company_name": "ABC Technologies Pvt Ltd",
+    "gstin": "21XDDMN1036R9Z1",
+    "pan": "XDDMN1036R",
+    "company_name": "Global Infrastructure Ltd",
     "registration_status": "ACTIVE",
-    "registered_address": "Mumbai, Maharashtra"
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2021-09-15",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "19OUNAI1010A5ZP",
+    "pan": "OUNAI1010A",
+    "company_name": "Sun Agro Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Kolkata, West Bengal",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-05-16",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10TEOKV1032J7ZU",
+    "pan": "TEOKV1032J",
+    "company_name": "Ravi Steel Works",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2019-09-01",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "24IXUWX1025G6Z9",
+    "pan": "IXUWX1025G",
+    "company_name": "Northern Enterprises Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Ahmedabad, Gujarat",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2020-07-12",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "18AJLYW1081D6ZD",
+    "pan": "AJLYW1081D",
+    "company_name": "Sanjay Plastics LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Guwahati, Assam",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2020-09-10",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "29SCEHA1070K6ZX",
+    "pan": "SCEHA1070K",
+    "company_name": "Northern Traders Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bengaluru, Karnataka",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2019-10-22",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "23DRXWX1035Y3Z7",
+    "pan": "DRXWX1035Y",
+    "company_name": "Modern Steel Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhopal, Madhya Pradesh",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2020-06-18",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "08LKHGY1016O9ZA",
+    "pan": "LKHGY1016O",
+    "company_name": "Vikram Electronics Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Jaipur, Rajasthan",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2023-07-17",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "07DGNKJ1080X7ZG",
+    "pan": "DGNKJ1080X",
+    "company_name": "National Foods & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "New Delhi, Delhi",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2022-09-15",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32IODGS1038W7Z0",
+    "pan": "IODGS1038W",
+    "company_name": "Star Constructions LLP",
+    "registration_status": "CANCELLED",
+    "registered_address": "Kochi, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2020-03-13",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "23DJTGJ1078U4Z4",
+    "pan": "DJTGJ1078U",
+    "company_name": "Shree Constructions Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhopal, Madhya Pradesh",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2020-09-27",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21ADWZB1068Z7ZF",
+    "pan": "ADWZB1068Z",
+    "company_name": "Shiv Automobiles & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2022-01-12",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "07CMBTT1011E3ZQ",
+    "pan": "CMBTT1011E",
+    "company_name": "Star Solutions Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "New Delhi, Delhi",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2019-12-28",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "18HVZGO1064M3ZE",
+    "pan": "HVZGO1064M",
+    "company_name": "Delta Automobiles Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Guwahati, Assam",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2018-12-02",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "23YVCFQ1082A4ZI",
+    "pan": "YVCFQ1082A",
+    "company_name": "Nova Electronics Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Indore, Madhya Pradesh",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2021-03-27",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "29GYWWJ1021F5Z7",
+    "pan": "GYWWJ1021F",
+    "company_name": "Diamond Electronics Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Mysuru, Karnataka",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2016-04-01",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36TRDCQ1075B1ZX",
+    "pan": "TRDCQ1075B",
+    "company_name": "Anand Components Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2018-07-17",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36UZXTV1074J4ZM",
+    "pan": "UZXTV1074J",
+    "company_name": "Shree Solutions Works",
+    "registration_status": "CANCELLED",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2015-12-05",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "07BBWKY1019S2Z0",
+    "pan": "BBWKY1019S",
+    "company_name": "Elite Industries Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "New Delhi, Delhi",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2022-09-13",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36WDJUP1084A1ZI",
+    "pan": "WDJUP1084A",
+    "company_name": "Metro Traders Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2020-09-12",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "27XFBVX1079J2ZI",
+    "pan": "XFBVX1079J",
+    "company_name": "Sanjay Infrastructure LLP",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Nagpur, Maharashtra",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2019-10-16",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32MBTFR1077V6ZF",
+    "pan": "MBTFR1077V",
+    "company_name": "Green Metals Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2018-05-25",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "07BYBAG1043A3Z4",
+    "pan": "BYBAG1043A",
+    "company_name": "Silver Logistics Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "New Delhi, Delhi",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2020-08-12",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21GAUXR1072F6ZT",
+    "pan": "GAUXR1072F",
+    "company_name": "Harsha Constructions & Co",
+    "registration_status": "CANCELLED",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2019-02-19",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "09ZQORV1005Y1ZU",
+    "pan": "ZQORV1005Y",
+    "company_name": "Pioneer Steel LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Lucknow, Uttar Pradesh",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2020-03-10",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "33HQXJE1003C5ZF",
+    "pan": "HQXJE1003C",
+    "company_name": "Eastern Industries Enterprises",
+    "registration_status": "CANCELLED",
+    "registered_address": "Chennai, Tamil Nadu",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2022-11-09",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21VGPNK1098J6ZK",
+    "pan": "VGPNK1098J",
+    "company_name": "Golden Industries & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2019-09-23",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "19FFWID1083T3ZI",
+    "pan": "FFWID1083T",
+    "company_name": "Om Components Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Kolkata, West Bengal",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2018-04-02",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21FMXUE1033C6ZF",
+    "pan": "FMXUE1033C",
+    "company_name": "Universal Chemicals Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2015-02-14",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10YGEUE1026N6Z0",
+    "pan": "YGEUE1026N",
+    "company_name": "Sanjay Fabricators Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2017-01-18",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "27MIZGW1053D8ZE",
+    "pan": "MIZGW1053D",
+    "company_name": "Vishwa Foods & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Mumbai, Maharashtra",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2022-08-21",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10BLJPL1085H5Z3",
+    "pan": "BLJPL1085H",
+    "company_name": "Pearl Traders Works",
+    "registration_status": "PENDING_VERIFICATION",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-02-21",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "33USIAK1063H2ZJ",
+    "pan": "USIAK1063H",
+    "company_name": "Bharat Exports Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Chennai, Tamil Nadu",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2015-03-14",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "21LTVHU1037P8ZE",
+    "pan": "LTVHU1037P",
+    "company_name": "Apex Fabricators & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2021-08-06",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "10ICNEM1090D6ZH",
+    "pan": "ICNEM1090D",
+    "company_name": "Global Foods Enterprises",
+    "registration_status": "PENDING_VERIFICATION",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2015-01-10",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "18VOLII1061Y1Z8",
+    "pan": "VOLII1061Y",
+    "company_name": "Delta Polymers & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Guwahati, Assam",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2019-08-21",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "03WSHIK1031M3ZM",
+    "pan": "WSHIK1031M",
+    "company_name": "Sanjay Pharma Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Amritsar, Punjab",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2023-08-09",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32SITYR1051G5Z7",
+    "pan": "SITYR1051G",
+    "company_name": "Uni Logistics Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Kochi, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2022-11-09",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21NQMLB1062I8Z5",
+    "pan": "NQMLB1062I",
+    "company_name": "Southern Engineering Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2019-10-22",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "29LTJDB1089R7ZW",
+    "pan": "LTJDB1089R",
+    "company_name": "Sai Industries Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Mysuru, Karnataka",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2021-07-17",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "27EJSNV1096Z7ZC",
+    "pan": "EJSNV1096Z",
+    "company_name": "Modern Fabricators & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Pune, Maharashtra",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2017-08-11",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "32ZBFYT1095Y6ZH",
+    "pan": "ZBFYT1095Y",
+    "company_name": "National Logistics & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2022-05-11",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "33ZGCLS1029K2ZY",
+    "pan": "ZGCLS1029K",
+    "company_name": "Uni Textiles Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Coimbatore, Tamil Nadu",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2020-12-08",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "08LVEJR1004W9ZP",
+    "pan": "LVEJR1004W",
+    "company_name": "Shiv Steel LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Jaipur, Rajasthan",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2021-11-17",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "33STEPT1044D2ZB",
+    "pan": "STEPT1044D",
+    "company_name": "Vishwa Electronics & Co",
+    "registration_status": "CANCELLED",
+    "registered_address": "Chennai, Tamil Nadu",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2016-11-10",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "19KVKSI1088K3Z4",
+    "pan": "KVKSI1088K",
+    "company_name": "Northern Chemicals Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Howrah, West Bengal",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2022-03-15",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10FKMGO1073S1ZZ",
+    "pan": "FKMGO1073S",
+    "company_name": "Uni Chemicals LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2023-08-25",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "27IWZHQ1028M6ZB",
+    "pan": "IWZHQ1028M",
+    "company_name": "Ravi Electronics & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Nagpur, Maharashtra",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2018-11-25",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36MLHTC1094N8Z7",
+    "pan": "MLHTC1094N",
+    "company_name": "Universal Polymers & Co",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2023-12-12",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "19LNURY1030X7ZE",
+    "pan": "LNURY1030X",
+    "company_name": "Uni Engineering Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Kolkata, West Bengal",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2023-09-07",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36UFCFD1057I1ZK",
+    "pan": "UFCFD1057I",
+    "company_name": "Harsha Solutions Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2023-08-04",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "29OPASB1013C2Z6",
+    "pan": "OPASB1013C",
+    "company_name": "Green Technologies Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bengaluru, Karnataka",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2023-08-26",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36VZVPQ1091A3ZR",
+    "pan": "VZVPQ1091A",
+    "company_name": "Vishwa Logistics & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-09-15",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36GASVP1065V8Z8",
+    "pan": "GASVP1065V",
+    "company_name": "Southern Pharma Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2019-01-24",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "03EASSZ1009Y2ZT",
+    "pan": "EASSZ1009Y",
+    "company_name": "Royal Foods & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Ludhiana, Punjab",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2016-09-02",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "03SGKRH1020K8ZG",
+    "pan": "SGKRH1020K",
+    "company_name": "Uni Electronics Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Ludhiana, Punjab",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2015-05-14",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21HQPTY1055G2ZK",
+    "pan": "HQPTY1055G",
+    "company_name": "Krishna Solutions & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2021-06-13",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "27YCWGX1022X5ZS",
+    "pan": "YCWGX1022X",
+    "company_name": "Ravi Infrastructure LLP",
+    "registration_status": "CANCELLED",
+    "registered_address": "Nagpur, Maharashtra",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2016-11-22",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "10AFRWP1059A3Z4",
+    "pan": "AFRWP1059A",
+    "company_name": "Rajdhani Systems LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2016-03-18",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "24KBJZN1008R9ZR",
+    "pan": "KBJZN1008R",
+    "company_name": "Harsha Textiles Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Ahmedabad, Gujarat",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2015-01-10",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "19QGMXV1023C1ZA",
+    "pan": "QGMXV1023C",
+    "company_name": "Green Electronics Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Howrah, West Bengal",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2021-04-08",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10WOOSK1097D6ZK",
+    "pan": "WOOSK1097D",
+    "company_name": "Bharat Chemicals Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2016-01-26",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10JSUOC1093B1ZF",
+    "pan": "JSUOC1093B",
+    "company_name": "Pioneer Pharma Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2015-04-07",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "23XOSFM1006U5ZI",
+    "pan": "XOSFM1006U",
+    "company_name": "Nova Industries Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhopal, Madhya Pradesh",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-04-24",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21LVZMK1060K6Z0",
+    "pan": "LVZMK1060K",
+    "company_name": "Nova Textiles Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2015-03-17",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "33LMSRZ1015D6ZG",
+    "pan": "LMSRZ1015D",
+    "company_name": "Ravi Plastics LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Chennai, Tamil Nadu",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2020-10-20",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "27GKOGM1049W1ZF",
+    "pan": "GKOGM1049W",
+    "company_name": "Pearl Electronics Pvt Ltd",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Pune, Maharashtra",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2017-11-17",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "08TLPJZ1007E1ZH",
+    "pan": "TLPJZ1007E",
+    "company_name": "Crown Infrastructure LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Jodhpur, Rajasthan",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2017-11-22",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "29MFKBJ1017M5Z1",
+    "pan": "MFKBJ1017M",
+    "company_name": "Star Textiles & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Mysuru, Karnataka",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2021-09-11",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "08FDYOM1014Z4ZG",
+    "pan": "FDYOM1014Z",
+    "company_name": "Nova Polymers & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Jodhpur, Rajasthan",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2017-09-16",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10NIWVC1046L7ZL",
+    "pan": "NIWVC1046L",
+    "company_name": "Ravi Agro Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2017-08-02",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "08EKRMA1056J2ZO",
+    "pan": "EKRMA1056J",
+    "company_name": "Metro Infrastructure Pvt Ltd",
+    "registration_status": "PENDING_VERIFICATION",
+    "registered_address": "Jodhpur, Rajasthan",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2017-07-08",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "07YCGOK1054T7Z2",
+    "pan": "YCGOK1054T",
+    "company_name": "Sun Enterprises Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "New Delhi, Delhi",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2022-06-03",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "19AFQOF1001S3Z1",
+    "pan": "AFQOF1001S",
+    "company_name": "Laxmi Automobiles Enterprises",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Howrah, West Bengal",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2021-11-20",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32KSBRQ1045D1ZW",
+    "pan": "KSBRQ1045D",
+    "company_name": "Vishwa Polymers & Co",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2023-04-16",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10RSKRJ1012Q4ZO",
+    "pan": "RSKRJ1012Q",
+    "company_name": "Ganesh Infrastructure Works",
+    "registration_status": "CANCELLED",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-04-07",
+    "taxpayer_type": "Composition"
+  },
+  {
+    "gstin": "32XLMHK1058I2ZC",
+    "pan": "XLMHK1058I",
+    "company_name": "Ananya Fabricators Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2022-04-23",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "21JAWEF1048Z5ZR",
+    "pan": "JAWEF1048Z",
+    "company_name": "Vishwa Systems Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bhubaneswar, Odisha",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2023-06-25",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "10KREEP1071M3ZO",
+    "pan": "KREEP1071M",
+    "company_name": "Sun Logistics Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Patna, Bihar",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2019-05-12",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "24TEDOZ1076Q5Z4",
+    "pan": "TEDOZ1076Q",
+    "company_name": "Sai Foods LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Surat, Gujarat",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2022-06-07",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "03YQXMO1069T5ZO",
+    "pan": "YQXMO1069T",
+    "company_name": "Anand Infrastructure & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Ludhiana, Punjab",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2018-12-05",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "18FBTBI1018B9ZK",
+    "pan": "FBTBI1018B",
+    "company_name": "Sun Electronics LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Guwahati, Assam",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2021-05-05",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "03BVKUY1039A1ZW",
+    "pan": "BVKUY1039A",
+    "company_name": "Diamond Chemicals & Co",
+    "registration_status": "ACTIVE",
+    "registered_address": "Amritsar, Punjab",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2018-08-18",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "29NFUJY1099U2ZJ",
+    "pan": "NFUJY1099U",
+    "company_name": "Elite Exports Pvt Ltd",
+    "registration_status": "ACTIVE",
+    "registered_address": "Bengaluru, Karnataka",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2022-12-21",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "18TJYWZ1066H7ZC",
+    "pan": "TJYWZ1066H",
+    "company_name": "Silver Pharma Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Guwahati, Assam",
+    "constitution_of_business": "Partnership",
+    "date_of_registration": "2020-03-05",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "36UMVPI1047H8ZP",
+    "pan": "UMVPI1047H",
+    "company_name": "Sanjay Metals Enterprises",
+    "registration_status": "ACTIVE",
+    "registered_address": "Hyderabad, Telangana",
+    "constitution_of_business": "LLP",
+    "date_of_registration": "2023-11-02",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32TOPFF1040N7ZV",
+    "pan": "TOPFF1040N",
+    "company_name": "Eastern Plastics Enterprises",
+    "registration_status": "SUSPENDED",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-01-14",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32GRJOI1050X8ZR",
+    "pan": "GRJOI1050X",
+    "company_name": "Laxmi Steel Works",
+    "registration_status": "ACTIVE",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2017-01-07",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "03ELSOC1024W1ZX",
+    "pan": "ELSOC1024W",
+    "company_name": "Prime Exports LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Ludhiana, Punjab",
+    "constitution_of_business": "Proprietorship",
+    "date_of_registration": "2022-11-16",
+    "taxpayer_type": "Regular"
+  },
+  {
+    "gstin": "32FEANH1052B8ZG",
+    "pan": "FEANH1052B",
+    "company_name": "Shiv Electronics LLP",
+    "registration_status": "ACTIVE",
+    "registered_address": "Thiruvananthapuram, Kerala",
+    "constitution_of_business": "Private Limited Company",
+    "date_of_registration": "2015-09-24",
+    "taxpayer_type": "Regular"
   }
 ]

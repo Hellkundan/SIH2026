@@ -1,18 +1,18 @@
 package backend.service;
 
 import backend.model.Bidder;
-import backend.storage.BidderStorage;
+import backend.repository.BidderRepository;
 
 import java.util.List;
 import java.util.UUID;
 
 public class BidderService {
 
-    private final BidderStorage bidderStorage;
+    private final BidderRepository bidderRepository;
 
 
-    public BidderService(BidderStorage bidderStorage) {
-        this.bidderStorage = bidderStorage;
+    public BidderService(BidderRepository bidderRepository) {
+        this.bidderRepository = bidderRepository;
     }
 
 
@@ -28,31 +28,23 @@ public class BidderService {
                 phone
         );
 
-        bidderStorage.saveBidder(bidder);
-
-        return bidder;
+        return bidderRepository.save(bidder);
     }
 
 
     public Bidder getBidderById(UUID id) {
 
-        Bidder bidder =
-                bidderStorage.findBidderById(id);
-
-        if (bidder == null) {
-
-            throw new IllegalArgumentException(
-                    "Bidder not found"
-            );
-        }
-
-        return bidder;
+        return bidderRepository
+                .findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Bidder not found"
+                ));
     }
 
 
     public List<Bidder> getAllBidders() {
 
-        return bidderStorage.getAllBidders();
+        return bidderRepository.findAll();
     }
 
 
@@ -70,14 +62,15 @@ public class BidderService {
                 email,
                 phone
         );
+
+        bidderRepository.save(bidder);
     }
 
 
     public void deleteBidder(UUID id) {
 
-        // First verify that the bidder exists
         getBidderById(id);
 
-        bidderStorage.deleteBidder(id);
+        bidderRepository.deleteById(id);
     }
 }
