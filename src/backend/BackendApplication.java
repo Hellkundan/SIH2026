@@ -11,6 +11,7 @@ import backend.security.AppUser;
 import backend.security.Role;
 import backend.security.UserStorage;
 import backend.repository.BidderRepository;
+import backend.repository.CartelSignalRepository;
 import backend.repository.ComplianceResultRepository;
 import backend.repository.DocumentRepository;
 import backend.repository.RecommendationRepository;
@@ -106,6 +107,7 @@ public class BackendApplication {
             VerificationResultRepository verificationResultRepository,
             ComplianceResultRepository complianceResultRepository,
             RecommendationRepository recommendationRepository,
+            CartelSignalRepository cartelSignalRepository,
             RestTemplate restTemplate,
             ObjectMapper objectMapper,
             @Value("${app.ocr.base-url:http://localhost:8001}") String ocrBaseUrl,
@@ -121,6 +123,7 @@ public class BackendApplication {
                 verificationResultRepository,
                 complianceResultRepository,
                 recommendationRepository,
+                cartelSignalRepository,
                 restTemplate,
                 objectMapper,
                 ocrBaseUrl,

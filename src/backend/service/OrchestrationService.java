@@ -15,5 +15,8 @@ public interface OrchestrationService {
     // TODO: Implement compliance evaluation orchestration with the compliance engine.
     void triggerComplianceEvaluation(UUID tenderBidId);
 
+    // Collusion Radar (roadmap section 12.5) — Priority 7, never gates the core compliance pipeline.
+    void triggerCollusionCheck(UUID tenderId);
+
     List<VerificationResult> getVerificationResults(UUID tenderBidId);
-}
+}

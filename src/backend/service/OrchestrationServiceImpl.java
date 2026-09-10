@@ -1,13 +1,16 @@
 package backend.service;
 
 import backend.enums.BidStatus;
+import backend.enums.CollusionRecommendation;
 import backend.enums.DocumentStatus;
 import backend.model.Bidder;
+import backend.model.CartelSignal;
 import backend.model.ComplianceResult;
 import backend.model.Document;
 import backend.model.Recommendation;
 import backend.model.TenderBid;
 import backend.model.VerificationResult;
+import backend.repository.CartelSignalRepository;
 import backend.repository.ComplianceResultRepository;
 import backend.repository.DocumentRepository;
 import backend.repository.RecommendationRepository;
@@ -40,6 +43,7 @@ public class OrchestrationServiceImpl implements OrchestrationService {
     private final VerificationResultRepository verificationResultRepository;
     private final ComplianceResultRepository complianceResultRepository;
     private final RecommendationRepository recommendationRepository;
+    private final CartelSignalRepository cartelSignalRepository;
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
     private final String ocrBaseUrl;
@@ -55,6 +59,7 @@ public class OrchestrationServiceImpl implements OrchestrationService {
             VerificationResultRepository verificationResultRepository,
             ComplianceResultRepository complianceResultRepository,
             RecommendationRepository recommendationRepository,
+            CartelSignalRepository cartelSignalRepository,
             RestTemplate restTemplate,
             ObjectMapper objectMapper,
             String ocrBaseUrl,
@@ -69,6 +74,7 @@ public class OrchestrationServiceImpl implements OrchestrationService {
         this.verificationResultRepository = verificationResultRepository;
         this.complianceResultRepository = complianceResultRepository;
         this.recommendationRepository = recommendationRepository;
+        this.cartelSignalRepository = cartelSignalRepository;
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
         this.ocrBaseUrl = ocrBaseUrl;
@@ -294,6 +300,99 @@ public class OrchestrationServiceImpl implements OrchestrationService {
                     ? BidStatus.NEEDS_REVIEW
                     : BidStatus.PASSED_AUTOMATED_CHECKS);
             tenderBidRepository.save(tenderBid);
+        }
+    }
+
+    @Override
+    public void triggerCollusionCheck(UUID tenderId) {
+        logger.info("Starting collusion check for tender {}", tenderId);
+        try {
+            // ── 1. Collect bids for this tender ──────────────────────────────────
+            List<TenderBid> bids = tenderBidService.getTenderBidsByTenderId(tenderId);
+            if (bids.isEmpty()) {
+                logger.info("No bids found for tender {} — skipping collusion check", tenderId);
+                return;
+            }
+
+            // ── 2. Build bidder info payload for the AI engine ───────────────────
+            List<Map<String, Object>> bidderInfoList = new ArrayList<>();
+            for (TenderBid bid : bids) {
+                Bidder bidder = bidderService.getBidderById(bid.getBidderId());
+                Map<String, Object> info = new HashMap<>();
+                info.put("bidder_id", bidder.getId().toString());
+                info.put("company_name", bidder.getCompanyName());
+                info.put("pan", bidder.getPan());
+                info.put("gstin", bidder.getGstin());
+                info.put("bid_id", bid.getId().toString());
+                bidderInfoList.add(info);
+            }
+
+            Map<String, Object> requestBody = new HashMap<>();
+            requestBody.put("tender_id", tenderId.toString());
+            requestBody.put("bidders", bidderInfoList);
+
+            // ── 3. Call AI engine collusion endpoint ─────────────────────────────
+            ResponseEntity<Map> response = restTemplate.postForEntity(
+                    aiBaseUrl + "/api/collusion/analyze",
+                    new HttpEntity<>(requestBody, jsonHeaders()),
+                    Map.class
+            );
+
+            if (response.getStatusCode() != HttpStatus.OK || response.getBody() == null) {
+                logger.warn("AI collusion endpoint returned non-200 for tender {}: {}",
+                        tenderId, response.getStatusCode());
+                return;
+            }
+
+            Map<?, ?> body = response.getBody();
+            Object clustersRaw = body.get("clusters");
+            if (!(clustersRaw instanceof List<?> clusters)) {
+                logger.warn("Unexpected AI response shape for collusion check on tender {}", tenderId);
+                return;
+            }
+
+            // ── 4. Wipe old signals for this tender, then persist new clusters ───
+            cartelSignalRepository.deleteByTenderId(tenderId);
+
+            List<CartelSignal> signals = new ArrayList<>();
+            for (Object clusterObj : clusters) {
+                if (!(clusterObj instanceof Map<?, ?> cluster)) continue;
+
+                String clusterId      = stringValue((Map) cluster, "cluster_id");
+                String bidderIdsJson  = stringValue((Map) cluster, "bidder_ids");   // already JSON string
+                Double strength       = doubleValue((Map) cluster, "connection_strength");
+                String sharedSignals  = stringValue((Map) cluster, "shared_signals");
+                String patternFlags   = stringValue((Map) cluster, "pattern_flags");
+                String explanation    = stringValue((Map) cluster, "explanation");
+                String recRaw         = stringValue((Map) cluster, "recommendation");
+
+                CollusionRecommendation recommendation;
+                try {
+                    recommendation = recRaw != null
+                            ? CollusionRecommendation.valueOf(recRaw.toUpperCase())
+                            : CollusionRecommendation.FLAG_FOR_REVIEW;
+                } catch (IllegalArgumentException e) {
+                    recommendation = CollusionRecommendation.FLAG_FOR_REVIEW;
+                }
+
+                signals.add(new CartelSignal(
+                        clusterId != null ? clusterId : UUID.randomUUID().toString(),
+                        tenderId,
+                        bidderIdsJson != null ? bidderIdsJson : "[]",
+                        strength != null ? new java.math.BigDecimal(strength).setScale(2, java.math.RoundingMode.HALF_UP) : null,
+                        sharedSignals,
+                        patternFlags,
+                        explanation,
+                        recommendation
+                ));
+            }
+
+            cartelSignalRepository.saveAll(signals);
+            logger.info("Persisted {} cartel-signal cluster(s) for tender {}", signals.size(), tenderId);
+
+        } catch (Exception e) {
+            // Collusion check is non-blocking — log and continue
+            logger.error("Collusion check failed for tender {} (non-fatal): {}", tenderId, e.getMessage(), e);
         }
     }
 
