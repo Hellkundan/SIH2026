@@ -11,6 +11,8 @@ public class BidderResponse {
     private final String companyName;
     private final String email;
     private final String phone;
+    private final String pan;
+    private final String gstin;
     private final LocalDateTime createdAt;
 
 
@@ -20,6 +22,8 @@ public class BidderResponse {
         this.companyName = bidder.getCompanyName();
         this.email = bidder.getEmail();
         this.phone = bidder.getPhone();
+        this.pan = bidder.getPan();
+        this.gstin = bidder.getGstin();
         this.createdAt = bidder.getCreatedAt();
     }
 
@@ -45,6 +49,16 @@ public class BidderResponse {
     public String getPhone() {
 
         return phone;
+    }
+
+
+    public String getPan() {
+        return pan;
+    }
+
+
+    public String getGstin() {
+        return gstin;
     }
 
 

@@ -15,6 +15,11 @@ public class DocumentResponse {
     private final String fileName;
     private final DocumentStatus status;
     private final LocalDateTime uploadedAt;
+    private final String filePath;
+    private final String extractedText;
+    private final String documentHash;
+    private final Double classificationConfidence;
+    private final String ocrExtractedFields;
 
 
     public DocumentResponse(Document document) {
@@ -25,6 +30,11 @@ public class DocumentResponse {
         this.fileName = document.getFileName();
         this.status = document.getStatus();
         this.uploadedAt = document.getUploadedAt();
+        this.filePath = document.getFilePath();
+        this.extractedText = document.getExtractedText();
+        this.documentHash = document.getDocumentHash();
+        this.classificationConfidence = document.getClassificationConfidence();
+        this.ocrExtractedFields = document.getOcrExtractedFields();
     }
 
 
@@ -61,5 +71,30 @@ public class DocumentResponse {
     public LocalDateTime getUploadedAt() {
 
         return uploadedAt;
+    }
+
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+
+    public String getExtractedText() {
+        return extractedText;
+    }
+
+
+    public String getDocumentHash() {
+        return documentHash;
+    }
+
+
+    public Double getClassificationConfidence() {
+        return classificationConfidence;
+    }
+
+
+    public String getOcrExtractedFields() {
+        return ocrExtractedFields;
     }
 }

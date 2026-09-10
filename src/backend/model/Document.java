@@ -32,6 +32,18 @@ public class Document {
     @Column(nullable = false)
     private LocalDateTime uploadedAt;
 
+    private String filePath;
+
+    @Lob
+    private String extractedText;
+
+    private String documentHash;
+
+    private Double classificationConfidence;
+
+    @Lob
+    private String ocrExtractedFields;
+
 
     public Document() {}
 
@@ -78,6 +90,49 @@ public class Document {
 
     public LocalDateTime getUploadedAt() {
         return uploadedAt;
+    }
+
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+
+    public String getExtractedText() {
+        return extractedText;
+    }
+
+
+    public String getDocumentHash() {
+        return documentHash;
+    }
+
+
+    public Double getClassificationConfidence() {
+        return classificationConfidence;
+    }
+
+
+    public String getOcrExtractedFields() {
+        return ocrExtractedFields;
+    }
+
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+
+    public void setOcrResults(
+            String extractedText,
+            String documentHash,
+            Double classificationConfidence,
+            String ocrExtractedFields
+    ) {
+        this.extractedText = extractedText;
+        this.documentHash = documentHash;
+        this.classificationConfidence = classificationConfidence;
+        this.ocrExtractedFields = ocrExtractedFields;
     }
 
 
