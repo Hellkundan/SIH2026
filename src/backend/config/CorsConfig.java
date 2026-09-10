@@ -18,6 +18,7 @@ public class CorsConfig {
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:5173",
                 "http://localhost:3000",
+                "https://sih-2026-cx3k75jta-dixy2.vercel.app",
                 "https://sih-2026-k9ld10d6f-dixy2.vercel.app",
                 "https://sih-2026-gamma-neon.vercel.app"
         ));
