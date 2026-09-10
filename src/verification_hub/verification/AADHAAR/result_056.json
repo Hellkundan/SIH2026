@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-056",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.329058Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "531929520192",
+        "details": {
+            "identifier": "531929520192",
+            "pan": "NEYER7685A",
+            "company_name": "Naveen Singh",
+            "status": "VALID",
+            "date_of_birth": "1997-09-03",
+            "gender": "Male",
+            "state": "Maharashtra",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

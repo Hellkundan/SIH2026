@@ -1,9 +1,9 @@
 {
     "bidder_id": "OEM-014",
     "verification_type": "OEM",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_OEM_DATASET",
-    "timestamp": "2026-09-10T19:19:06.508621Z",
+    "timestamp": "2026-09-10T22:12:33.103297Z",
     "evidence": {
         "provider": "OEMProvider",
         "source": "MOCK_OEM_DATASET",
@@ -18,11 +18,7 @@
             "valid_upto": "2027-06-09",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "OEM-5013"
-            ],
-            "dataset_status": null
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

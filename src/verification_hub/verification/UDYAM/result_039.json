@@ -3,7 +3,7 @@
     "verification_type": "UDYAM",
     "status": "VERIFIED",
     "source": "MOCK_UDYAM_DATASET",
-    "timestamp": "2026-09-10T19:19:05.708015Z",
+    "timestamp": "2026-09-10T22:12:32.494292Z",
     "evidence": {
         "provider": "UdyamProvider",
         "source": "MOCK_UDYAM_DATASET",
@@ -18,11 +18,7 @@
             "date_of_registration": "2021-11-04",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "UDYAM-TG-01-1000038"
-            ],
-            "dataset_status": "ACTIVE"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

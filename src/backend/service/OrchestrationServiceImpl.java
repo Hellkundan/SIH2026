@@ -3,10 +3,14 @@ package backend.service;
 import backend.enums.BidStatus;
 import backend.enums.DocumentStatus;
 import backend.model.Bidder;
+import backend.model.ComplianceResult;
 import backend.model.Document;
+import backend.model.Recommendation;
 import backend.model.TenderBid;
 import backend.model.VerificationResult;
+import backend.repository.ComplianceResultRepository;
 import backend.repository.DocumentRepository;
+import backend.repository.RecommendationRepository;
 import backend.repository.TenderBidRepository;
 import backend.repository.VerificationResultRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,6 +22,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -33,10 +38,13 @@ public class OrchestrationServiceImpl implements OrchestrationService {
     private final DocumentRepository documentRepository;
     private final TenderBidRepository tenderBidRepository;
     private final VerificationResultRepository verificationResultRepository;
+    private final ComplianceResultRepository complianceResultRepository;
+    private final RecommendationRepository recommendationRepository;
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
     private final String ocrBaseUrl;
     private final String verificationBaseUrl;
+    private final String aiBaseUrl;
 
     public OrchestrationServiceImpl(
             DocumentService documentService,
@@ -45,10 +53,13 @@ public class OrchestrationServiceImpl implements OrchestrationService {
             DocumentRepository documentRepository,
             TenderBidRepository tenderBidRepository,
             VerificationResultRepository verificationResultRepository,
+            ComplianceResultRepository complianceResultRepository,
+            RecommendationRepository recommendationRepository,
             RestTemplate restTemplate,
             ObjectMapper objectMapper,
             String ocrBaseUrl,
-            String verificationBaseUrl
+            String verificationBaseUrl,
+            String aiBaseUrl
     ) {
         this.documentService = documentService;
         this.tenderBidService = tenderBidService;
@@ -56,10 +67,13 @@ public class OrchestrationServiceImpl implements OrchestrationService {
         this.documentRepository = documentRepository;
         this.tenderBidRepository = tenderBidRepository;
         this.verificationResultRepository = verificationResultRepository;
+        this.complianceResultRepository = complianceResultRepository;
+        this.recommendationRepository = recommendationRepository;
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
         this.ocrBaseUrl = ocrBaseUrl;
         this.verificationBaseUrl = verificationBaseUrl;
+        this.aiBaseUrl = aiBaseUrl;
     }
 
     @Override
@@ -164,21 +178,123 @@ public class OrchestrationServiceImpl implements OrchestrationService {
     @Override
     public void triggerComplianceEvaluation(UUID tenderBidId) {
         TenderBid tenderBid = tenderBidService.getTenderBidById(tenderBidId);
+        Bidder bidder = bidderService.getBidderById(tenderBid.getBidderId());
         List<Document> documents = documentRepository.findByTenderBidId(tenderBidId);
         List<VerificationResult> verifications = verificationResultRepository.findByTenderBidId(tenderBidId);
 
-        // Placeholder rules for the future AI/ML compliance scoring service.
-        boolean needsReview = documents.stream().anyMatch(document ->
-                document.getStatus() == DocumentStatus.FAILED
-                        || (document.getClassificationConfidence() != null
-                        && document.getClassificationConfidence() < MINIMUM_CLASSIFICATION_CONFIDENCE));
-        needsReview = needsReview || verifications.stream().anyMatch(result ->
-                "NOT_FOUND".equals(result.getStatus()) || "FAILED".equals(result.getStatus()));
+        try {
+            Map<String, Object> bidderData = new HashMap<>();
+            bidderData.put("id", bidder.getId().toString());
+            bidderData.put("company_name", bidder.getCompanyName());
+            bidderData.put("email", bidder.getEmail());
+            bidderData.put("phone", bidder.getPhone());
+            if (bidder.getPan() != null && !bidder.getPan().isBlank()) {
+                bidderData.put("pan", Map.of("pan", bidder.getPan(), "name", bidder.getCompanyName()));
+            }
+            if (bidder.getGstin() != null && !bidder.getGstin().isBlank()) {
+                bidderData.put("gst", Map.of("gstin", bidder.getGstin(), "legal_name", bidder.getCompanyName()));
+            }
 
-        tenderBid.markComplianceResult(needsReview
-                ? BidStatus.NEEDS_REVIEW
-                : BidStatus.PASSED_AUTOMATED_CHECKS);
-        tenderBidRepository.save(tenderBid);
+            List<Object> extractedEntities = new ArrayList<>();
+            for (Document doc : documents) {
+                if (doc.getOcrExtractedFields() != null && !doc.getOcrExtractedFields().isBlank()) {
+                    try {
+                        Object parsedFields = objectMapper.readValue(doc.getOcrExtractedFields(), Object.class);
+                        String docTypeKey = doc.getDocumentType() != null ? doc.getDocumentType().name().toLowerCase() : "other";
+                        if (!bidderData.containsKey(docTypeKey)) {
+                            bidderData.put(docTypeKey, parsedFields);
+                        }
+                        if (parsedFields instanceof List) {
+                            extractedEntities.addAll((List<?>) parsedFields);
+                        } else {
+                            extractedEntities.add(parsedFields);
+                        }
+                    } catch (Exception e) {
+                        logger.warn("Could not parse ocrExtractedFields for doc {}: {}", doc.getId(), e.getMessage());
+                    }
+                }
+            }
+            bidderData.put("extracted_entities", extractedEntities);
+
+            Map<String, Object> verificationResultsMap = new HashMap<>();
+            for (VerificationResult vr : verifications) {
+                Map<String, Object> resMap = new HashMap<>();
+                resMap.put("status", vr.getStatus());
+                resMap.put("source", vr.getSource());
+                resMap.put("reason", vr.getErrorState() != null ? vr.getErrorState() : "");
+                resMap.put("confidence", vr.getConfidence());
+                resMap.put("identifier", vr.getIdentifier());
+                if (vr.getEvidence() != null) {
+                    resMap.put("evidence", vr.getEvidence());
+                }
+                verificationResultsMap.put(vr.getVerificationType(), resMap);
+            }
+
+            Map<String, Object> requestBody = Map.of(
+                    "bidder_data", bidderData,
+                    "verification_results", verificationResultsMap
+            );
+
+            ResponseEntity<Map> response = restTemplate.postForEntity(
+                    aiBaseUrl + "/api/ai/analyze",
+                    new HttpEntity<>(requestBody, jsonHeaders()),
+                    Map.class
+            );
+
+            Map<String, Object> aiResult = response.getBody();
+            if (!response.getStatusCode().is2xxSuccessful() || aiResult == null) {
+                throw new IllegalStateException("AI engine returned non-successful status or null body");
+            }
+
+            String status = stringValue(aiResult, "status");
+            Double consistencyScore = doubleValue(aiResult, "identity_consistency_score");
+            BigDecimal entityMatchScore = consistencyScore != null ? BigDecimal.valueOf(consistencyScore) : BigDecimal.ZERO;
+            String riskLevel = stringValue(aiResult, "risk_level");
+            String recommendationText = stringValue(aiResult, "recommendation");
+            String explanation = stringValue(aiResult, "explanation");
+
+            Map<String, Object> discrepanciesMap = new HashMap<>();
+            discrepanciesMap.put("findings", aiResult.get("findings"));
+            discrepanciesMap.put("consistency_checks", aiResult.get("consistency_checks"));
+            discrepanciesMap.put("identifier_checks", aiResult.get("identifier_checks"));
+            String discrepanciesJson = objectMapper.writeValueAsString(discrepanciesMap);
+
+            ComplianceResult complianceResult = new ComplianceResult(
+                    tenderBidId,
+                    entityMatchScore,
+                    riskLevel,
+                    discrepanciesJson,
+                    explanation
+            );
+            complianceResultRepository.save(complianceResult);
+
+            Recommendation recommendation = new Recommendation(
+                    tenderBidId,
+                    complianceResult.getId(),
+                    recommendationText,
+                    entityMatchScore
+            );
+            recommendationRepository.save(recommendation);
+
+            boolean pass = ("CONSISTENT".equalsIgnoreCase(status) || "PASS".equalsIgnoreCase(status) || "LOW".equalsIgnoreCase(riskLevel));
+            tenderBid.markComplianceResult(pass ? BidStatus.PASSED_AUTOMATED_CHECKS : BidStatus.NEEDS_REVIEW);
+            tenderBidRepository.save(tenderBid);
+
+        } catch (Exception exception) {
+            logger.error("AI service call failed for tender bid {} at {}: {}", tenderBidId, aiBaseUrl, exception.getMessage(), exception);
+            // Fallback heuristic
+            boolean needsReview = documents.stream().anyMatch(document ->
+                    document.getStatus() == DocumentStatus.FAILED
+                            || (document.getClassificationConfidence() != null
+                            && document.getClassificationConfidence() < MINIMUM_CLASSIFICATION_CONFIDENCE));
+            needsReview = needsReview || verifications.stream().anyMatch(result ->
+                    "NOT_FOUND".equals(result.getStatus()) || "FAILED".equals(result.getStatus()));
+
+            tenderBid.markComplianceResult(needsReview
+                    ? BidStatus.NEEDS_REVIEW
+                    : BidStatus.PASSED_AUTOMATED_CHECKS);
+            tenderBidRepository.save(tenderBid);
+        }
     }
 
     public List<VerificationResult> getVerificationResults(UUID tenderBidId) {

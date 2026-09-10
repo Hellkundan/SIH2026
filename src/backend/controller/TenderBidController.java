@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import backend.model.ComplianceResult;
+import backend.model.Recommendation;
+import backend.repository.ComplianceResultRepository;
+import backend.repository.RecommendationRepository;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,16 +29,20 @@ import java.util.UUID;
 public class TenderBidController {
 
     private final TenderBidService tenderBidService;
-        private final OrchestrationService orchestrationService;
+    private final OrchestrationService orchestrationService;
+    private final ComplianceResultRepository complianceResultRepository;
+    private final RecommendationRepository recommendationRepository;
 
-
-        public TenderBidController(
-                        TenderBidService tenderBidService,
-                        OrchestrationService orchestrationService
-        ) {
-
+    public TenderBidController(
+            TenderBidService tenderBidService,
+            OrchestrationService orchestrationService,
+            ComplianceResultRepository complianceResultRepository,
+            RecommendationRepository recommendationRepository
+    ) {
         this.tenderBidService = tenderBidService;
-                this.orchestrationService = orchestrationService;
+        this.orchestrationService = orchestrationService;
+        this.complianceResultRepository = complianceResultRepository;
+        this.recommendationRepository = recommendationRepository;
     }
 
 
@@ -49,6 +57,20 @@ public class TenderBidController {
                 "Verification and compliance evaluation completed",
                 HttpStatus.OK
         );
+    }
+
+    @GetMapping("/{id}/compliance")
+    public ResponseEntity<ApiResponse<ComplianceResult>> getComplianceResult(@PathVariable UUID id) {
+        List<ComplianceResult> results = complianceResultRepository.findByTenderBidId(id);
+        ComplianceResult latest = results.isEmpty() ? null : results.get(results.size() - 1);
+        return response(latest, "Compliance result retrieved", HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/recommendation")
+    public ResponseEntity<ApiResponse<Recommendation>> getRecommendation(@PathVariable UUID id) {
+        List<Recommendation> results = recommendationRepository.findByTenderBidId(id);
+        Recommendation latest = results.isEmpty() ? null : results.get(results.size() - 1);
+        return response(latest, "Recommendation retrieved", HttpStatus.OK);
     }
 
 

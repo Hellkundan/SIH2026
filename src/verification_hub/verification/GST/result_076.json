@@ -1,9 +1,9 @@
 {
     "bidder_id": "GST-076",
     "verification_type": "GST",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_GST_DATASET",
-    "timestamp": "2026-09-10T19:19:05.027852Z",
+    "timestamp": "2026-09-10T22:12:32.052690Z",
     "evidence": {
         "provider": "GSTProvider",
         "source": "MOCK_GST_DATASET",
@@ -19,11 +19,7 @@
             "taxpayer_type": "Composition",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "10RSKRJ1012Q4ZO"
-            ],
-            "dataset_status": "CANCELLED"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-043",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.286400Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "533331515937",
+        "details": {
+            "identifier": "533331515937",
+            "pan": "DFPTR1747Y",
+            "company_name": "Ashok Malhotra",
+            "status": "INACTIVE",
+            "date_of_birth": "1967-04-04",
+            "gender": "Female",
+            "state": "Kerala",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

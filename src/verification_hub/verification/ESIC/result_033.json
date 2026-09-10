@@ -1,9 +1,9 @@
 {
     "bidder_id": "ESIC-033",
     "verification_type": "ESIC",
-    "status": "PENDING",
+    "status": "VERIFIED",
     "source": "MOCK_ESIC_DATASET",
-    "timestamp": "2026-09-10T19:19:06.153132Z",
+    "timestamp": "2026-09-10T22:12:32.807290Z",
     "evidence": {
         "provider": "ESICProvider",
         "source": "MOCK_ESIC_DATASET",
@@ -17,11 +17,7 @@
             "date_of_registration": "2019-02-02",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "ESIC-3032"
-            ],
-            "dataset_status": "PENDING"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

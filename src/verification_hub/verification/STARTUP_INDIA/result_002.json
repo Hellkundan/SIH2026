@@ -1,9 +1,9 @@
 {
     "bidder_id": "STARTUP_INDIA-002",
     "verification_type": "STARTUP_INDIA",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_STARTUP_INDIA_DATASET",
-    "timestamp": "2026-09-10T19:19:06.218816Z",
+    "timestamp": "2026-09-10T22:12:32.873445Z",
     "evidence": {
         "provider": "StartupIndiaProvider",
         "source": "MOCK_STARTUP_INDIA_DATASET",
@@ -18,11 +18,7 @@
             "certificate_number": "DIPP58001",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "DIPP-50001"
-            ],
-            "dataset_status": null
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

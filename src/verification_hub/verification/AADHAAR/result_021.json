@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-021",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.231524Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "853292475634",
+        "details": {
+            "identifier": "853292475634",
+            "pan": "UIWSH0907P",
+            "company_name": "Rohit Kapoor",
+            "status": "VALID",
+            "date_of_birth": "1989-04-12",
+            "gender": "Male",
+            "state": "Madhya Pradesh",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -2,6 +2,7 @@ from app.models.enums import VerificationType
 from app.providers.gst_provider import GSTProvider
 from app.providers.udyam_provider import UdyamProvider
 from app.providers.pan_provider import PANProvider
+from app.providers.aadhaar_provider import AadhaarProvider
 from app.providers.epfo_provider import EPFOProvider
 from app.providers.esic_provider import ESICProvider
 from app.providers.start_provider import StartupIndiaProvider
@@ -16,6 +17,7 @@ class ProviderRegistry:
             VerificationType.GST: GSTProvider(),
             VerificationType.UDYAM: UdyamProvider(),
             VerificationType.PAN: PANProvider(),
+            VerificationType.AADHAAR: AadhaarProvider(),
             VerificationType.EPFO: EPFOProvider(),
             VerificationType.ESIC: ESICProvider(),
             VerificationType.STARTUP_INDIA: StartupIndiaProvider(),

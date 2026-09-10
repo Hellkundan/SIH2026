@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-059",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.339327Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "487734515057",
+        "details": {
+            "identifier": "487734515057",
+            "pan": "DZKUI9715Q",
+            "company_name": "Geeta Singh",
+            "status": "VALID",
+            "date_of_birth": "1997-11-20",
+            "gender": "Male",
+            "state": "Maharashtra",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

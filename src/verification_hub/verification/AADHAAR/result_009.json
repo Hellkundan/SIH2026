@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-009",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.200369Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "108495500653",
+        "details": {
+            "identifier": "108495500653",
+            "pan": "GKRHI7049D",
+            "company_name": "Geeta Patel",
+            "status": "VALID",
+            "date_of_birth": "2000-12-11",
+            "gender": "Male",
+            "state": "Punjab",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

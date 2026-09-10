@@ -11,7 +11,9 @@ import backend.security.AppUser;
 import backend.security.Role;
 import backend.security.UserStorage;
 import backend.repository.BidderRepository;
+import backend.repository.ComplianceResultRepository;
 import backend.repository.DocumentRepository;
+import backend.repository.RecommendationRepository;
 import backend.repository.TenderBidRepository;
 import backend.repository.TenderRequirementRepository;
 import backend.repository.TenderRepository;
@@ -102,10 +104,13 @@ public class BackendApplication {
             DocumentRepository documentRepository,
             TenderBidRepository tenderBidRepository,
             VerificationResultRepository verificationResultRepository,
+            ComplianceResultRepository complianceResultRepository,
+            RecommendationRepository recommendationRepository,
             RestTemplate restTemplate,
             ObjectMapper objectMapper,
-            @Value("${app.ocr.base-url}") String ocrBaseUrl,
-            @Value("${app.verification.base-url}") String verificationBaseUrl
+            @Value("${app.ocr.base-url:http://localhost:8001}") String ocrBaseUrl,
+            @Value("${app.verification.base-url:http://localhost:8000}") String verificationBaseUrl,
+            @Value("${app.ai.base-url:http://localhost:8002}") String aiBaseUrl
     ) {
         return new OrchestrationServiceImpl(
                 documentService,
@@ -114,10 +119,13 @@ public class BackendApplication {
                 documentRepository,
                 tenderBidRepository,
                 verificationResultRepository,
+                complianceResultRepository,
+                recommendationRepository,
                 restTemplate,
                 objectMapper,
                 ocrBaseUrl,
-                verificationBaseUrl
+                verificationBaseUrl,
+                aiBaseUrl
         );
     }
 

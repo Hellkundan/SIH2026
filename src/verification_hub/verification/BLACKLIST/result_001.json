@@ -1,9 +1,9 @@
 {
     "bidder_id": "BLACKLIST-001",
     "verification_type": "BLACKLIST",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_BLACKLIST_DATASET",
-    "timestamp": "2026-09-10T19:19:06.550192Z",
+    "timestamp": "2026-09-10T22:12:33.142318Z",
     "evidence": {
         "provider": "BlacklistProvider",
         "source": "MOCK_BLACKLIST_DATASET",
@@ -17,14 +17,8 @@
             "debarment_period": "2023-09-19 to 2027-03-03",
             "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim",
             "match_type": "exact",
-            "searched_identifiers": [
-                "EJSNV1096Z"
-            ],
-            "dataset_status": "DEBARRED",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "finding": "ADVERSE",
-            "requires_human_review": true
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

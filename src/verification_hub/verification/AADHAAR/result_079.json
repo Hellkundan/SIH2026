@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-079",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.406641Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "321122739746",
+        "details": {
+            "identifier": "321122739746",
+            "pan": "YIQUI3889E",
+            "company_name": "Suresh Kumar",
+            "status": "VALID",
+            "date_of_birth": "1966-05-01",
+            "gender": "Female",
+            "state": "Gujarat",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

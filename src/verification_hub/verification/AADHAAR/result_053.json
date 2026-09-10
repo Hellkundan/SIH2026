@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-053",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.319254Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "486916700733",
+        "details": {
+            "identifier": "486916700733",
+            "pan": "LJLBD3329A",
+            "company_name": "Anita Malhotra",
+            "status": "VALID",
+            "date_of_birth": "1996-03-22",
+            "gender": "Male",
+            "state": "Uttar Pradesh",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

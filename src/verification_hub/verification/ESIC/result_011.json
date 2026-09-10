@@ -3,7 +3,7 @@
     "verification_type": "ESIC",
     "status": "VERIFIED",
     "source": "MOCK_ESIC_DATASET",
-    "timestamp": "2026-09-10T19:19:06.074873Z",
+    "timestamp": "2026-09-10T22:12:32.742182Z",
     "evidence": {
         "provider": "ESICProvider",
         "source": "MOCK_ESIC_DATASET",
@@ -17,11 +17,7 @@
             "date_of_registration": "2020-02-19",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "ESIC-3010"
-            ],
-            "dataset_status": "ACTIVE"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

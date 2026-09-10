@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-002",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.180827Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "432041902683",
+        "details": {
+            "identifier": "432041902683",
+            "pan": "FHCGC2633G",
+            "company_name": "Arjun Singh",
+            "status": "VALID",
+            "date_of_birth": "1962-01-22",
+            "gender": "Female",
+            "state": "Madhya Pradesh",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

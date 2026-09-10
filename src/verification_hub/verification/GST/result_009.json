@@ -3,7 +3,7 @@
     "verification_type": "GST",
     "status": "VERIFIED",
     "source": "MOCK_GST_DATASET",
-    "timestamp": "2026-09-10T19:19:04.779887Z",
+    "timestamp": "2026-09-10T22:12:31.867581Z",
     "evidence": {
         "provider": "GSTProvider",
         "source": "MOCK_GST_DATASET",
@@ -19,11 +19,7 @@
             "taxpayer_type": "Regular",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "07DGNKJ1080X7ZG"
-            ],
-            "dataset_status": "ACTIVE"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

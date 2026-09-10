@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-044",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.289961Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "204320534080",
+        "details": {
+            "identifier": "204320534080",
+            "pan": "NMOUX4863P",
+            "company_name": "Geeta Joshi",
+            "status": "INACTIVE",
+            "date_of_birth": "1963-10-20",
+            "gender": "Male",
+            "state": "Maharashtra",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

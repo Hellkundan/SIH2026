@@ -37,7 +37,7 @@ public class DocumentController {
         public DocumentController(
                         DocumentService documentService,
                             OrchestrationService orchestrationService,
-                            @Value("${app.storage.documents-dir}") String documentsDirectory
+                            @Value("${app.storage.documents-dir:./data/documents}") String documentsDirectory
         ) {
 
         this.documentService = documentService;

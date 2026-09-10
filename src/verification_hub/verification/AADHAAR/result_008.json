@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-008",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.198604Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "524039274499",
+        "details": {
+            "identifier": "524039274499",
+            "pan": "EFBTB3049Q",
+            "company_name": "Suresh Kapoor",
+            "status": "VALID",
+            "date_of_birth": "2003-08-05",
+            "gender": "Male",
+            "state": "Maharashtra",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

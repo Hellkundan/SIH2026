@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-032",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.258410Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "539813326083",
+        "details": {
+            "identifier": "539813326083",
+            "pan": "XTVXU2821I",
+            "company_name": "Ajay Iyer",
+            "status": "VALID",
+            "date_of_birth": "2001-12-02",
+            "gender": "Male",
+            "state": "Kerala",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

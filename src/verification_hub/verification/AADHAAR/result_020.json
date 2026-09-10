@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-020",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.228604Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "761786197343",
+        "details": {
+            "identifier": "761786197343",
+            "pan": "KMLJX4115U",
+            "company_name": "Anita Rao",
+            "status": "VALID",
+            "date_of_birth": "1979-01-28",
+            "gender": "Female",
+            "state": "Telangana",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

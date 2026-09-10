@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-012",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.207954Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "921714197467",
+        "details": {
+            "identifier": "921714197467",
+            "pan": "JBMFX3882V",
+            "company_name": "Rekha Kumar",
+            "status": "VALID",
+            "date_of_birth": "1968-12-04",
+            "gender": "Male",
+            "state": "Rajasthan",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

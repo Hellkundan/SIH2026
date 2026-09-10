@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-014",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.214431Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "661956365163",
+        "details": {
+            "identifier": "661956365163",
+            "pan": "HOAHL5644G",
+            "company_name": "Anita Joshi",
+            "status": "VALID",
+            "date_of_birth": "1969-10-19",
+            "gender": "Female",
+            "state": "Bihar",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

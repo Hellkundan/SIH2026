@@ -1,9 +1,9 @@
 {
     "bidder_id": "NSIC-009",
     "verification_type": "NSIC",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_NSIC_DATASET",
-    "timestamp": "2026-09-10T19:19:06.360993Z",
+    "timestamp": "2026-09-10T22:12:33.007521Z",
     "evidence": {
         "provider": "NSICProvider",
         "source": "MOCK_NSIC_DATASET",
@@ -17,11 +17,7 @@
             "valid_upto": "2024-07-18",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "NSIC-4008"
-            ],
-            "dataset_status": null
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

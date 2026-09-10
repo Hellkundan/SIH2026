@@ -1,9 +1,9 @@
 {
     "bidder_id": "UDYAM-030",
     "verification_type": "UDYAM",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_UDYAM_DATASET",
-    "timestamp": "2026-09-10T19:19:05.667110Z",
+    "timestamp": "2026-09-10T22:12:32.473894Z",
     "evidence": {
         "provider": "UdyamProvider",
         "source": "MOCK_UDYAM_DATASET",
@@ -18,11 +18,7 @@
             "date_of_registration": "2017-02-25",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "UDYAM-DL-09-1000029"
-            ],
-            "dataset_status": "SUSPENDED"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-033",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.260883Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "345702711595",
+        "details": {
+            "identifier": "345702711595",
+            "pan": "YZHWU4072V",
+            "company_name": "Sandeep Verma",
+            "status": "INACTIVE",
+            "date_of_birth": "1968-05-27",
+            "gender": "Female",
+            "state": "Odisha",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

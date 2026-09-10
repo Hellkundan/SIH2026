@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-028",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.245790Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "518475289253",
+        "details": {
+            "identifier": "518475289253",
+            "pan": "WHUKY5822S",
+            "company_name": "Naveen Singh",
+            "status": "SUSPENDED",
+            "date_of_birth": "1990-12-05",
+            "gender": "Female",
+            "state": "Odisha",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

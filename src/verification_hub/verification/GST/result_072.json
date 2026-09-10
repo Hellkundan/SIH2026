@@ -1,9 +1,9 @@
 {
     "bidder_id": "GST-072",
     "verification_type": "GST",
-    "status": "PENDING",
+    "status": "VERIFIED",
     "source": "MOCK_GST_DATASET",
-    "timestamp": "2026-09-10T19:19:05.013061Z",
+    "timestamp": "2026-09-10T22:12:32.039144Z",
     "evidence": {
         "provider": "GSTProvider",
         "source": "MOCK_GST_DATASET",
@@ -19,11 +19,7 @@
             "taxpayer_type": "Regular",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "08EKRMA1056J2ZO"
-            ],
-            "dataset_status": "PENDING_VERIFICATION"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

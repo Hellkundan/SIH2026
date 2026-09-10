@@ -1,9 +1,9 @@
 {
     "bidder_id": "EPFO-012",
     "verification_type": "EPFO",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_EPFO_DATASET",
-    "timestamp": "2026-09-10T19:19:05.870136Z",
+    "timestamp": "2026-09-10T22:12:32.587683Z",
     "evidence": {
         "provider": "EPFOProvider",
         "source": "MOCK_EPFO_DATASET",
@@ -18,11 +18,7 @@
             "employee_count_range": "20-50",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "EPFO-2011"
-            ],
-            "dataset_status": "EXITED"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

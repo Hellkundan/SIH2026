@@ -4,6 +4,7 @@ class VerificationType(str, Enum):
     GST = "GST"
     UDYAM = "UDYAM"
     PAN = "PAN"
+    AADHAAR = "AADHAAR"
     EPFO = "EPFO"
     ESIC = "ESIC"
     STARTUP_INDIA = "STARTUP_INDIA"

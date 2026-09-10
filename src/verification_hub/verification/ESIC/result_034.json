@@ -1,9 +1,9 @@
 {
     "bidder_id": "ESIC-034",
     "verification_type": "ESIC",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_ESIC_DATASET",
-    "timestamp": "2026-09-10T19:19:06.156175Z",
+    "timestamp": "2026-09-10T22:12:32.811697Z",
     "evidence": {
         "provider": "ESICProvider",
         "source": "MOCK_ESIC_DATASET",
@@ -17,11 +17,7 @@
             "date_of_registration": "2014-03-19",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "ESIC-3033"
-            ],
-            "dataset_status": "CANCELLED"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-068",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.368981Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "875030990904",
+        "details": {
+            "identifier": "875030990904",
+            "pan": "ZJXLX3098E",
+            "company_name": "Arjun Iyer",
+            "status": "VALID",
+            "date_of_birth": "1999-12-21",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

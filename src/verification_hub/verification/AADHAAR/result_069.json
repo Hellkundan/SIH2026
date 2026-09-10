@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-069",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.372096Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "572002655823",
+        "details": {
+            "identifier": "572002655823",
+            "pan": "RPYXG0546B",
+            "company_name": "Divya Malhotra",
+            "status": "VALID",
+            "date_of_birth": "1965-01-26",
+            "gender": "Male",
+            "state": "Madhya Pradesh",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

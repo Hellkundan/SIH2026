@@ -1,9 +1,9 @@
 {
     "bidder_id": "BLACKLIST-007",
     "verification_type": "BLACKLIST",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_BLACKLIST_DATASET",
-    "timestamp": "2026-09-10T19:19:06.569435Z",
+    "timestamp": "2026-09-10T22:12:33.161208Z",
     "evidence": {
         "provider": "BlacklistProvider",
         "source": "MOCK_BLACKLIST_DATASET",
@@ -17,14 +17,8 @@
             "debarment_period": "2024-11-26 to 2026-07-21",
             "reason": "Controlled SIH demo record - Simulated debarment for tender document forgery",
             "match_type": "exact",
-            "searched_identifiers": [
-                "DGNKJ1080X"
-            ],
-            "dataset_status": "DEBARRED",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "finding": "ADVERSE",
-            "requires_human_review": true
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

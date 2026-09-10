@@ -1,9 +1,9 @@
 {
     "bidder_id": "PAN-084",
     "verification_type": "PAN",
-    "status": "MANUAL_REVIEW",
+    "status": "VERIFIED",
     "source": "MOCK_PAN_DATASET",
-    "timestamp": "2026-09-10T19:19:05.484553Z",
+    "timestamp": "2026-09-10T22:12:32.337310Z",
     "evidence": {
         "provider": "PANProvider",
         "source": "MOCK_PAN_DATASET",
@@ -16,11 +16,7 @@
             "aadhaar_linked": "Yes",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "OUNAI1010A"
-            ],
-            "dataset_status": "DEACTIVATED"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

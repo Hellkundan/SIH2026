@@ -3,7 +3,7 @@
     "verification_type": "PAN",
     "status": "VERIFIED",
     "source": "MOCK_PAN_DATASET",
-    "timestamp": "2026-09-10T19:19:05.400859Z",
+    "timestamp": "2026-09-10T22:12:32.286391Z",
     "evidence": {
         "provider": "PANProvider",
         "source": "MOCK_PAN_DATASET",
@@ -16,11 +16,7 @@
             "aadhaar_linked": "Yes",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0,
-            "searched_identifiers": [
-                "SCEHA1070K"
-            ],
-            "dataset_status": "VALID"
+            "name_similarity": 1.0
         }
     },
     "error_state": "NONE",

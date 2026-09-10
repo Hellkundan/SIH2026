@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-016",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.219280Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "559114553748",
+        "details": {
+            "identifier": "559114553748",
+            "pan": "XTMGG6756I",
+            "company_name": "Swati Desai",
+            "status": "INACTIVE",
+            "date_of_birth": "1985-09-15",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

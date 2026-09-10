@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-029",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.248420Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "537398923843",
+        "details": {
+            "identifier": "537398923843",
+            "pan": "UQDZD9318D",
+            "company_name": "Rohit Pillai",
+            "status": "VALID",
+            "date_of_birth": "1982-07-22",
+            "gender": "Female",
+            "state": "Maharashtra",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-055",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.324852Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "343549180374",
+        "details": {
+            "identifier": "343549180374",
+            "pan": "DIBMN1855Y",
+            "company_name": "Swati Kumar",
+            "status": "VALID",
+            "date_of_birth": "1984-10-03",
+            "gender": "Male",
+            "state": "Rajasthan",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

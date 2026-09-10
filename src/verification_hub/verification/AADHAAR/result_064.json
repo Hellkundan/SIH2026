@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-064",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.355051Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "722076278094",
+        "details": {
+            "identifier": "722076278094",
+            "pan": "MYZYW0519J",
+            "company_name": "Sunita Reddy",
+            "status": "INACTIVE",
+            "date_of_birth": "1960-07-26",
+            "gender": "Female",
+            "state": "Kerala",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

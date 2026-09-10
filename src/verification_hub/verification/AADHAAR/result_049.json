@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-049",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.306834Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "867128617400",
+        "details": {
+            "identifier": "867128617400",
+            "pan": "PLUGD2660P",
+            "company_name": "Radha Singh",
+            "status": "VALID",
+            "date_of_birth": "1967-09-24",
+            "gender": "Male",
+            "state": "Kerala",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

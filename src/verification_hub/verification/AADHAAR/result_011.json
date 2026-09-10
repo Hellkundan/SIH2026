@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-011",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.204613Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "803191475196",
+        "details": {
+            "identifier": "803191475196",
+            "pan": "OLBJY9036V",
+            "company_name": "Anita Kapoor",
+            "status": "VALID",
+            "date_of_birth": "1960-06-19",
+            "gender": "Male",
+            "state": "Gujarat",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}
