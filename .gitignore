@@ -28,3 +28,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### OCR / Uploaded Files ###
+src/ocr/app/files/*
+!src/ocr/app/files/.gitkeep
