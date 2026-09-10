@@ -72,10 +72,14 @@ def extract_identity_data(bidder_json):
 
     if isinstance(pan_data, dict):
         identity["pan"] = {
-            "number": pan_data.get("pan"),
+            "number": (
+                pan_data.get("pan")
+                or pan_data.get("number")
+            ),
             "name": pan_data.get("name"),
             "address": pan_data.get("address")
         }
+
 
     # --------------------------------------------------------
     # GST
@@ -86,11 +90,15 @@ def extract_identity_data(bidder_json):
     if isinstance(gst_data, dict):
         identity["gst"] = {
             "gstin": gst_data.get("gstin"),
-            "name": gst_data.get("legal_name"),
+            "name": (
+                gst_data.get("legal_name")
+                or gst_data.get("name")
+            ),
             "trade_name": gst_data.get("trade_name"),
             "address": gst_data.get("address"),
             "state": gst_data.get("state")
         }
+
 
     # --------------------------------------------------------
     # UDYAM
@@ -100,13 +108,22 @@ def extract_identity_data(bidder_json):
 
     if isinstance(udyam_data, dict):
         identity["udyam"] = {
-            "number": udyam_data.get("udyam_number"),
-            "name": udyam_data.get("enterprise_name"),
+            "number": (
+                udyam_data.get("udyam_number")
+                or udyam_data.get("number")
+                or udyam_data.get("identifier")
+            ),
+            "name": (
+                udyam_data.get("enterprise_name")
+                or udyam_data.get("name")
+                or udyam_data.get("company_name")
+            ),
             "pan": udyam_data.get("pan"),
             "gstin": udyam_data.get("gstin"),
             "address": udyam_data.get("address")
         }
 
+        
     # --------------------------------------------------------
     # MCA / CIN
     # --------------------------------------------------------
@@ -1201,7 +1218,7 @@ def dixy_anomaly_check(
 
                 })
 
-
+    
     pan_data = bidder_json.get(
         "pan",
         {}
@@ -1216,12 +1233,33 @@ def dixy_anomaly_check(
     missing_fields = []
 
 
-    if not pan_data.get("pan"):
+    # PAN may arrive as either:
+    # {"pan": "..."} or {"number": "..."}
+    if isinstance(pan_data, dict):
+        pan_value = (
+            pan_data.get("pan")
+            or pan_data.get("number")
+        )
+    else:
+        pan_value = None
+
+
+    # GSTIN is normally supplied as "gstin"
+    if isinstance(gst_data, dict):
+        gstin_value = gst_data.get("gstin")
+    else:
+        gstin_value = None
+
+
+    if not pan_value:
         missing_fields.append("PAN")
 
 
-    if not gst_data.get("gstin"):
+    if not gstin_value:
         missing_fields.append("GSTIN")
+
+
+
 
 
     if missing_fields:
