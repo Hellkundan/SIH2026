@@ -27,7 +27,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/dixy"
       SPRING_DATASOURCE_USERNAME: "dixy"
       SPRING_DATASOURCE_PASSWORD: "dixy_password"
-      SPRING_JPA_HIBERNATE_DDL_AUTO: "create-drop"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "validate"
     depends_on:
       postgres:
         condition: service_healthy

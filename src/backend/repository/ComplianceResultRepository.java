@@ -1,0 +1,13 @@
+package backend.repository;
+
+import backend.model.ComplianceResult;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.UUID;
+
+@Repository
+public interface ComplianceResultRepository extends JpaRepository<ComplianceResult, UUID> {
+    List<ComplianceResult> findByTenderBidId(UUID tenderBidId);
+}
