@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-078",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.402992Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "310332114540",
+        "details": {
+            "identifier": "310332114540",
+            "pan": "UWAKU7592Q",
+            "company_name": "Nisha Malhotra",
+            "status": "VALID",
+            "date_of_birth": "1963-10-20",
+            "gender": "Male",
+            "state": "Kerala",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

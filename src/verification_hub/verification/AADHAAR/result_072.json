@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-072",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.382681Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "754839099194",
+        "details": {
+            "identifier": "754839099194",
+            "pan": "KGIHM6338O",
+            "company_name": "Deepak Rao",
+            "status": "VALID",
+            "date_of_birth": "1996-12-07",
+            "gender": "Male",
+            "state": "Bihar",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

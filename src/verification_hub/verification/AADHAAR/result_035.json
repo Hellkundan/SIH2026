@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-035",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.265172Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "496557868692",
+        "details": {
+            "identifier": "496557868692",
+            "pan": "YWCRO9331D",
+            "company_name": "Arjun Chatterjee",
+            "status": "VALID",
+            "date_of_birth": "1971-08-15",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

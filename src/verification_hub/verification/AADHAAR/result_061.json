@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-061",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.344150Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "616681609103",
+        "details": {
+            "identifier": "616681609103",
+            "pan": "NPMWS7559P",
+            "company_name": "Nisha Verma",
+            "status": "VALID",
+            "date_of_birth": "2002-04-14",
+            "gender": "Female",
+            "state": "Gujarat",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-001",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.177783Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "122768040250",
+        "details": {
+            "identifier": "122768040250",
+            "pan": "KLHWT1422Y",
+            "company_name": "Vijay Singh",
+            "status": "VALID",
+            "date_of_birth": "1999-12-18",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

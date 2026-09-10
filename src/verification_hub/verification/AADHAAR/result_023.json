@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-023",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.235752Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "437100296710",
+        "details": {
+            "identifier": "437100296710",
+            "pan": "EBYMV4060E",
+            "company_name": "Neha Nair",
+            "status": "VALID",
+            "date_of_birth": "1988-08-11",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

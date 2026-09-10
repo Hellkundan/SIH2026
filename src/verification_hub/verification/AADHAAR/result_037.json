@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-037",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.270781Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "241043542679",
+        "details": {
+            "identifier": "241043542679",
+            "pan": "ZBMKR4900T",
+            "company_name": "Rajesh Verma",
+            "status": "VALID",
+            "date_of_birth": "1977-08-21",
+            "gender": "Male",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-015",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.216935Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "366092381096",
+        "details": {
+            "identifier": "366092381096",
+            "pan": "OSJKD6888Y",
+            "company_name": "Shalini Gupta",
+            "status": "VALID",
+            "date_of_birth": "1987-07-21",
+            "gender": "Female",
+            "state": "Tamil Nadu",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

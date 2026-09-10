@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-080",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.409123Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "233769732739",
+        "details": {
+            "identifier": "233769732739",
+            "pan": "TASYF7808Z",
+            "company_name": "Sunita Joshi",
+            "status": "VALID",
+            "date_of_birth": "1992-03-22",
+            "gender": "Female",
+            "state": "Kerala",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

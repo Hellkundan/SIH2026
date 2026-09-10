@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-074",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.389571Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "995808001601",
+        "details": {
+            "identifier": "995808001601",
+            "pan": "QRQMM0505I",
+            "company_name": "Suresh Pillai",
+            "status": "VALID",
+            "date_of_birth": "1987-06-02",
+            "gender": "Female",
+            "state": "Maharashtra",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

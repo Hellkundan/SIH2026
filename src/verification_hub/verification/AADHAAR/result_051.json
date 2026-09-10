@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-051",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.313278Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "468694117902",
+        "details": {
+            "identifier": "468694117902",
+            "pan": "NZOGT1378K",
+            "company_name": "Pooja Pillai",
+            "status": "INACTIVE",
+            "date_of_birth": "1960-06-10",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-077",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.400084Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "590483793702",
+        "details": {
+            "identifier": "590483793702",
+            "pan": "OJEPJ7220I",
+            "company_name": "Swati Gupta",
+            "status": "SUSPENDED",
+            "date_of_birth": "1989-04-12",
+            "gender": "Male",
+            "state": "Rajasthan",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

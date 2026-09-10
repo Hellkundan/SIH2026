@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-017",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.221249Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "480131243408",
+        "details": {
+            "identifier": "480131243408",
+            "pan": "WTJAJ7894X",
+            "company_name": "Kavita Iyer",
+            "status": "VALID",
+            "date_of_birth": "1995-12-01",
+            "gender": "Male",
+            "state": "Uttar Pradesh",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

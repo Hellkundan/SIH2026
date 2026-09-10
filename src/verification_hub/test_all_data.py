@@ -30,6 +30,7 @@ DATASETS = {
     "nsic_data.json": "NSIC",
     "oem_data.json": "OEM",
     "blacklist_data.json": "BLACKLIST",
+    "aadhaar_data.json": "AADHAAR",
 }
 
 

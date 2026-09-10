@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-041",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.280287Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "270044642531",
+        "details": {
+            "identifier": "270044642531",
+            "pan": "RBKPA3212K",
+            "company_name": "Sandeep Verma",
+            "status": "VALID",
+            "date_of_birth": "1995-08-17",
+            "gender": "Male",
+            "state": "Maharashtra",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

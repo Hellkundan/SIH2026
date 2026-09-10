@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-054",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.321708Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "277266921017",
+        "details": {
+            "identifier": "277266921017",
+            "pan": "JBOXW7967Q",
+            "company_name": "Radha Pillai",
+            "status": "SUSPENDED",
+            "date_of_birth": "2001-06-22",
+            "gender": "Male",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

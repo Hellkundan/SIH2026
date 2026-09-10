@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-058",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.334891Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "320236281353",
+        "details": {
+            "identifier": "320236281353",
+            "pan": "MIAYN9230P",
+            "company_name": "Rohit Singh",
+            "status": "VALID",
+            "date_of_birth": "1989-09-15",
+            "gender": "Female",
+            "state": "West Bengal",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

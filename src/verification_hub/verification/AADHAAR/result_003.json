@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-003",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.186324Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "524296237088",
+        "details": {
+            "identifier": "524296237088",
+            "pan": "WIRKX4225I",
+            "company_name": "Rekha Patel",
+            "status": "VALID",
+            "date_of_birth": "1962-04-19",
+            "gender": "Female",
+            "state": "Haryana",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

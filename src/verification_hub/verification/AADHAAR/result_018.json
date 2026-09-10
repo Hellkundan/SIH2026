@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-018",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.223205Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "536778995956",
+        "details": {
+            "identifier": "536778995956",
+            "pan": "MBJFI7378I",
+            "company_name": "Rajesh Kapoor",
+            "status": "VALID",
+            "date_of_birth": "1985-03-28",
+            "gender": "Male",
+            "state": "Uttar Pradesh",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

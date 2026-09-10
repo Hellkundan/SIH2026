@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-007",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.196814Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "204447690438",
+        "details": {
+            "identifier": "204447690438",
+            "pan": "DEMWB8806R",
+            "company_name": "Swati Kapoor",
+            "status": "VALID",
+            "date_of_birth": "1970-09-15",
+            "gender": "Male",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

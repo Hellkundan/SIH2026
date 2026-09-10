@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-057",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.332034Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "746462948620",
+        "details": {
+            "identifier": "746462948620",
+            "pan": "MIDWI9337Q",
+            "company_name": "Vijay Reddy",
+            "status": "VALID",
+            "date_of_birth": "1986-07-16",
+            "gender": "Male",
+            "state": "Gujarat",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

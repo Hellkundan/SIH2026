@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-050",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.309924Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "303516539575",
+        "details": {
+            "identifier": "303516539575",
+            "pan": "KJTJB2615Y",
+            "company_name": "Ajay Kumar",
+            "status": "VALID",
+            "date_of_birth": "1988-01-21",
+            "gender": "Female",
+            "state": "Karnataka",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

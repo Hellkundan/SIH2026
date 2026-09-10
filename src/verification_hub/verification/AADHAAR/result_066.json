@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-066",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.361645Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "166013458731",
+        "details": {
+            "identifier": "166013458731",
+            "pan": "FYMLZ3797Z",
+            "company_name": "Ashok Rao",
+            "status": "INACTIVE",
+            "date_of_birth": "1976-06-20",
+            "gender": "Male",
+            "state": "Bihar",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

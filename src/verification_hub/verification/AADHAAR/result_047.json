@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-047",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.300806Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "231878144624",
+        "details": {
+            "identifier": "231878144624",
+            "pan": "GZUXF6547Y",
+            "company_name": "Sandeep Agarwal",
+            "status": "VALID",
+            "date_of_birth": "1986-04-18",
+            "gender": "Female",
+            "state": "Punjab",
+            "mobile_linked": "No",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

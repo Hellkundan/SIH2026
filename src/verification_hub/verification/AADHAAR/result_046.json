@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-046",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.298008Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "270563179990",
+        "details": {
+            "identifier": "270563179990",
+            "pan": "JEFYM2108D",
+            "company_name": "Neha Malhotra",
+            "status": "VALID",
+            "date_of_birth": "1990-06-01",
+            "gender": "Male",
+            "state": "Kerala",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

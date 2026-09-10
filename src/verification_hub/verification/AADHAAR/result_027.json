@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-027",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.243657Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "278808405644",
+        "details": {
+            "identifier": "278808405644",
+            "pan": "YLSDZ6215R",
+            "company_name": "Rajesh Joshi",
+            "status": "VALID",
+            "date_of_birth": "1975-09-05",
+            "gender": "Female",
+            "state": "Delhi",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}

@@ -1,0 +1,28 @@
+{
+    "bidder_id": "AADHAAR-030",
+    "verification_type": "AADHAAR",
+    "status": "VERIFIED",
+    "source": "MOCK_AADHAAR_DATASET",
+    "timestamp": "2026-09-10T22:12:33.251126Z",
+    "evidence": {
+        "provider": "AadhaarProvider",
+        "source": "MOCK_AADHAAR_DATASET",
+        "matched_identifier": "172630365968",
+        "details": {
+            "identifier": "172630365968",
+            "pan": "BQXZT4068O",
+            "company_name": "Meena Kumar",
+            "status": "VALID",
+            "date_of_birth": "1992-01-20",
+            "gender": "Male",
+            "state": "Madhya Pradesh",
+            "mobile_linked": "Yes",
+            "match_type": "exact",
+            "edit_distance": 0,
+            "name_similarity": 1.0
+        }
+    },
+    "error_state": "NONE",
+    "error_message": null,
+    "confidence": 0.99
+}
