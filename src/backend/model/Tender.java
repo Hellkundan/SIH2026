@@ -60,26 +60,12 @@ public class Tender {
 
 
     public void openTender() {
-
-        if (this.status == TenderStatus.DRAFT) {
-            this.status = TenderStatus.OPEN;
-        } else {
-            throw new IllegalStateException(
-                    "Tender can only be opened when status is DRAFT"
-            );
-        }
+        this.status = TenderStatus.OPEN;
     }
 
 
     public void closeTender() {
-
-        if (this.status == TenderStatus.OPEN) {
-            this.status = TenderStatus.CLOSED;
-        } else {
-            throw new IllegalStateException(
-                    "Tender can only be closed when status is OPEN"
-            );
-        }
+        this.status = TenderStatus.CLOSED;
     }
 
 

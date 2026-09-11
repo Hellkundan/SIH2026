@@ -92,11 +92,9 @@ public class TenderBid {
 
 
     public void startReview() {
-
-        if (this.status != BidStatus.SUBMITTED) {
-
+        if (this.status == BidStatus.DRAFT) {
             throw new IllegalStateException(
-                    "Only a SUBMITTED bid can be moved to review"
+                    "A DRAFT bid cannot be moved to review"
             );
         }
 
@@ -105,11 +103,9 @@ public class TenderBid {
 
 
     public void qualifyBid() {
-
-        if (this.status != BidStatus.UNDER_REVIEW) {
-
+        if (this.status == BidStatus.DRAFT) {
             throw new IllegalStateException(
-                    "Only a bid UNDER_REVIEW can be qualified"
+                    "A DRAFT bid cannot be qualified"
             );
         }
 
@@ -118,11 +114,9 @@ public class TenderBid {
 
 
     public void disqualifyBid() {
-
-        if (this.status != BidStatus.UNDER_REVIEW) {
-
+        if (this.status == BidStatus.DRAFT) {
             throw new IllegalStateException(
-                    "Only a bid UNDER_REVIEW can be disqualified"
+                    "A DRAFT bid cannot be disqualified"
             );
         }
 
