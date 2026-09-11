@@ -58,7 +58,10 @@ export async function updateTender(
 }
 
 export async function setTenderStatus(id: string, action: "open" | "close"): Promise<Tender> {
-  if (!USE_MOCK) return http<Tender>(`/tenders/${id}/${action}`, { method: "POST" });
+  if (!USE_MOCK) {
+    const res = await http<Tender>(`/tenders/${id}/${action}`, { method: "POST" });
+    return res ?? ({ id, status: action === "open" ? "OPEN" : "CLOSED" } as Tender);
+  }
   await delay();
   return updateTender(id, { status: action === "open" ? "OPEN" : "CLOSED" });
 }

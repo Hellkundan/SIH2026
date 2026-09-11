@@ -93,24 +93,32 @@ public class TenderController {
 
 
     @PostMapping("/{id}/open")
-    public ResponseEntity<ApiResponse<Void>> openTender(
+    public ResponseEntity<ApiResponse<TenderResponse>> openTender(
             @PathVariable UUID id
     ) {
 
         tenderService.openTender(id);
 
-        return response(null, "Tender opened", HttpStatus.OK);
+        return response(
+                new TenderResponse(tenderService.getTenderById(id)),
+                "Tender opened",
+                HttpStatus.OK
+        );
     }
 
 
     @PostMapping("/{id}/close")
-    public ResponseEntity<ApiResponse<Void>> closeTender(
+    public ResponseEntity<ApiResponse<TenderResponse>> closeTender(
             @PathVariable UUID id
     ) {
 
         tenderService.closeTender(id);
 
-        return response(null, "Tender closed", HttpStatus.OK);
+        return response(
+                new TenderResponse(tenderService.getTenderById(id)),
+                "Tender closed",
+                HttpStatus.OK
+        );
     }
 
 
