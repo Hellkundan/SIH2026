@@ -64,6 +64,9 @@ public class OrchestrationServiceComplianceTest {
     private RecommendationRepository recommendationRepository;
 
     @Autowired
+    private backend.repository.CartelSignalRepository cartelSignalRepository;
+
+    @Autowired
     private RestTemplate restTemplate;
 
     private MockRestServiceServer mockServer;
@@ -121,5 +124,51 @@ public class OrchestrationServiceComplianceTest {
 
         TenderBid updatedBid = tenderBidRepository.findById(bid.getId()).orElseThrow();
         assertEquals(BidStatus.PASSED_AUTOMATED_CHECKS, updatedBid.getStatus());
+    }
+
+    @Test
+    public void testTriggerCollusionCheck_Success() {
+        Tender tender = tenderRepository.save(new Tender("Collusion Tender", "Tender for collusion test"));
+        Bidder bidder1 = bidderRepository.save(new Bidder("Alpha Corp", "alpha@example.com", "+1234567891"));
+        bidder1.setIdentifiers("ABCDE1234F", "27ABCDE1234F1Z5");
+        bidderRepository.save(bidder1);
+
+        Bidder bidder2 = bidderRepository.save(new Bidder("Beta Corp", "beta@example.com", "+1234567892"));
+        bidder2.setIdentifiers("ABCDE1234F", "27XYZDE1234F1Z5");
+        bidderRepository.save(bidder2);
+
+        tenderBidRepository.save(new TenderBid(tender.getId(), bidder1.getId()));
+        tenderBidRepository.save(new TenderBid(tender.getId(), bidder2.getId()));
+
+        String mockCollusionAiResponse = """
+            {
+              "clusters": [
+                {
+                  "cluster_id": "CR-001",
+                  "bidder_ids": "[\\"b1\\", \\"b2\\"]",
+                  "connection_strength": 40.0,
+                  "shared_signals": "[{\\"type\\": \\"SHARED_PAN\\", \\"value\\": \\"ABCDE1234F\\"}]",
+                  "pattern_flags": "[\\"SHARED_PAN\\"]",
+                  "explanation": "Cluster CR-001 contains 2 connected bidders.",
+                  "recommendation": "FLAG_FOR_REVIEW"
+                }
+              ]
+            }
+            """;
+
+        mockServer.expect(requestTo("http://localhost:8002/api/collusion/analyze"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withSuccess(mockCollusionAiResponse, MediaType.APPLICATION_JSON));
+
+        orchestrationService.triggerCollusionCheck(tender.getId());
+
+        mockServer.verify();
+
+        List<backend.model.CartelSignal> signals = cartelSignalRepository.findByTenderId(tender.getId());
+        assertEquals(1, signals.size());
+        backend.model.CartelSignal signal = signals.get(0);
+        assertEquals("CR-001", signal.getClusterId());
+        assertEquals("[\"b1\", \"b2\"]", signal.getBidderIds());
+        assertEquals(backend.enums.CollusionRecommendation.FLAG_FOR_REVIEW, signal.getRecommendation());
     }
 }
