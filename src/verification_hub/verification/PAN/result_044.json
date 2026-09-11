@@ -1,12 +1,14 @@
 {
     "bidder_id": "PAN-044",
     "verification_type": "PAN",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_PAN_DATASET",
-    "timestamp": "2026-09-10T22:12:32.227356Z",
+    "timestamp": "2026-09-10T23:54:45.879382Z",
     "evidence": {
         "provider": "PANProvider",
         "source": "MOCK_PAN_DATASET",
+        "checked_at": "2026-09-10T23:54:45.879382Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "YCGOK1054T",
         "details": {
             "pan": "YCGOK1054T",
@@ -16,10 +18,16 @@
             "aadhaar_linked": "Yes",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "YCGOK1054T"
+            ],
+            "dataset_status": "INACTIVE"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.16
 }

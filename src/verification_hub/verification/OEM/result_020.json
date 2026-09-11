@@ -3,10 +3,12 @@
     "verification_type": "OEM",
     "status": "VERIFIED",
     "source": "MOCK_OEM_DATASET",
-    "timestamp": "2026-09-10T22:12:33.123847Z",
+    "timestamp": "2026-09-10T23:54:46.774484Z",
     "evidence": {
         "provider": "OEMProvider",
         "source": "MOCK_OEM_DATASET",
+        "checked_at": "2026-09-10T23:54:46.774484Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "OEM-5019",
         "details": {
             "identifier": "OEM-5019",
@@ -18,10 +20,16 @@
             "valid_upto": "2028-06-21",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "OEM-5019"
+            ],
+            "dataset_status": "AUTHORIZED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.16
 }

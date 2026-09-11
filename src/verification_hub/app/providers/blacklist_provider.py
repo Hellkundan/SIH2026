@@ -18,20 +18,14 @@ class BlacklistProvider(MockDatasetProvider):
     """
     Specialized provider for blacklist/debarment checks.
 
-    Blacklist semantics are intentionally different from normal
-    registration/certificate verification:
+    No match:
+        VERIFIED + NO_MATCH
 
-        - No match:
-            VERIFIED + finding=NO_MATCH
+    DEBARRED:
+        MANUAL_REVIEW + ADVERSE
 
-        - DEBARRED:
-            MANUAL_REVIEW + finding=ADVERSE
-
-        - UNDER_REVIEW:
-            MANUAL_REVIEW + finding=UNDER_REVIEW
-
-    VERIFIED here means only that no matching record was found in
-    the consulted dataset. It does NOT mean legal clearance.
+    UNDER_REVIEW:
+        MANUAL_REVIEW + UNDER_REVIEW
     """
 
     verification_type = VerificationType.BLACKLIST
@@ -48,18 +42,27 @@ class BlacklistProvider(MockDatasetProvider):
         request: VerificationRequest,
     ) -> VerificationResponse:
 
+        checked_at = datetime.now(timezone.utc)
+
         values = self._request_values(request)
 
+        # ---------------------------------------------------------
+        # INVALID REQUEST
+        # ---------------------------------------------------------
         if not values and not request.company_name:
+
             return VerificationResponse(
                 bidder_id=request.bidder_id,
                 verification_type=self.verification_type,
                 status=VerificationStatus.MANUAL_REVIEW,
                 source=self.source,
-                timestamp=datetime.now(timezone.utc),
+                timestamp=checked_at,
+
                 evidence=VerificationEvidence(
                     provider=self.name,
                     source=self.source,
+                    checked_at=checked_at,
+                    evidence_type="synthetic_dataset",
                     details={
                         "finding": "INSUFFICIENT_EVIDENCE",
                         "reason": (
@@ -68,6 +71,7 @@ class BlacklistProvider(MockDatasetProvider):
                         ),
                     },
                 ),
+
                 error_state=ErrorState.INVALID_REQUEST,
                 error_message=(
                     "Identifier or company name required "
@@ -76,6 +80,9 @@ class BlacklistProvider(MockDatasetProvider):
                 confidence=0.0,
             )
 
+        # ---------------------------------------------------------
+        # SEARCH DATASET
+        # ---------------------------------------------------------
         result = find_match(
             dataset_file=self.dataset_file,
             identifier_keys=self.identifier_keys,
@@ -87,15 +94,19 @@ class BlacklistProvider(MockDatasetProvider):
         # NO MATCH
         # ---------------------------------------------------------
         if result.record is None:
+
             return VerificationResponse(
                 bidder_id=request.bidder_id,
                 verification_type=self.verification_type,
                 status=VerificationStatus.VERIFIED,
                 source=self.source,
-                timestamp=datetime.now(timezone.utc),
+                timestamp=checked_at,
+
                 evidence=VerificationEvidence(
                     provider=self.name,
                     source=self.source,
+                    checked_at=checked_at,
+                    evidence_type="synthetic_dataset",
                     matched_identifier=None,
                     details={
                         "finding": "NO_MATCH",
@@ -107,6 +118,7 @@ class BlacklistProvider(MockDatasetProvider):
                         ),
                     },
                 ),
+
                 error_state=ErrorState.NONE,
                 confidence=result.confidence,
             )
@@ -142,6 +154,7 @@ class BlacklistProvider(MockDatasetProvider):
         # DEBARRED
         # ---------------------------------------------------------
         if dataset_status == "DEBARRED":
+
             details["finding"] = "ADVERSE"
             details["requires_human_review"] = True
 
@@ -150,13 +163,17 @@ class BlacklistProvider(MockDatasetProvider):
                 verification_type=self.verification_type,
                 status=VerificationStatus.MANUAL_REVIEW,
                 source=self.source,
-                timestamp=datetime.now(timezone.utc),
+                timestamp=checked_at,
+
                 evidence=VerificationEvidence(
                     provider=self.name,
                     source=self.source,
+                    checked_at=checked_at,
+                    evidence_type="synthetic_dataset",
                     matched_identifier=result.matched_identifier,
                     details=details,
                 ),
+
                 error_state=ErrorState.NONE,
                 confidence=result.confidence,
             )
@@ -165,6 +182,7 @@ class BlacklistProvider(MockDatasetProvider):
         # UNDER REVIEW
         # ---------------------------------------------------------
         if dataset_status == "UNDER_REVIEW":
+
             details["finding"] = "UNDER_REVIEW"
             details["requires_human_review"] = True
 
@@ -173,19 +191,23 @@ class BlacklistProvider(MockDatasetProvider):
                 verification_type=self.verification_type,
                 status=VerificationStatus.MANUAL_REVIEW,
                 source=self.source,
-                timestamp=datetime.now(timezone.utc),
+                timestamp=checked_at,
+
                 evidence=VerificationEvidence(
                     provider=self.name,
                     source=self.source,
+                    checked_at=checked_at,
+                    evidence_type="synthetic_dataset",
                     matched_identifier=result.matched_identifier,
                     details=details,
                 ),
+
                 error_state=ErrorState.NONE,
                 confidence=result.confidence,
             )
 
         # ---------------------------------------------------------
-        # UNKNOWN BLACKLIST STATUS
+        # UNKNOWN STATUS
         # ---------------------------------------------------------
         details["finding"] = "UNKNOWN_STATUS"
         details["requires_human_review"] = True
@@ -195,13 +217,17 @@ class BlacklistProvider(MockDatasetProvider):
             verification_type=self.verification_type,
             status=VerificationStatus.MANUAL_REVIEW,
             source=self.source,
-            timestamp=datetime.now(timezone.utc),
+            timestamp=checked_at,
+
             evidence=VerificationEvidence(
                 provider=self.name,
                 source=self.source,
+                checked_at=checked_at,
+                evidence_type="synthetic_dataset",
                 matched_identifier=result.matched_identifier,
                 details=details,
             ),
+
             error_state=ErrorState.NONE,
             confidence=result.confidence,
         )

@@ -1,12 +1,14 @@
 {
     "bidder_id": "EPFO-025",
     "verification_type": "EPFO",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_EPFO_DATASET",
-    "timestamp": "2026-09-10T22:12:32.642850Z",
+    "timestamp": "2026-09-10T23:54:46.329400Z",
     "evidence": {
         "provider": "EPFOProvider",
         "source": "MOCK_EPFO_DATASET",
+        "checked_at": "2026-09-10T23:54:46.329400Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "EPFO-2024",
         "details": {
             "identifier": "EPFO-2024",
@@ -18,10 +20,16 @@
             "employee_count_range": "10-20",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "EPFO-2024"
+            ],
+            "dataset_status": "EXITED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.11
 }

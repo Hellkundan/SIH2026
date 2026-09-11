@@ -3,10 +3,12 @@
     "verification_type": "GST",
     "status": "VERIFIED",
     "source": "MOCK_GST_DATASET",
-    "timestamp": "2026-09-10T22:12:31.954094Z",
+    "timestamp": "2026-09-10T23:54:45.447963Z",
     "evidence": {
         "provider": "GSTProvider",
         "source": "MOCK_GST_DATASET",
+        "checked_at": "2026-09-10T23:54:45.447963Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "08LVEJR1004W9ZP",
         "details": {
             "gstin": "08LVEJR1004W9ZP",
@@ -19,10 +21,16 @@
             "taxpayer_type": "Composition",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "08LVEJR1004W9ZP"
+            ],
+            "dataset_status": "ACTIVE"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.12
 }

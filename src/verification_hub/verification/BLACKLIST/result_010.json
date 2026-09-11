@@ -1,12 +1,14 @@
 {
     "bidder_id": "BLACKLIST-010",
     "verification_type": "BLACKLIST",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_BLACKLIST_DATASET",
-    "timestamp": "2026-09-10T22:12:33.169739Z",
+    "timestamp": "2026-09-10T23:54:46.817323Z",
     "evidence": {
         "provider": "BlacklistProvider",
         "source": "MOCK_BLACKLIST_DATASET",
+        "checked_at": "2026-09-10T23:54:46.817323Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "IWZHQ1028M",
         "details": {
             "pan": "IWZHQ1028M",
@@ -17,11 +19,19 @@
             "debarment_period": "2022-09-09 to 2027-12-05",
             "reason": "Controlled SIH demo record - Simulated show-cause notice for expired certifications",
             "match_type": "exact",
+            "searched_identifiers": [
+                "IWZHQ1028M"
+            ],
+            "dataset_status": "DEBARRED",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "finding": "ADVERSE",
+            "requires_human_review": true
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.11
 }

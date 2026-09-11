@@ -1,12 +1,14 @@
 {
     "bidder_id": "BLACKLIST-001",
     "verification_type": "BLACKLIST",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_BLACKLIST_DATASET",
-    "timestamp": "2026-09-10T22:12:33.142318Z",
+    "timestamp": "2026-09-10T23:54:46.791185Z",
     "evidence": {
         "provider": "BlacklistProvider",
         "source": "MOCK_BLACKLIST_DATASET",
+        "checked_at": "2026-09-10T23:54:46.791185Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "EJSNV1096Z",
         "details": {
             "pan": "EJSNV1096Z",
@@ -17,11 +19,19 @@
             "debarment_period": "2023-09-19 to 2027-03-03",
             "reason": "Controlled SIH demo record - Simulated blacklisting for false OEM authorization claim",
             "match_type": "exact",
+            "searched_identifiers": [
+                "EJSNV1096Z"
+            ],
+            "dataset_status": "DEBARRED",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "finding": "ADVERSE",
+            "requires_human_review": true
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.22
 }

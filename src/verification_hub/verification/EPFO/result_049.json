@@ -3,10 +3,12 @@
     "verification_type": "EPFO",
     "status": "VERIFIED",
     "source": "MOCK_EPFO_DATASET",
-    "timestamp": "2026-09-10T22:12:32.709814Z",
+    "timestamp": "2026-09-10T23:54:46.391576Z",
     "evidence": {
         "provider": "EPFOProvider",
         "source": "MOCK_EPFO_DATASET",
+        "checked_at": "2026-09-10T23:54:46.391576Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "EPFO-2048",
         "details": {
             "identifier": "EPFO-2048",
@@ -18,10 +20,16 @@
             "employee_count_range": "50-100",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "EPFO-2048"
+            ],
+            "dataset_status": "ACTIVE"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.14
 }

@@ -1,12 +1,14 @@
 {
     "bidder_id": "OEM-014",
     "verification_type": "OEM",
-    "status": "VERIFIED",
+    "status": "MANUAL_REVIEW",
     "source": "MOCK_OEM_DATASET",
-    "timestamp": "2026-09-10T22:12:33.103297Z",
+    "timestamp": "2026-09-10T23:54:46.759477Z",
     "evidence": {
         "provider": "OEMProvider",
         "source": "MOCK_OEM_DATASET",
+        "checked_at": "2026-09-10T23:54:46.759477Z",
+        "evidence_type": "synthetic_dataset",
         "matched_identifier": "OEM-5013",
         "details": {
             "identifier": "OEM-5013",
@@ -18,10 +20,16 @@
             "valid_upto": "2027-06-09",
             "match_type": "exact",
             "edit_distance": 0,
-            "name_similarity": 1.0
+            "name_similarity": 1.0,
+            "searched_identifiers": [
+                "OEM-5013"
+            ],
+            "dataset_status": "EXPIRED"
         }
     },
     "error_state": "NONE",
     "error_message": null,
-    "confidence": 0.99
+    "confidence": 0.99,
+    "attempts": 1,
+    "duration_ms": 0.1
 }
