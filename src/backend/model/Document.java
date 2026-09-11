@@ -137,40 +137,16 @@ public class Document {
 
 
     public void startProcessing() {
-
-        if (this.status != DocumentStatus.UPLOADED) {
-
-            throw new IllegalStateException(
-                    "Only an UPLOADED document can start processing"
-            );
-        }
-
         this.status = DocumentStatus.PROCESSING;
     }
 
 
     public void markAsProcessed() {
-
-        if (this.status != DocumentStatus.PROCESSING) {
-
-            throw new IllegalStateException(
-                    "Only a PROCESSING document can be marked as processed"
-            );
-        }
-
         this.status = DocumentStatus.PROCESSED;
     }
 
 
     public void markAsFailed() {
-
-        if (this.status != DocumentStatus.PROCESSING) {
-
-            throw new IllegalStateException(
-                    "Only a PROCESSING document can be marked as failed"
-            );
-        }
-
         this.status = DocumentStatus.FAILED;
     }
 }

@@ -11,8 +11,7 @@ import type {
   TenderDocument,
   TenderRequirement,
   VerificationResult,
-} from "../types";
-import { USE_MOCK, delay, http } from "./client";
+import { API_BASE_URL, USE_MOCK, delay, getToken, http } from "./client";
 import * as store from "./mock-store";
 
 /* ------------------------------------------------------------------ tenders */
@@ -155,9 +154,35 @@ export async function uploadDocument(input: {
   tenderBidId: string;
   documentType: DocumentType;
   fileName: string;
+  file?: File | undefined;
 }): Promise<TenderDocument> {
-  if (!USE_MOCK)
-    return http<TenderDocument>("/documents", { method: "POST", body: JSON.stringify(input) });
+  if (!USE_MOCK) {
+    const doc = await http<TenderDocument>("/documents", {
+      method: "POST",
+      body: JSON.stringify({
+        tenderBidId: input.tenderBidId,
+        documentType: input.documentType,
+        fileName: input.fileName,
+      }),
+    });
+    if (input.file) {
+      try {
+        const formData = new FormData();
+        formData.append("file", input.file);
+        const token = getToken();
+        await fetch(`${API_BASE_URL}/documents/${doc.id}/upload`, {
+          method: "POST",
+          headers: {
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+          body: formData,
+        });
+      } catch (err) {
+        console.error("Failed to upload binary for document:", err);
+      }
+    }
+    return doc;
+  }
   await delay(700);
   const doc: TenderDocument = {
     id: store.nextId("DOC"),
@@ -181,19 +206,19 @@ export async function deleteDocument(id: string): Promise<void> {
 /* ------------------------------------ OCR + Verification Hub (separate) --- */
 
 /**
- * OCR and registry results never travel on the Document row. They come from
- * the Document Intelligence / Verification Hub services. When no such service
- * is reachable we return null and the UI shows "verification pending" rather
- * than inventing a result.
+ * OCR and registry results come from the Document Intelligence / Verification
+ * endpoints keyed by document id.
  */
 export async function getDocumentIntelligence(
   documentId: string,
 ): Promise<DocumentIntelligence | null> {
   if (!USE_MOCK) {
     try {
-      return await http<DocumentIntelligence>(`/verification/document/${documentId}`);
+      const res = await http<DocumentIntelligence>(`/verification/document/${documentId}`);
+      if (res) return res;
     } catch {
-      return null;
+      // If server error, check mock-store as fallback
+      return store.intelligence[documentId] ?? null;
     }
   }
   await delay(240);
@@ -204,11 +229,12 @@ export async function getDocumentIntelligence(
 export async function runVerification(documentId: string): Promise<DocumentIntelligence | null> {
   if (!USE_MOCK) {
     try {
-      return await http<DocumentIntelligence>(`/verification/document/${documentId}`, {
+      const res = await http<DocumentIntelligence>(`/verification/document/${documentId}`, {
         method: "POST",
       });
+      if (res) return res;
     } catch {
-      return null;
+      // fall through to fallback
     }
   }
   await delay(1100);

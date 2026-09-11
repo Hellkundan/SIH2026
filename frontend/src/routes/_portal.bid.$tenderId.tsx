@@ -78,7 +78,7 @@ function BidWizard() {
   const refreshDocs = () => qc.invalidateQueries({ queryKey: ["documents", "bid", bidId] });
 
   const upload = useMutation({
-    mutationFn: (input: { documentType: DocumentType; fileName: string }) =>
+    mutationFn: (input: { documentType: DocumentType; fileName: string; file?: File }) =>
       uploadDocument({ tenderBidId: bidId, ...input }),
     onSuccess: async (doc) => {
       await refreshDocs();
@@ -249,7 +249,7 @@ function BidWizard() {
               docs={docList}
               loading={docs.isLoading}
               uploading={upload.isPending}
-              onUpload={(documentType, fileName) => upload.mutate({ documentType, fileName })}
+              onUpload={(documentType, fileName, file) => upload.mutate({ documentType, fileName, file })}
               onRemove={(id) => remove.mutate(id)}
               onRerun={(id) => reverify.mutate(id)}
               rerunning={reverify.isPending}
@@ -357,7 +357,7 @@ function DocumentsStep({
   }[];
   loading: boolean;
   uploading: boolean;
-  onUpload: (type: DocumentType, fileName: string) => void;
+  onUpload: (type: DocumentType, fileName: string, file?: File) => void;
   onRemove: (id: string) => void;
   onRerun: (id: string) => void;
   rerunning: boolean;
@@ -387,7 +387,7 @@ function DocumentsStep({
   const handleFiles = (files: FileList | null) => {
     const file = files?.[0];
     if (!file) return;
-    onUpload(type, file.name);
+    onUpload(type, file.name, file);
   };
 
   return (

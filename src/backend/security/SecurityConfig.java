@@ -53,6 +53,8 @@ public class SecurityConfig {
                                                 .hasRole("ADMIN")
                                                 .requestMatchers(HttpMethod.GET, "/documents/**").authenticated()
                                                 .requestMatchers(HttpMethod.POST, "/documents").hasRole("BIDDER")
+                                                .requestMatchers(HttpMethod.POST, "/documents/*/upload")
+                                                .hasAnyRole("BIDDER", "ADMIN")
                                                 .requestMatchers(HttpMethod.POST, "/documents/*/processing")
                                                 .hasAnyRole("PROCUREMENT_OFFICER", "ADMIN")
                                                 .requestMatchers(HttpMethod.POST, "/documents/*/processed")
@@ -60,7 +62,7 @@ public class SecurityConfig {
                                                 .requestMatchers(HttpMethod.POST, "/documents/*/failed")
                                                 .hasAnyRole("PROCUREMENT_OFFICER", "ADMIN")
                                                 .requestMatchers(HttpMethod.DELETE, "/documents/**")
-                                                .hasRole("ADMIN")
+                                                .hasAnyRole("BIDDER", "ADMIN")
                                                 .requestMatchers(HttpMethod.GET, "/tender-bids/**").authenticated()
                                                 .requestMatchers(HttpMethod.POST, "/tender-bids").hasRole("BIDDER")
                                                 .requestMatchers(HttpMethod.POST, "/tender-bids/*/submit")
@@ -77,6 +79,8 @@ public class SecurityConfig {
                                                 .hasAnyRole("PROCUREMENT_OFFICER", "ADMIN")
                                                 .requestMatchers(HttpMethod.DELETE, "/tender-requirements/**")
                                                 .hasRole("ADMIN")
+                                                .requestMatchers(HttpMethod.GET, "/verification/**").authenticated()
+                                                .requestMatchers(HttpMethod.POST, "/verification/**").authenticated()
 
                                                 .anyRequest().authenticated())
                                 .addFilterBefore(
