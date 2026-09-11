@@ -36,9 +36,30 @@ public class TenderRequirementController {
 
 
     @PostMapping
-    public ResponseEntity<ApiResponse<TenderRequirementResponse>> createRequirement(
+    public ResponseEntity<?> createRequirement(
             @Valid @RequestBody TenderRequirementRequest request
     ) {
+
+        if (request.getRequirements() != null) {
+            List<TenderRequirement> saved = tenderRequirementService.saveRequirementsForTender(
+                    request.getTenderId(),
+                    request.getRequirements()
+            );
+
+            List<TenderRequirementResponse> responses = saved.stream()
+                    .map(TenderRequirementResponse::new)
+                    .toList();
+
+            return response(
+                    responses,
+                    "Tender requirements saved",
+                    HttpStatus.OK
+            );
+        }
+
+        if (request.getRequirement() == null || request.getRequirement().isBlank()) {
+            throw new IllegalArgumentException("requirement must not be blank");
+        }
 
         TenderRequirement requirement = tenderRequirementService.createRequirement(
                 request.getTenderId(),

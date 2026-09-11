@@ -160,35 +160,47 @@ public class TenderBidController {
 
 
     @PostMapping("/{id}/review")
-    public ResponseEntity<ApiResponse<Void>> startBidReview(
+    public ResponseEntity<ApiResponse<TenderBidResponse>> startBidReview(
             @PathVariable UUID id
     ) {
 
         tenderBidService.startBidReview(id);
 
-        return response(null, "Tender bid moved to review", HttpStatus.OK);
+        return response(
+                new TenderBidResponse(tenderBidService.getTenderBidById(id)),
+                "Tender bid moved to review",
+                HttpStatus.OK
+        );
     }
 
 
     @PostMapping("/{id}/qualify")
-    public ResponseEntity<ApiResponse<Void>> qualifyBid(
+    public ResponseEntity<ApiResponse<TenderBidResponse>> qualifyBid(
             @PathVariable UUID id
     ) {
 
         tenderBidService.qualifyBid(id);
 
-        return response(null, "Tender bid qualified", HttpStatus.OK);
+        return response(
+                new TenderBidResponse(tenderBidService.getTenderBidById(id)),
+                "Tender bid qualified",
+                HttpStatus.OK
+        );
     }
 
 
     @PostMapping("/{id}/disqualify")
-    public ResponseEntity<ApiResponse<Void>> disqualifyBid(
+    public ResponseEntity<ApiResponse<TenderBidResponse>> disqualifyBid(
             @PathVariable UUID id
     ) {
 
         tenderBidService.disqualifyBid(id);
 
-        return response(null, "Tender bid disqualified", HttpStatus.OK);
+        return response(
+                new TenderBidResponse(tenderBidService.getTenderBidById(id)),
+                "Tender bid disqualified",
+                HttpStatus.OK
+        );
     }
 
 
