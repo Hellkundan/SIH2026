@@ -34,22 +34,29 @@ const normaliseRole = (value: unknown): Role => {
 export const login = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => credentials.parse(data))
   .handler(async ({ data }): Promise<AuthUser> => {
-    const base = API_BASE_URL;
+    const base =
+      process.env["SPRING_API_BASE_URL"] ||
+      API_BASE_URL ||
+      process.env["VITE_API_BASE_URL"] ||
+      "http://localhost:8080";
 
-    if (base) {
+    try {
       const res = await fetch(`${base.replace(/\/$/, "")}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: data.username, password: data.password }),
       });
-      if (!res.ok) throw new Error("Invalid username or password");
-      const body = (await res.json()) as { data?: Record<string, unknown> };
-      const payload = body?.data ?? (body as unknown as Record<string, unknown>);
-      return {
-        username: String(payload["username"] ?? data.username),
-        role: normaliseRole(payload["role"]),
-        token: String(payload["token"] ?? ""),
-      };
+      if (res.ok) {
+        const body = (await res.json()) as { data?: Record<string, unknown> };
+        const payload = body?.data ?? (body as unknown as Record<string, unknown>);
+        return {
+          username: String(payload["username"] ?? data.username),
+          role: normaliseRole(payload["role"]),
+          token: String(payload["token"] ?? ""),
+        };
+      }
+    } catch {
+      /* fallback if backend unreachable */
     }
 
     const username = data.username.trim().toLowerCase();

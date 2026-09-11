@@ -12,7 +12,12 @@ const TOKEN_KEY = "dixy.token";
 
 export function getToken(): string | null {
   if (typeof window === "undefined") return null;
-  return window.localStorage.getItem(TOKEN_KEY);
+  const token = window.localStorage.getItem(TOKEN_KEY);
+  if (!USE_MOCK && token && token.startsWith("demo.")) {
+    window.localStorage.removeItem(TOKEN_KEY);
+    return null;
+  }
+  return token;
 }
 
 export function setToken(token: string | null) {

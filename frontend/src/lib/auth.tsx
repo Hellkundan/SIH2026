@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 
-import { setToken } from "./api/client";
+import { USE_MOCK, setToken } from "./api/client";
 import type { AuthUser, BidderProfile } from "./types";
 
 const USER_KEY = "dixy.user";
@@ -36,8 +36,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const raw = window.localStorage.getItem(USER_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as AuthUser;
-        setUser(parsed);
-        setToken(parsed.token);
+        if (!USE_MOCK && parsed.token && parsed.token.startsWith("demo.")) {
+          window.localStorage.removeItem(USER_KEY);
+          window.localStorage.removeItem(BIDDER_KEY);
+          setToken(null);
+          setUser(null);
+          setBidderState(null);
+        } else {
+          setUser(parsed);
+          setToken(parsed.token);
+        }
       }
       const rawBidder = window.localStorage.getItem(BIDDER_KEY);
       if (rawBidder) setBidderState(JSON.parse(rawBidder) as BidderProfile);

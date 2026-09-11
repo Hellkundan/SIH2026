@@ -144,13 +144,18 @@ public class BackendApplication {
             Role.PROCUREMENT_OFFICER
         ));
         userStorage.saveUser(new AppUser(
+            "officer",
+            passwordEncoder.encode("dixy1234"),
+            Role.PROCUREMENT_OFFICER
+        ));
+        userStorage.saveUser(new AppUser(
             "admin",
             passwordEncoder.encode("admin123"),
             Role.ADMIN
         ));
         userStorage.saveUser(new AppUser(
             "bidder",
-            passwordEncoder.encode("bidder123"),
+            passwordEncoder.encode("dixy1234"),
             Role.BIDDER
         ));
 

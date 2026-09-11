@@ -36,3 +36,6 @@ src/ocr/app/files/*
 ### Verification Hub / Test Results ###
 src/verification_hub/verification_results/*
 !src/verification_hub/verification_results/.gitkeep
+
+### Old subproject ###
+src/backend/dixy-backend/
