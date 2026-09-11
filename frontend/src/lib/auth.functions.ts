@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { API_BASE_URL } from "./api/client";
 
 import type { AuthUser, Role } from "./types";
 
@@ -33,7 +34,7 @@ const normaliseRole = (value: unknown): Role => {
 export const login = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => credentials.parse(data))
   .handler(async ({ data }): Promise<AuthUser> => {
-    const base = process.env["SPRING_API_BASE_URL"];
+    const base = API_BASE_URL;
 
     if (base) {
       const res = await fetch(`${base.replace(/\/$/, "")}/auth/login`, {
